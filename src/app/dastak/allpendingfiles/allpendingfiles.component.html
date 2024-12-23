@@ -1,0 +1,70 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">All Pending Admissions</h1>
+        
+        </div><!-- /.col -->
+        
+          
+            
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+     
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>File Number</th>
+              <th>Reference Number</th>
+              <th>Full Name</th>
+             
+
+              <th>Perform Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of pendingdetail">
+              <td>{{item.fileNo}}</td>
+              <td>{{item.referenceNo}}</td>
+              <td>{{item.firstName}} {{item.lastName}}</td>
+              
+              <td>  <button  type="button" class="btn btn-labeled btn-success " title="Proceed Application" [routerLink]="['/dastak/proceedapplication',item.fileNo,item.referenceNo]" >
+                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>  <i class="fas fa-check"></i></button> 
+            
+                <button type="button" class="btn btn-labeled btn-danger ml-2" (click)="Delete(item.fileNo,item.referenceNo)"  title="Discard"  >
+                    <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span><i class="fas fa-times"></i></button>
+            </td>
+             
+        </tr>
+        
+         
+          
+           
+      
+  
+ 
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

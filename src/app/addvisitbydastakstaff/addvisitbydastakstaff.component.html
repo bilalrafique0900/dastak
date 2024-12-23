@@ -1,0 +1,157 @@
+
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Add Visit</h1>
+            </div><!-- /.col -->
+           
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+        <div class="card card-default">
+       
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Date</label>
+                  <div class="input-group date" id="date" data-target-input="nearest">
+                    <input type="date"  [(ngModel)]="dastakvisit.date" class="form-control" data-target="#date"/>
+                </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-12">
+                <form [formGroup]="visitForm">
+                    <div formArrayName="visitors">
+                      <div *ngFor="let visitor of visitors().controls; let i=index" [formGroupName]="i" class="row">
+                        <div class="col-md-9">
+                          <div class="form-group">
+                            <label>Name of Visitor</label>
+                            <input class="form-control" formControlName="name" type="text" placeholder="name of visitor">
+                          </div>
+                        </div>
+                            <div class="col-md-3">
+                              <button (click)="removeVisitor(i)" class="btn btn-danger mt-4  ml-1">x</button>
+                              <button (click)="addVisitor()" class="btn btn-success mt-4   ml-1">+</button>
+                              </div>
+                      </div>
+                    </div>
+                    
+                  </form>
+              </div>
+             
+                 
+ <div class="col-md-6">
+                <div class="form-group">
+                  <label>Objective of  visit</label>
+                  <select class="form-control select2" [(ngModel)]="dastakvisit.objectiveOfVisit" style="width: 100%;">
+                    <option>Select option</option>
+                    <option>Workshop</option>
+                    <option>Observation Visit</option>
+                    <option>Meeting</option>
+                    <option> Research</option>
+                    <option>Other</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Location</label>
+                    <input class="form-control" [(ngModel)]="dastakvisit.location" type="text" placeholder="location">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+            
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>City</label>
+                  <select class="form-control select2" [(ngModel)]="dastakvisit.city" style="width: 100%;">
+                    <option >Lahore</option>
+                    <option>Karachi</option>
+                    <option>Peshawar</option>
+                    <option >Islamabad</option>
+                    <option>Kasur</option>
+                    <option>Multan</option>
+          
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Country</label>
+                  <select class="form-control select2" [(ngModel)]="dastakvisit.country" style="width: 100%;">
+                    <option >pakistan</option>
+                    <option>india</option>
+                    <option>china</option>
+          
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Number of Previous Visits</label>
+                  <input class="form-control" type="number" [(ngModel)]="dastakvisit.noOfPreviousVisits" placeholder="number of previous visits" >
+                 
+                </div>
+              </div>
+             
+             
+              <!-- /.col -->
+              <div class="col-md-6">
+              
+                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>Number of Planned Visits</label>
+                  <input class="form-control" type="number" [(ngModel)]="dastakvisit.noOfPlannedVisits" placeholder="number of planned visits" >
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Detail of Call</label>
+                    <textarea class="form-control" [(ngModel)]="dastakvisit.detailOfVisit" rows="2" placeholder="Detail of call">
+                    </textarea>
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button class="btn btn-primary" (click)="Post()" >Save</button>
+            <button class="btn btn-default mx-2">Cancel</button>
+          </div>
+        </div>
+        <!-- /.card -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->

@@ -1,0 +1,153 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Abuser Detail</h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reference Numberr</td>
+              <td>{{abusedata.referenceNo}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>Name of resident</td>
+            <td>{{abusedata.residentName}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>{{abusedata.address}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Contact</td>
+    <td>{{abusedata.contact}}</td>
+    
+   
+</tr>
+      <tr>
+        <td>Name of alleged abuser</td>
+        <td>{{abusedata.abuserName}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Relationship with resident</td>
+    <td>{{abusedata.relationship}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Length of relationship</td>
+    <td>{{abusedata.relationDuration}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Qualification of alleged abuser</td>
+    <td>{{abusedata.qualification}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Profession of alleged abuser</td>
+    <td>{{abusedata.profession}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Type of Abuse</td>
+    <td>  <li *ngFor="let detail of session.getFormattedData(abusedata.typeOfAbuse)"> {{ detail }}</li></td>
+    
+   
+</tr>
+
+<tr>
+    <td>Type in case of Economic Abuse</td>
+    <td>{{abusedata.typeOfEconomicAbuse}}</td>
+    
+   
+</tr>
+<tr>
+    <td>What was the family or partner's reason for inflicting abuse?</td>
+    <td>{{abusedata.reasonOfInflictingAbuse}}</td>
+    
+   
+</tr>
+<tr>
+    <td>What reasons does she have for tolerating abuse till now?</td>
+    <td>{{abusedata.reasonOfToleratingAbuse}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Nature of physical abuse</td>
+    <td>{{abusedata.natureOfPhysicalAbuse}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Nature of bodily injury resulting from physical abuse</td>
+    <td>{{abusedata.natureOfBodilyInjury}}</td>
+    
+   
+</tr>
+<tr>
+  <td>If yes, type of verbal abuse</td>
+  <td>{{abusedata.typeOfVerbalAbuse}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>If yes, nature of threats</td>
+  <td>{{abusedata.natureOfThreats}}</td>
+  
+ 
+</tr>
+
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

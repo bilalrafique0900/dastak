@@ -1,0 +1,32 @@
+.login-page{
+ background-image: url('../../../assets/dist/img/dastak-trust.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ position: relative;
+}
+.login-page:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0 , 0 , 0.7);
+    width: 100%;
+    height: 100%;
+}
+.login-card-body, .register-card-body {
+    border-radius: 5px;
+}
+
+::ng-deep .overlay-container{
+    position: absolute;
+    top: 41px;
+    left: 50%;
+    width: 41%;
+    transform: translateX(-50%);
+   }
+   ::ng-deep .overlay-container #toast-container .toast-error {
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}

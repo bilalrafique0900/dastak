@@ -1,0 +1,69 @@
+<div class="content-header">
+
+</div>
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Follow Up Record</h1>
+        
+        </div><!-- /.col -->
+        
+          
+            
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+      <div class=" d-flex justify-content-end">
+        <button class="btn btn-primary" title="Add New" [routerLink]="['/dastak/followup',this.file,this.entity]"  > <i class="fas fa-plus"></i></button>
+    
+      </div>
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                  Reference No.</th>
+              <th>Name Of Resident</th>
+              <th>Contact No.</th>
+              
+
+              <th>Current Resident</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of followdetail.followup">
+              <td>{{item.referenceNo}}</td>
+              <td>{{item.nameOfResident}}</td>
+              <td>{{item.contactNo}}</td>
+              <td>{{item.currentResidence}}</td>
+              <td> 
+                <div class="input-group-prepend">
+                  
+                  <button type="button" class="btn btn-danger ml-1" (click)="Delete(item.id)"title="Delete"  >
+                    <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span><i class="fas fa-times"></i></button> 
+                    
+                
+              
+                
+              </div></td>
+        </tr>
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

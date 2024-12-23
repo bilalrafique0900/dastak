@@ -1,0 +1,116 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Visitor Detail </h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>From date</td>
+              <td>{{visitordata.date | date:'fullDate'}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>time</td>
+            <td>{{visitordata.time}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Organisation</td>
+        <td>{{visitordata.organisation}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Name of visitor(s)</td>
+     <td>
+      {{ getFormattedData(visitordata.name) }}
+    </td>
+   
+</tr>
+<tr>
+    <td>Detail of visitor</td>
+    <td>{{getFormattedData(visitordata.detailOfVisitor)}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Contact Number</td>
+    <td>{{getFormattedData(visitordata.contactNo)}}</td>
+    
+   
+</tr>
+<tr>
+  <td>City</td>
+  <td>{{visitordata.city}}</td>
+  
+ 
+</tr>
+<tr>
+    <td>Country</td>
+    <td>{{visitordata.country}}</td>
+    
+   
+</tr>
+<tr>
+  <td>Reason For Visit</td>
+  <td>{{visitordata.reasonForVisit}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Detail of visit</td>
+  <td>{{visitordata.detailOfVisit}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Number of planned visits</td>
+  <td>{{visitordata.noOfPlannedVisits}}</td>
+  
+ 
+</tr>
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

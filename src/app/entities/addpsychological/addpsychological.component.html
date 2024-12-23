@@ -1,0 +1,218 @@
+<div class="content-header">
+    <div class="container-fluid">
+     
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <h3 class="m-0">  Add Psychological Record </h3>   
+      <br>   <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+     
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                  <label>Reference Number</label>
+                    <input class="form-control"[(ngModel)]="this.adphysical.parents.referenceNo" disabled type="text" placeholder="reference number">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Name</label>
+                    <input class="form-control" [(ngModel)]="this.fullName" disabled type="text" placeholder="name">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Age</label>
+                    <input class="form-control" [(ngModel)]="this.adphysical.basicInfo.age " disabled type="text" placeholder="age">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Psychological assessment at admission</label>
+                  <select class="form-control  select2" [(ngModel)]="this.repost.psychologicalAssessment"  style="width: 100%;">
+                    <option value="">Select Option </option>
+                    <option value="Normal functioning">Normal functioning </option>
+                    <option value="Mild symptoms of distress/anxiety/depression">Mild symptoms of distress/anxiety/depression </option>
+                    <option value="moderate symptoms of distress/anxiety/depression">moderate symptoms of distress/anxiety/depression </option>
+                    <option value="Serious symptoms of distress/anxiety/depression">Serious symptoms of distress/anxiety/depression </option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="row">
+                <h4>In-house Therapy</h4>
+              </div>
+
+
+
+
+
+
+              <br><br>
+              <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Date when therapy session conducted</label>
+              <div class="input-group date" id="conductedAt" data-target-input="nearest">
+                <input  [(ngModel)]="this.repost.conductedAt"  type="date" class="form-control " data-target="#conductedAt"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Started at</label>
+              <div class="input-group date" id="startedAt" data-target-input="nearest">
+                <input   [(ngModel)]="this.repost.startedAt" type="time" class="form-control " data-target="#startedAt"/>
+                
+                </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Ended at</label>
+              <div class="input-group date" id="endedAt" data-target-input="nearest">
+                <input  [(ngModel)]="this.repost.endedAt" type="time" class="form-control " data-target="#endedAt"/>
+                
+                </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Arrangements for immediate psychological assistance</label>
+              <select class="form-control  select2"  [(ngModel)]="this.repost.whatArrangementsMadeForImmediateAssistance" style="width: 100%;">
+                <option value="">Select Option </option>
+                <option value="Private session arranged with shelter psychologist">Private session arranged with shelter psychologist  </option>
+                <option value="Referred to external psychiatrist">Referred to external psychiatrist </option>
+                <option value="Group therapy session arranged with external therapists">Group therapy session arranged with external therapists  </option>
+                <option value="None">None </option>
+                <option value="Other">Other </option>
+             
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Nature of assistance sought?</label>
+              <select class="form-control  select2" [(ngModel)]="this.repost.natureOfAssistance"  style="width: 100%;">
+                <option value="">Select Option </option>
+                <option value="Psychological/ Therapy">Psychological/ Therapy </option>
+                <option value="Psychiatric">Psychiatric </option>
+              
+             
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Date when psychological assistance sought</label>
+              <div class="input-group date" id="soughtAt" data-target-input="nearest">
+                <input  [(ngModel)]="this.repost.soughtAt" type="date" class="form-control " data-target="#soughtAt"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Date when psychological assistance provided</label>
+              <div class="input-group date" id="providedAt" data-target-input="nearest">
+                <input [(ngModel)]="this.repost.providedAt"  type="date" class="form-control " data-target="#providedAt"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Name of psychologist/ psychiatrist consulted</label>
+                <input class="form-control"  [(ngModel)]="this.repost.nameOfConsultant"  type="text" placeholder="">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div> <div class="col-md-6">
+            <div class="form-group">
+              <label>Location of consultation</label>
+                <input class="form-control"  [(ngModel)]="this.repost.locationOfConsultant"  type="text" placeholder="">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>
+                Contact number of psychologist/ psychiatrist consulted</label>
+                <input class="form-control"  [(ngModel)]="this.repost.contact"  type="text" placeholder="xxxx-xxxxxxx">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Notes</label>
+                <input class="form-control"  [(ngModel)]="this.repost.notes"  type="text" placeholder="">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+
+
+         
+          
+        </div>
+
+
+
+       
+    
+
+
+
+
+
+
+
+        
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button class="btn btn-primary" (click)="PostAllPHY()">Save</button>
+        <button class="btn btn-default mx-2">Cancel</button>
+      </div>
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

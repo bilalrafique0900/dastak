@@ -1,0 +1,185 @@
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Add Caller Details</h1>
+            </div><!-- /.col -->
+            
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+        <div class="card card-default">
+         
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Date</label>
+                  <div class="input-group date" id="date" data-target-input="nearest">
+                    <input type="date" [(ngModel)]="dastakvisit.date"  class="form-control " data-target="#date"/>
+                </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Time</label>
+                  <div class="input-group date" id="timepicker" data-target-input="nearest">
+                    <input type="time" [(ngModel)]="dastakvisit.time"  class="form-control" data-target="#timepicker"/>
+                    
+                    </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Organisation</label>
+                    <input class="form-control" [(ngModel)]="dastakvisit.organisation" type="text" placeholder="organisation">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Name of Caller</label>
+                    <input class="form-control"[(ngModel)]="dastakvisit.name"  type="text" placeholder="name of caller">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Designation</label>
+                    <input class="form-control" [(ngModel)]="dastakvisit.designation" type="text" placeholder="designation">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Detial Of Caller</label>
+                  <select class="form-control select2"[(ngModel)]="dastakvisit.detailOfCaller"  style="width: 100%;">
+                    <option>Select option</option>
+                    <option >Previous Dastak resident</option>
+                    <option>Activist</option>
+                    <option>Lawyer</option>
+                    <option>Doctor</option>
+                    <option>Psychologist/therapist</option>
+                    <option>Reseacher</option>
+                    <option>Student</option>
+                    <option>Documentary Maker</option>
+                    <option>Journalist </option>
+                    <option>Goverment official</option>
+                    <option>NGO worker</option>
+                    <option>Memeber of society</option>
+                    <option>other</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Contact Number</label>
+                    <input class="form-control" [(ngModel)]="dastakvisit.contactNo" type="text" placeholder="xxxx-xxxxxxx">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>City</label>
+                    <input class="form-control"[(ngModel)]="dastakvisit.city"  type="text" placeholder="city">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Country</label>
+                  <select class="form-control select2"[(ngModel)]="dastakvisit.country"  style="width: 100%;">
+                    <option >pakistan</option>
+                    <option>india</option>
+                    <option>china</option>
+          
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Reason For Call</label>
+                  <select class="form-control select2"[(ngModel)]="dastakvisit.reasonForCall"  style="width: 100%;">
+                    <option >select option </option>
+                    <option>Legal advice</option>
+                    <option>Psychological Assistance</option>
+                    <option>Financial Assistance</option>
+                    <option>Seeking info on dastak services</option>
+                    <option>Seeking info resident</option>
+                    <option>Previous resident seeking update on case </option>
+                    <option>Phone Interview</option>
+                    <option>Online Workshop/training</option>
+                    <option>Other</option>
+                  
+                  </select>
+                </div>
+              </div>
+             
+             
+              <!-- /.col -->
+              <div class="col-md-6">
+              
+                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>Outcome</label>
+                  <select class="form-control select2" [(ngModel)]="dastakvisit.outcome" style="width: 100%;">
+                    <option > select option</option>
+                    <option>Information/Advice provide</option>
+                    <option >Referral</option>
+                    <option>Requested to visit Dastak</option>
+                    <option>Legal aid provided</option>
+              
+                  </select>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Detail of Call</label>
+                    <textarea class="form-control" [(ngModel)]="dastakvisit.detailOfCall" rows="2" placeholder="Detail of call">
+                    </textarea>
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+            <button class="btn btn-primary"  (click)="Post()">Save</button>
+            <button class="btn btn-default mx-2">Cancel</button>
+          </div>
+        </div>
+        <!-- /.card -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->

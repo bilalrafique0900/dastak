@@ -1,0 +1,540 @@
+<div class="card-header">
+               
+    <h5 class="card-title">Edit Child Information</h5>
+    
+  </div>
+  <!-- /.content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+      <div class="card-body">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+              <label>Mother's Reference Number</label>
+                <input class="form-control" type="text"  [(ngModel)]="this.childnotice.referenceNo" placeholder="mother reference number">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Mother's Name</label>
+                <input class="form-control"  [(ngModel)]="this.childnotice.childData.motherName" type="text" placeholder="mother name">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+         
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>child's Name</label>
+                <input class="form-control" type="text" [(ngModel)]="this.childnotice.childData.name" placeholder="child's name">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Child' Age</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.age" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Less than 1">Less than 1 year</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option selected="" value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="Above 16">Above 16 years</option>
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Child's assigned gender at birth</label>
+              <select class="form-control select2"  [(ngModel)]="this.childnotice.childData.gender"style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Female">Female</option>
+                <option selected="" value="Male">Male</option>
+                <option value="Transgender">Transgender</option>
+                <option value="Other">Other</option>
+               
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Condition of personal hygiene at admission</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.health.hygiene" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Good">Good</option>
+                <option selected="" value="Fair">Fair</option>
+                <option value="Poor">Poor</option>
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Is the child under threat of physical violence?</label>
+              <select class="form-control select2"  [(ngModel)]="this.childnotice.childData.health.underPhysicalViolence"style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-8">
+            <div class="form-group">
+              <label>Does the child require medical or psychological assistance at the time of admission</label>
+              <select class="form-control select2"  [(ngModel)]="this.childnotice.childData.health.requireMedicalOrPsychologicalAssistance"style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+               
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Has the child been categorised as a special-needs child?</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.health.specialChild" style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>If yes, where is the special needs child residing?</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.health.residence" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Accompanying mother">Accompanying mother</option>
+                <option value="Bali Memorial Trust">Bali Memorial Trust</option>
+                <option value="Fountain house">Fountain house</option>
+                <option value="Madrassa">Madrassa</option>
+                <option value="PSRD Special School">PSRD Special School</option>
+                <option value="Edhi Centre">Edhi Centre</option>
+                <option value="Dar-ul-Sakoon">Dar-ul-Sakoon</option>
+                <option value="Other">Other</option>
+   
+                
+                
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div> 
+        </div>
+        <div class="row">
+          <h1>Schooling</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Class assigned at shelter school</label>
+              <select class="form-control select2"  [(ngModel)]="this.childnotice.childData.schooling.gradeAssigned"style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Primary">Primary</option>
+                <option value="Class 1">Class 1</option>
+                <option value="Class 2">Class 2</option>
+                <option value="Class 3">Class 3</option>
+                <option value="Class 4">Class 4</option>
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Shelter School Entery Date</label>
+              <div class="input-group date" id="shelterSchoolEntryDate" data-target-input="nearest">
+                <input type="date" [(ngModel)]="this.childnotice.childData.schooling.shelterSchoolEntryDate" class="form-control " data-target="#shelterSchoolEntryDate"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Shelter School Leaving Date</label>
+              <div class="input-group date" id="shelterSchoolLeavingDate" data-target-input="nearest">
+                <input type="date" [(ngModel)]="this.childnotice.childData.schooling.shelterSchoolLeavingDate" class="form-control " data-target="#shelterSchoolLeavingDate"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Impact of schooling on the child's reading ability</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.schooling.impactOnReadingAbility" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="No impact">No impact</option>
+                <option value="Minor impact">Minor impact</option>
+                <option value="Moderate impact">Moderate impact</option>
+                <option value="Substantial impact">Substantial impact</option>
+
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Impact of schooling on the child's writing ability</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.schooling.impactOnWritingAbility" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="No impact">No impact</option>
+                <option value="Minor impact">Minor impact</option>
+                <option value="Moderate impact">Moderate impact</option>
+                <option value="Substantial impact">Substantial impact</option>
+
+                
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Impact of schooling on the child's math ability</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.schooling.impactOnMathsAbility" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="No impact">No impact</option>
+                <option value="Minor impact">Minor impact</option>
+                <option value="Moderate impact">Moderate impact</option>
+                <option value="Substantial impact">Substantial impact</option>
+
+                
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Impact of schooling on the child's social ability</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.schooling.impactOnSocialAbility" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="No impact">No impact</option>
+                <option value="Minor impact">Minor impact</option>
+                <option value="Moderate impact">Moderate impact</option>
+                <option value="Substantial impact">Substantial impact</option>
+
+                
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Impact of schooling on the child's extra curricular ability</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.schooling.impactOnExtraCurricularAbility" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="No impact">No impact</option>
+                <option value="Minor impact">Minor impact</option>
+                <option value="Moderate impact">Moderate impact</option>
+                <option value="Substantial impact">Substantial impact</option>
+
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Has the child attended any workshop/training at the shelter?</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.orientation.attendedTraining" style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+                
+                
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>If yes, nature of training/ workshop:</label>
+              <select multiple class="form-control" [(ngModel)]="this.childnotice.childData.orientation.natureOfTraining">
+                <option value="Human Rights">Human Rights</option>
+                <option value="Arts and crafts">Arts and crafts</option>
+                <option value="Health awareness">Health awareness</option>
+                <option value="Psychological wellbeing">Psychological wellbeing</option>
+                <option value="Performance">Performance</option>
+                <option value="Other">Other</option>
+                
+                
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Has the child been vaccinated?</label>
+              <select class="form-control select2"  [(ngModel)]="this.childnotice.childData.orientation.vaccinated"style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+                
+                
+              
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group row clearfix">
+              <label>Detail of vaccination</label>
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox"  [(ngModel)]="this.childnotice.childData.orientation.typeOfVaccination"checked id="checkboxDanger1">
+                <label for="checkboxDanger1">
+                  BCG
+                </label>
+              </div>
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger2">
+                <label for="checkboxDanger2">
+                  OPV-I
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger3">
+                <label for="checkboxDanger3">
+                  OPV-II
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger4">
+                <label for="checkboxDanger4">
+                  OPV -III
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger5">
+                <label for="checkboxDanger5">
+                  Hepatitus B
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger6">
+                <label for="checkboxDanger6">
+                  Rotavirus-I
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger7">
+                <label for="checkboxDanger7">
+                  Rotavirus-II
+                </label>
+              </div>
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger5">
+                <label for="checkboxDanger5">
+                  Pneumococcal-I
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger6">
+                <label for="checkboxDanger6">
+                  Pneumococcal-II
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger7">
+                <label for="checkboxDanger7">
+                  Pneumococcal-III
+                </label>
+              </div>
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger5">
+                <label for="checkboxDanger5">
+                  Pentavalent-I
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger6">
+                <label for="checkboxDanger6">
+                  Pentavalent-II
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger7">
+                <label for="checkboxDanger7">
+                  Pentavalent-III
+                </label>
+              </div>
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger5">
+                <label for="checkboxDanger5">
+                  IPV(polio)
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger6">
+                <label for="checkboxDanger6">
+                  Measles-I
+                </label>
+              </div>
+
+              <div class="icheck-success col-12 d-inline">
+                <input type="checkbox" id="checkboxDanger7">
+                <label for="checkboxDanger7">
+                  Measles-II
+                </label>
+              </div>
+
+            </div>
+            
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Next date of vaccination</label>
+              <div class="input-group date" id="nextDateOfVaccination" data-target-input="nearest">
+                <input type="date" [(ngModel)]="this.childnotice.childData.orientation.nextDateOfVaccination" class="form-control " data-target="#nextDateOfVaccination"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Is the child a male above the age of 10?:</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.orientation.isChildMaleAbove10" style="width: 100%;">
+        
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+                
+                
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>If yes, where has the male child been sent to?:</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.orientation.whereMaleChildBeenSent" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="SOS Mother and Child Centre">SOS Mother and Child Centre</option>
+                            <option value="Madrassa">Madrassa</option>
+                            <option value="Returned to family">Returned to family</option>
+                            <option value="Edhi Centre">Edhi Centre</option>
+                            <option value="Dar-ul-Shafqat">Dar-ul-Shafqat</option>
+                            <option value="Child Protection &amp; Welfare Bureau">Child Protection &amp; Welfare Bureau</option>
+                            <option value="Other">Other</option>
+                
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Discharge Date</label>
+              <div class="input-group date" id="dischargeDate" data-target-input="nearest">
+                <input type="date"  [(ngModel)]="this.childnotice.childData.dischargeDate"class="form-control " data-target="#dischargeDate"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Has the child been referred to elsewhere?</label>
+              <select class="form-control select2" [(ngModel)]="this.childnotice.childData.hasBeenReferred" style="width: 100%;">
+           
+                <option value="select option">Select option</option>
+                <option  value="1">Yes</option>
+                <option value="0">No</option>
+                
+                
+                
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>If yes, where has the child been referred?</label>
+                <input class="form-control"  [(ngModel)]="this.childnotice.childData.whereHasBeenReferred"type="text" placeholder="organisation">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+ 
+        </div>
+      </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="Editchildd()">Save</button>
+          <button class="btn btn-default mx-2">Cancel</button>
+        </div>
+
+        
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

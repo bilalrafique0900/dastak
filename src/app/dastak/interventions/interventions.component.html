@@ -1,0 +1,76 @@
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-11">
+        <h1 class="m-0">Interventions</h1>
+      
+      </div><!-- /.col -->
+      
+        
+       
+        
+      
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+              <!-- SELECT2 EXAMPLE -->
+  <div class="card card-default">
+      <div class=" d-flex justify-content-end">
+          <button class="btn btn-primary" title="Add New"  [routerLink]="['/dastak/addintervention',this.file,this.entity]"> <i class="fas fa-plus"></i></button>
+      
+        </div>
+    <!-- /.card-header -->
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+      <table class="table table-striped">
+        <thead>
+          <tr >
+            <th style=>Intervention Date</th>
+            <th>Created At</th>
+            <th>Nature of Intervention</th>
+            <th >Detail of Intervention</th>
+         
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let item of intervention?.interventions">
+            <td>{{item.interventionDate| date:'fullDate'}}</td>
+            <td>{{item.createdAt| date:'fullDate'}}</td>
+            <td>{{item.natureOfIntervention}}</td>
+            <td>{{item.detailOfIntervention}}</td>
+            
+            <td>   <div class="input-group-prepend">
+              <button type="button" class="btn btn-primary ml-1" title="View" [routerLink]="['/dastak/viewintervention',this.entity,item.id]">
+              <svg width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"></path>
+<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"></path>
+</svg>
+              
+            </button>
+            <br><br>
+            <button type="button" class="btn btn-danger ml-1" (click)="Delete(item.id)"title="Delete"  >
+              <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span><i class="fas fa-times"></i></button> 
+              <br><br> 
+          </div>
+          </td>
+           
+      </tr>
+          
+        </tbody>
+      </table>
+  
+
+    </div>
+    <!-- /.card-body -->
+
+  </div>
+  <!-- /.card -->
+  </div><!-- /.container-fluid -->
+</section>
+  

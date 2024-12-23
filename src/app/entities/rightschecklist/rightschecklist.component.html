@@ -1,0 +1,152 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Resident Details - FILE# {{feedbackdata.parent?.referenceNo}} </h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Have you guaranteed that unnecessary persons are not present in the room to protect resident's rights of privacy and to make her feel comfortable?</td>
+              <td>{{feedbackdata.feedback?.rightsWereRespected==1?'Yes':'No'}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>Was she given a resource list of other available services?</td>
+            <td>{{feedbackdata.discharge?.givenResourcesList==1?'Yes':'No'}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Does the resident consent to follow-up calls?</td>
+        <td>{{feedbackdata.discharge?.consentFollowUps==1?'Yes':'No'}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Has she been oriented with shelter rules & regulations and rights of residents?</td>
+    <td>{{feedbackdata.orientation?.hasBeenOriented==1?'Yes':'No'}}</td>
+    
+   
+</tr>
+<tr>
+    <td> Has she been given a copy of shelter rules & regulations of residents in a language she can read?</td>
+    <td>{{feedbackdata.orientation?.givenCopyOfRules==1?'Yes':'No'}}</td>
+    
+   
+</tr>
+<tr>
+  <td>Have you ensured confidentiality of resident's data?</td>
+  <td>{{feedbackdata.orientation?.ensuredConfidentialityOfData==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Did the resident consent to her family being informed of her admission at the shelter?</td>
+  <td>{{feedbackdata?.meetings?.residentConsent?feedbackdata?.meetings?.residentConsent:'Unanswered'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>How did she rate her overall experience at the Shelter?</td>
+  <td>{{feedbackdata?.feedback?.overAllExperience}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Security arrangements at the shelter?</td>
+  <td>{{feedbackdata?.feedback?.securityArrangements}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Provision of food at the shelter?	</td>
+  <td>{{feedbackdata.feedback?.provisionOfFood}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Provision of clothing and accessories at the shelter?</td>
+  <td>{{feedbackdata.feedback?.provisionOfClothingAndAccessories}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Medical/Psychological facilities at the shelter?	</td>
+  <td>{{feedbackdata.feedback?.medicalOrPsychologicalFacilities}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Provision of legal counselling and/or assistance at the shelter?</td>
+  <td>{{feedbackdata.feedback?.provisionOfLegalAssisstance}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Shelter's procedure for family meetings and phone calls?</td>
+  <td>{{feedbackdata.feedback?.provisionForFamilyMeetings}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Crisis management staff's attitude and behaviour?</td>
+  <td>{{feedbackdata.feedback?.crisisManagementAndAttitude}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Services offered her children (if any)?</td>
+  <td>{{feedbackdata.feedback?.servicesProvidedToHerChildren}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Awareness programs and workshops held at the shelter?</td>
+  <td>{{feedbackdata.feedback?.awarenessProgramsAndWorkshop}}</td>
+  
+ 
+</tr>
+
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

@@ -1,0 +1,730 @@
+
+      <!-- /.content-header -->
+  
+      <!-- Main content -->
+  
+      <section class="content"
+      style="
+      padding-top: 77px;
+      "
+      >
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.total}}</h3>
+  
+                  <p>Total Population in Shelter</p>
+                </div>
+              
+              
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.pending}}</h3>
+  
+                  <p>Pending Files for Admission</p>
+                </div>
+               
+           
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.parents}}</h3>
+  
+                  <p>Number of Adults
+                    in Shelter</p>
+                </div>
+           
+              
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.children}}</h3>
+  
+                  <p>Number of Children
+                    in Shelter</p>
+                </div>
+             
+
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-secondary">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.cases}}</h3>
+  
+                  <p>Total cases
+                    since 1991</p>
+                </div>
+             
+             
+              </div>
+            </div>
+            
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.readmissions}}</h3>
+  
+                  <p>Re-admissions since 1991</p>
+                </div>
+              
+
+              </div>
+            </div>
+
+
+
+
+
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.childrensince_1991}}</h3>
+  
+                  <p>Number of Children
+                    Since 1991</p>
+                </div>
+             
+
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.averageDays}} Days</h3>
+  
+                  <p>Average length of Stay 
+                    since 1991</p>
+                </div>
+             
+             
+              </div>
+            </div>
+            
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>{{this.dashboarddata?.stats?.reference?.['Former Dastak resident']}}</h3>
+  
+                  <p>Total Legal Assisstance To Non Residents</p>
+                </div>
+              
+
+              </div>
+            </div>
+
+            
+            <!-- ./col -->
+          </div>
+          <!-- /.row -->
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+
+            <!-- /.Left col -->
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          
+          
+          
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+                <div class="card-body">
+            <div *ngIf="this.dashboarddata?.admissionsLastYear">
+              <canvasjs-chart [options]="chartOptions7" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+          </div>
+                </div>
+        </div>
+        <!-- /.card -->
+      </section>
+      <section class="col-lg-6 connectedSortable">
+        <!-- Custom tabs (Charts with tabs)-->
+        <div class="card">
+          <div class="card-body">
+      <div *ngIf="this.dashboarddata?.departureLastYear">
+        <canvasjs-chart [options]="chartOptions8" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+    </div>
+    
+          </div>
+  </div>
+  <!-- /.card -->
+</section>
+<section class="col-lg-6 connectedSortable">
+  <!-- Custom tabs (Charts with tabs)-->
+  <div class="card">
+   
+    <div class="card-body">
+      <div *ngIf="this.dashboarddata?.admissions">
+        <canvasjs-chart [options]="chartOptions2" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+    </div>   
+    </div><!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</section>
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+               
+                <div class="card-body">
+                  <div class="tab-content p-0" *ngIf="this.dashboarddata?.departure">
+                    <!-- Morris chart - Sales -->
+                    <canvasjs-chart [options]="chartOptions4" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </section>
+          
+            
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+               
+                <div class="card-body">
+                  <div *ngIf="this.dashboarddata?.medical">
+                    <canvasjs-chart [options]="chartOptionsnoData" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart> 
+                    <br>
+                    <p><i class="fas fa-play"></i> No. of medical Assistance sought in last 6 months</p>   
+                </div> 
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+               
+                <div class="card-body">
+                  <div *ngIf="this.dashboarddata?.psychological">
+                    <canvasjs-chart [options]="chartOptions5" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>  
+                    <br>
+                    <p> <i class="fas fa-play"></i> No. of Psychological Assistance sought in last 6 months</p>  
+                </div> 
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+               
+                <div class="card-body">
+                  <div>
+                    <canvasjs-chart [options]="chartOptions3" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+                </div> 
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </section>
+            
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+               
+                <div class="card-body">
+                  <div *ngIf="this.dashboarddata?.topCities">
+                    <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+                </div>  
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              
+              <div class="card">
+               
+                
+                  <!-- SELECT2 EXAMPLE -->
+      
+          
+        <!-- /.card-header -->
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          <h3>Literacy Level since 1991</h3>
+          <table class="table table-striped">
+        
+            <tbody>
+              <tr>
+                <td>
+                  Holding Degree</td>
+                <td>	No. of Residents</td>
+                
+               
+          </tr>
+          <tr>
+              <td>PhD</td>
+              <td>{{this.dashboarddata?.stats?.literacyLevel?.PhD}}</td>
+              
+             
+        </tr>
+        <tr>
+          <td>Masters</td>
+          <td>{{this.dashboarddata?.stats?.literacyLevel?.Masters}}</td>
+          
+         
+    </tr>
+    <tr>
+      <td>Graduation</td>
+      <td>{{this.dashboarddata?.stats?.literacyLevel?.Graduation}}</td>
+      
+     
+  </tr>
+  <tr>
+      <td>Intermediate</td>
+      <td>{{this.dashboarddata?.stats?.literacyLevel?.Intermediate}}</td>
+      
+     
+  </tr>
+  <tr>
+    <td>Matric</td>
+    <td>{{this.dashboarddata?.stats?.literacyLevel?.Matric}}</td>
+    
+   
+</tr>
+<tr>
+  <td>Religious course</td>
+  <td>{{this.dashboarddata?.stats?.literacyLevel?.['Religious course']}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Undermatric</td>
+  <td>{{this.dashboarddata?.stats?.literacyLevel?.Undermatric}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Non-Formal Education</td>
+  <td>{{this.dashboarddata?.stats?.literacyLevel?.['Non-Formal Education']}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Illitrate</td>
+  <td>{{this.dashboarddata?.stats?.literacyLevel?.Illiterate}}</td>
+  
+ 
+</tr>
+              
+            </tbody>
+          </table>
+      
+  
+        
+        <!-- /.card-body -->
+  
+      </div>
+    
+  
+      <!-- /.card -->
+      </div>
+              
+              <!-- /.card -->
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+               
+                
+                  <!-- SELECT2 EXAMPLE -->
+      
+          
+        <!-- /.card-header -->
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          <h3>Reason of admission in shelter since 1991</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style=>
+                  Reason of admission</th>
+                
+                  <th>	No. of Cases</th>
+              </tr>
+            </thead>
+            <tbody>
+       
+          <tr>
+              <td>Seeking shelter and protection from serious threats</td>
+              <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Seeking shelter and protection from serious threats']}}</td>
+              
+             
+        </tr>
+        <tr>
+          <td>Forced marriage</td>
+          <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Escape from forced marriage']}}</td>
+          
+         
+    </tr>
+  
+  <tr>
+      <td>Violence and harassment</td>
+      <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Escape from abuse and harassment']}}</td>
+      
+     
+  </tr>
+  <tr>
+    <td>Lack of family/social support</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Lack of family/social support']}}</td>
+    
+   
+</tr>
+<!-- <tr>
+  <td>Mentally abnormal</td>
+  <td>5</td>
+  
+ 
+</tr>
+<tr>
+  <td>Victim of trafficking</td>
+  <td>2</td>
+  
+ 
+</tr>
+<tr>
+  <td>Run-away</td>
+  <td>1</td>
+  
+ 
+</tr>
+<tr>
+  <td>Missing person</td>
+  <td>1</td>
+  
+ 
+</tr>
+<tr>
+  <tr>
+    <td>Abduction case</td>
+    <td>29</td>
+    
+   
+  </tr>
+  <tr>
+    <td>Under trial</td>
+    <td>0</td>
+    
+   
+  </tr>
+  <tr>
+    <td>Escape from honor crimes</td>
+    <td>3</td>
+    
+   
+  </tr> -->
+  <tr>
+    <td>Vani</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.Vani}}</td>
+    
+   
+  </tr>
+ 
+  <tr>
+    <td>Sawara/compensation</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.Sawara}}</td>
+    
+   
+  </tr>
+  <tr>
+    <td>Karo-kari</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Karo-kari']}}</td>
+    
+   
+  </tr>
+  <tr>
+    <td>Under Age Marriage</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.[ 'Under Age Marriage']}}</td>
+    
+   
+  </tr>
+<tr>
+  <td>Watta satta</td>
+  <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Watta satta']}}</td>
+  
+ 
+</tr>
+<tr>
+  <tr>
+    <td>Marriage with Quran</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Marriage with Quran']}}</td>
+    
+   
+  </tr>
+  <tr>
+    <td>Deprivation from inheriting property</td>
+    <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.['Deprivation from inheriting property']}}</td>
+    
+   
+  </tr>
+<tr>
+  <td>Other</td>
+  <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.Other}}</td>
+  
+ 
+</tr>
+              
+            </tbody>
+          </table>
+      
+  
+        </div>
+        <!-- /.card-body -->
+  
+      
+      <!-- /.card -->
+    
+              </div>
+              <!-- /.card -->
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              
+              <div class="card">
+                <div class="card-body p-0">
+                  <h3>TYPES OF ABUSE</h3>
+                  <table class="table table-striped" *ngIf="this.dashboarddata?.stats?.abuseType">
+                    <thead>
+                      <tr>
+                        <th >Type of Abuser</th>
+                        <th>Total Number Since 1991</th>
+                        <th>Currently</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td>Physical</td>
+                        <td>{{this.dashboarddata?.stats?.abuseType?.Physical?.totalCount}}</td>
+                        <td>{{this.dashboarddata?.stats?.abuseType?.Physical?.activeCount}}</td>
+                  </tr>
+                  <tr >
+                    <td>Verbal</td>
+                    <td>{{this.dashboarddata?.stats?.abuseType?.Verbal?.totalCount}}</td>
+                    <td>{{this.dashboarddata?.stats?.abuseType?.Verbal?.activeCount}}</td>
+              </tr>
+              <tr >
+                <td>Threats</td>
+                <td>{{this.dashboarddata?.stats?.abuseType?.Threats?.totalCount}}</td>
+                <td>{{this.dashboarddata?.stats?.abuseType?.Threats?.activeCount}}</td>
+          </tr>
+                  <tr >
+                    <td>Economic</td>
+                    <td>{{this.dashboarddata?.stats?.abuseType?.Economic?.totalCount}}</td>
+                    <td>{{this.dashboarddata?.stats?.abuseType?.Economic?.activeCount}}</td>
+              </tr>
+              <tr >
+                <td>Psychological</td>
+                <td>{{this.dashboarddata?.stats?.abuseType?.Psychological?.totalCount}}</td>
+                        <td>{{this.dashboarddata?.stats?.abuseType?.Psychological?.activeCount}}</td>
+          </tr>
+          <tr >
+            <td>Sexual</td>
+            <td>{{this.dashboarddata?.stats?.abuseType?.Sexual?.totalCount}}</td>
+                        <td>{{this.dashboarddata?.stats?.abuseType?.Sexual?.activeCount}}</td>
+      </tr>
+      <tr >
+        <td>Other</td>
+        <td>{{this.dashboarddata?.stats?.abuseType?.Other?.totalCount}}</td>
+          <td>{{this.dashboarddata?.stats?.abuseType?.Other?.activeCount}}</td>
+  </tr>          
+
+              
+
+              
+
+                      
+                    </tbody>
+                  </table>
+              
+            
+                </div>
+              </div>
+              <!-- /.card -->
+            </section>
+            <section class="col-lg-6 connectedSortable">
+              
+              <div class="card">
+ 
+                <div class="card-body p-0">
+                  <h3>RELATION OF ABUSER</h3>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th >Relation of Abuse</th>
+                        <th>Total Number Since 1991</th>
+                        <th>Currently</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <td>In-laws</td>
+                        <td>{{this.dashboarddata?.stats?.abuserrelation?.['In-laws']?.totalCount}}</td>
+                        <td>{{this.dashboarddata?.stats?.abuserrelation?.['In-laws']?.activeCount}}</td>
+                      
+                      
+                       
+                       
+                  </tr>
+                  <tr >
+                    <td>Husband</td>
+                    <td>{{this.dashboarddata?.stats?.abuserrelation?.Husband?.totalCount}}</td>
+                    <td>{{this.dashboarddata?.stats?.abuserrelation?.Husband?.activeCount}}</td>
+                  
+                  
+                   
+                   
+              </tr>
+              <tr >
+                <td>Son</td>
+                <td>{{this.dashboarddata?.stats?.abuserrelation?.Son?.totalCount}}</td>
+                <td>{{this.dashboarddata?.stats?.abuserrelation?.Son?.activeCount}}</td>
+              
+              
+               
+               
+          </tr>
+          <tr >
+            <td>Father</td>
+            <td>{{this.dashboarddata?.stats?.abuserrelation?.Father?.totalCount}}</td>
+            <td>{{this.dashboarddata?.stats?.abuserrelation?.Father?.activeCount}}</td>
+          
+          
+           
+           
+      </tr>
+      <tr >
+        <td>Brother</td>
+        <td>{{this.dashboarddata?.stats?.abuserrelation?.Brother?.totalCount}}</td>
+        <td>{{this.dashboarddata?.stats?.abuserrelation?.Brother?.activeCount}}</td>
+      
+      
+       
+       
+  </tr>
+  <tr >
+    <td>Mother</td>
+    <td>{{this.dashboarddata?.stats?.abuserrelation?.Mother?.totalCount}}</td>
+    <td>{{this.dashboarddata?.stats?.abuserrelation?.Mother?.activeCount}}</td>
+  
+  
+   
+   
+</tr>
+<tr >
+  <td>Employer/Coworker</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.['Employer/Coworker']?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.['Employer/Coworker']?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+<tr >
+  <td>Stranger</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Stranger?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Stranger?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+<tr >
+  <td>Teacher</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Teacher?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Teacher?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+
+<tr >
+  <td>Neighbour</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Neighbour?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Neighbour?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+<tr >
+  <td>Acquaintance</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Acquaintance?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Acquaintance?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+<tr >
+  <td>Male Relative from own Family</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.['Male Relative from own Family']?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.['Male Relative from own Family']?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+<tr >
+  <td>Male Relative from Husband's family</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.["Male Relative from Husband's family"]?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.["Male Relative from Husband's family"]?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+<tr >
+  <td>Other</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Other?.totalCount}}</td>
+  <td>{{this.dashboarddata?.stats?.abuserrelation?.Other?.activeCount}}</td>
+
+
+ 
+ 
+</tr>
+                      
+                    </tbody>
+                  </table>
+              
+            
+                </div>
+              </div>
+              <!-- /.card -->
+            </section>
+           
+         
+            <!-- right col -->
+
+          </div>
+          <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
