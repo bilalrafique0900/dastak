@@ -11,7 +11,8 @@ import { HttpService } from '../core/services/http.service';
 export class ReportsComponent {
   
   legalcase: any={};
-  responseData: any[]=[];
+  responseData: any; 
+
   
   constructor(private fb: FormBuilder
     ,private cb: FormBuilder ,

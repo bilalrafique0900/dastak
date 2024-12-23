@@ -37,16 +37,19 @@
                   </div> 
                 <!-- /.form-group -->
               </div>
-              <div class="form-group col-md-12" >
+              <div class="form-group col-md-12">
                 <label for="exampleInputFile">Attach file</label>
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" (change)="onFileSelected($event)" [(ngModel)]="documentcase.image" id="customFile">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <input type="file" class="custom-file-input" (change)="onFileSelected($event)" id="customFile">
+                    <label class="custom-file-label" for="customFile">
+                      {{ selectedFile?.name || 'Choose file' }}
+                    </label>
                   </div>
-                  
                 </div>
               </div>
+              
+              
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Details</label>
