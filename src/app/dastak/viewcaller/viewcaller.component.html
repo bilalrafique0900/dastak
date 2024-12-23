@@ -1,0 +1,103 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Caller Detail </h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Date</td>
+              <td>{{callersdata.date | date:'fullDate'}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td>{{callersdata.time}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Name of caller</td>
+        <td>{{callersdata.name}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Detail of caller</td>
+    <td>{{callersdata.detailOfCaller}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Contact number</td>
+    <td>{{callersdata.contactNo}}</td>
+    
+   
+</tr>
+<tr>
+    <td>City</td>
+    <td>{{callersdata.city}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Country</td>
+    <td>{{callersdata.country}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Reason for call</td>
+    <td>{{callersdata.reasonForCall}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Detail of call</td>
+    <td>{{callersdata.detailOfCall}}</td>
+    
+   
+</tr>
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

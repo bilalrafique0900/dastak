@@ -1,0 +1,266 @@
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Recently Added - {{newfile.length}} Files</h1>
+            </div><!-- /.col -->
+            
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+
+
+
+
+
+
+
+                    <div class="row">
+                      
+                      <!-- /.col -->
+                      <div class="col-md-3" *ngFor="let item of newfile">
+                        <!-- Widget: user widget style 1 -->
+                        <div class="card card-widget widget-user shadow">
+                          <!-- Add the bg color to the header using any of the bg-* classes -->
+                          <div class="widget-user-header bg-info">
+                            <h3 class="widget-user-username">{{item.title}} {{item.firstName}} {{item.lastName}}</h3>
+                            <!-- <h3 class="widget-user-username" >File Staus</h3> -->
+                            <div class="widget-user-desc"><h5 class="description-header"><span class="description-text">File Staus:</span> {{item.status}}</h5>
+                            </div>
+                            <div class="widget-user-desc"><h5 class="description-header"><span class="description-text">City:</span> {{item.city}}</h5>
+                          </div>
+                          </div>
+                          <!-- <div class="widget-user-image">
+                            <img class="img-circle elevation-2" src="../dist/img/user1-128x128.jpg" alt="User Avatar">
+                          </div>
+                           -->
+                          <div class="card-footer">
+                            <div class="row">
+                              
+                              <div class="col-sm-12 border-bottom">
+                                <div class="description-block">
+                                  <h5 class="description-header">{{item.assessmentRisk}}</h5>
+                                  <span class="description-text">Assessment Risk:</span> 
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                              
+                              
+                              <div class="col-sm-6 border-right">
+                                <div class="description-block">
+                                  <h5 class="description-header">{{item.fileNo}}</h5>
+                                  <span class="description-text">File No.</span> 
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-6 border-right">
+                                <div class="description-block">
+                                  <h5 class="description-header">{{item.referenceNo}}</h5>
+                                  <span class="description-text">Reference No.</span>
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                              <!-- /.col -->
+                           
+
+
+                              <!-- /.col -->
+                              <div class="col-sm-12">
+                                <div class="description-block">
+                                  
+
+
+
+                                  <div class="flex-container">
+                                    <div class="button-group">
+                                    
+                                      <a class="btn btn-app dropdown-toggle" data-toggle="dropdown">
+                                        <span class="badge bg-teal"></span>
+                                        <i class="fas fa-edit"></i> Edit
+                                      </a>
+
+                                   
+                                      <a class="btn btn-app" title="Basic Information" [routerLink]="['/entities/basicinformation', item.fileNo, item.referenceNo]">
+                                        <span class="badge bg-teal"></span>
+                                        <i class="fas fa-eye"></i> View
+                                      </a>
+
+                                      <a class="btn btn-app"  title="Rights Checklist" [routerLink]="['/entities/rightschecklist', item.referenceNo]">
+                                        <span class="badge bg-teal"></span>
+                                        <i class="fas fa-check"></i> Approve
+                                      </a>
+
+                                      <a class="btn btn-app"  title="Departure" [routerLink]="['/entities/departure', item.fileNo, item.referenceNo]">
+                                        <span class="badge bg-teal"></span>
+                                        <i class="fas fa-handshake"></i> Departure
+                                      </a>
+                                    
+
+                                  
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" [routerLink]="['/entities/editbasicinformation', item.referenceNo]">
+                                          <i class="far fa-edit mr-1"></i> Edit Basic Information
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/editadmissioninfo', item.referenceNo]">
+                                          <i class="far fa-edit mr-1"></i> Edit Admission Info
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/children', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-child mr-1"></i> Children
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/detailofabuse', item.fileNo, item.referenceNo]">
+                                          <i class="far fa-hand-paper mr-1"></i> Detail Of Abuse
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/legaldetail', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-balance-scale-right mr-1"></i> Legal Detail
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/interventions', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-american-sign-language-interpreting mr-1"></i> Interventions
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/economicprofile', item.fileNo, item.referenceNo]">
+                                          <i class="far fa-money-bill-alt mr-1"></i> Economic Profile
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/meetingrecord', item.fileNo, item.referenceNo]">
+                                          <i class="far fa-handshake mr-1"></i> Meeting Record
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/medicalrecord', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-briefcase-medical mr-1"></i> Medical Record
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/psychologicalrecord', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-user-md mr-1"></i> Psychological Record
+                                        </a>
+                                        <a class="dropdown-item" [routerLink]="['/entities/documents', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-file mr-1"></i> Documents
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                            </div>
+                            <!-- /.row -->
+                          </div>
+                        </div>
+                        <!-- /.widget-user -->
+                      </div>
+                     
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  
+                  
+                 
+
+
+        <!-- <div class="card card-default">
+          
+       
+          <div class="card-body p-0">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th >File Number</th>
+                  <th>Reference Number</th>
+                  <th>Full Name</th>
+                  <th >Level of risk</th>
+                  <th  style="width: 50%">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of newfile">
+                  <td>{{item.fileNo}}</td>
+                  <td>{{item.referenceNo}}</td>
+                  
+                  <td>{{item.title}} {{item.firstName}} {{item.lastName}}</td>
+                  <td>{{item.assessmentRisk}}</td>
+                  <td>
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                          Add / Edit Details
+                        </button> 
+                        <button type="button" class="btn btn-primary ml-1"title="Basic Information"   [routerLink]="['/entities/basicinformation',item.fileNo,item.referenceNo]">
+                          <svg width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"></path>
+            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"></path>
+          </svg>
+                          
+                        </button>
+                        <br><br>
+                        <button type="button" class="btn btn-labeled btn-success ml-1"title="Rights Checklist"   [routerLink]="['/entities/rightschecklist',item.referenceNo]">
+                          <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span><i class="fas fa-check"></i></button> 
+                          <br><br>
+                      <button type="button" class="btn btn-labeled btn-danger ml-1" title="Departure" [routerLink]="['/entities/departure',item.fileNo,item.referenceNo]">
+                          <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span><i class="fas fa-times"></i></button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a  [routerLink]="['/entities/editbasicinformation',item.referenceNo]"><i class="far fa-edit mr-1"></i>Edit Basic Information</a></li>
+                            
+                            <li class="dropdown-item"><a [routerLink]="['/entities/editadmissioninfo',item.referenceNo]" ><i class="far fa-edit mr-1"></i>Edit Admission Info</a></li>
+                          
+                          <li class="dropdown-item"><a    [routerLink]="['/entities/children',item.fileNo,item.referenceNo]"><i class="fas fa-child mr-1"></i>Children</a></li>
+                          
+                          <li class="dropdown-item"><a   [routerLink]="['/entities/detailofabuse',item.fileNo,item.referenceNo]"><i class="far fa-hand-paper mr-1"></i>Detail Of Abuse</a></li>
+                          
+                          <li class="dropdown-item"><a  [routerLink]="['/entities/legaldetail',item.fileNo,item.referenceNo]"><i class="fas fa-balance-scale-right mr-1"></i>Legal Detail</a></li>
+                    
+                          <li class="dropdown-item"><a [routerLink]="['/entities/interventions',item.fileNo,item.referenceNo]" ><i class="fas fa-american-sign-language-interpreting mr-1"></i>Interventions</a></li>
+                        
+                          <li class="dropdown-item"><a [routerLink]="['/entities/economicprofile',item.fileNo,item.referenceNo]" ><i class="far fa-money-bill-alt mr-1"></i>Economic Profile</a></li>
+                          
+                          <li class="dropdown-item"><a [routerLink]="['/entities/meetingrecord',item.fileNo,item.referenceNo]" ><i class="far fa-handshake mr-1"></i>Meeting Record</a></li>
+                      
+                          <li class="dropdown-item"><a [routerLink]="['/entities/medicalrecord',item.fileNo,item.referenceNo]" ><i class="fas fa-briefcase-medical mr-1"></i>Medical Record</a></li>
+                        
+                          <li class="dropdown-item"><a [routerLink]="['/entities/psychologicalrecord',item.fileNo,item.referenceNo]"><i class="fas fa-user-md mr-1"></i>Psychological Record</a></li>
+                          
+                          <li class="dropdown-item"><a [routerLink]="['/entities/documents',item.fileNo,item.referenceNo]" ><i class="fas fa-file mr-1"></i>Documents</a></li>
+                      
+                        </ul>
+                      </div>
+                </td>
+                </tr>
+             
+              </tbody>
+            </table>
+          </div>
+          
+
+        </div> -->
+        <!-- /.card -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->

@@ -1,0 +1,207 @@
+    <!-- Content Header (Page header) -->
+    <div class="content-header" 
+    style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0;
+        width: 100% !important;
+        z-index: 99;
+    ">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+          
+            </div><!-- /.col -->
+            
+              <!-- <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Simple Search</p>
+              </a> -->
+            <!-- <h1 class="mr-2" href="#"><i class="fas fa-bell"></i>
+            </h1>
+            <nav class="mt-2">
+              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        
+     
+     
+              
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    
+                    <p>
+                      <i class="fas fa-bars"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a routerLink="/dastak/allpendingfiles"  class="nav-link">
+                        <i class="far fa-clock mr-1"></i>
+                        <p>All Pending Files</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a routerLink= "/dastak/allclosedfiles" class="nav-link">
+                        <i class="far fa-clock mr-1"></i>
+                        <p>All Closed Files</p>
+                      </a> 
+                    </li>
+                  </ul>
+                  <ul class="nav nav-treeview">
+              
+                    <li class="nav-item">
+                      <a routerLink= "/dastak/allcallers" class="nav-link">
+                       <i class="fas fa-headset mr-1"></i>
+                        <p>All Callers</p>
+                      </a> 
+                    </li>
+                  </ul>
+                  <ul class="nav nav-treeview">
+                    
+                    <li class="nav-item">
+                      <a routerLink= "/dastak/allusers" class="nav-link">
+                        <i class="far fa-user mr-1"></i>
+                        <p>All Users</p>
+                      </a> 
+                    </li>
+                  </ul>
+                </li>
+             
+              
+              </ul>
+            </nav> -->
+                <!-- <h1 class=" mr-2" href="#"><i class="fas fa-bars"></i></h1>
+                <h1 class=" ml-2" href="#"><i class="far fa-id-badge"></i></h1> -->
+              
+            <!-- /.col -->
+            <nav class="main-header navbar navbar-expand navbar-dark navbar-light"
+            style="width: 100% !important;"
+            >
+                  <a class="nav-item">
+                  <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i style="color: white;" class="fas fa-bars"></i></a>
+                  </a>
+
+          
+              <!-- Right navbar links -->
+              <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item" style="position: relative !important;">
+                  <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                    <i class="fas fa-search"></i>
+                  </a>
+                  <div class="navbar-search-block" style="
+                  min-width: 500px !important;
+                  max-width: 500px !important;
+                  left: auto !important;
+                  right: 0 !important;
+                  ">
+                    <div class="form-inline">
+                      <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar"  (keyup.enter)="onSearch()" type="text" [(ngModel)]="searchQuery" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                          <button class="btn btn-navbar" type="button" (click)="onSearch()">
+                            <i class="fas fa-search"></i>
+                          </button>
+                          <button class="btn btn-navbar" type="button" data-widget="navbar-search" >
+                            <i class="fas fa-times"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Messages Dropdown Menu -->
+                 <style>
+                  .custom-dropdown button{
+                    background-color: transparent;
+                  }
+                  .custom-dropdown button:after{
+                    content: unset !important;
+                  }
+                  .custom-dropdown .dropdown-menu{
+                    background-color: #4b545c !important;
+                    right: 0 !important;
+                    left: auto;
+                  }
+                 </style>
+                 <li class="nav-item dropdown">
+                  <a class="nav-link" data-toggle="dropdown" routerLink="/allnotifications" aria-expanded="false">
+                    <i class="far fa-bell"></i>
+                  </a>
+                </li>
+                <div class="dropdown custom-dropdown">
+                  <button 
+                  class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a style="display: flex; align-items: center;" routerLink="/dastak/allpendingfiles"  class="nav-link">
+                      <i class="far fa-clock mr-1"></i>
+                      <p style="text-wrap: nowrap; margin-bottom: 0 !important;">All Pending Files</p>
+                    </a>
+                    <a style="display: flex; align-items: center;" routerLink= "/dastak/allclosedfiles" class="nav-link">
+                      <i class="far fa-clock mr-1"></i>
+                      <p style="text-wrap: nowrap; margin-bottom: 0 !important;">All Closed Files</p>
+                    </a> 
+                    <a style="display: flex; align-items: center;" routerLink= "/dastak/allusers" class="nav-link">
+                      <i class="far fa-user mr-1"></i>
+                      <p style="text-wrap: nowrap; margin-bottom: 0 !important;">All Users</p>
+                    </a> 
+                    <a style="display: flex; align-items: center;" routerLink= "/dastak/allcallers" class="nav-link">
+                     <i class="fas fa-headset mr-1"></i>
+                      <p style="text-wrap: nowrap; margin-bottom: 0 !important;">All Callers</p>
+                    </a> 
+                  </div>
+                </div>
+                <div class="dropdown custom-dropdown ml-3">
+                  <button 
+                  class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user-alt"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a style="display: flex; align-items: center;"  class="nav-link">
+                      <i class="fas fa-user-alt"></i>
+                      <p style="text-wrap: nowrap; margin-bottom: 0 !important;">Profile</p>
+                    </a>
+                    <a style="display: flex; align-items: center;" (click)="logout()" class="nav-link">
+                      <i class="fas fa-sign-out-alt"></i>
+                      <p style="text-wrap: nowrap; margin-bottom: 0 !important;">Log Out</p>
+                    </a> 
+                  </div>
+                </div>
+              </ul>
+            </nav>
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+<div class="wrapper">
+
+    <!-- Preloader -->
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    </div> -->
+  
+    <!-- Navbar -->
+   
+    <!-- /.navbar -->
+  
+    <!-- Main Sidebar Container -->
+  <app-sidebar></app-sidebar>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+  
+  
+  
+  

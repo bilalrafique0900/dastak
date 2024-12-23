@@ -1,0 +1,486 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Proceed Admission</h1>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- SELECT2 EXAMPLE -->
+      <div class="card card-default">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" [(ngModel)]="this.pendadd.fullName" disabled type="text" >
+              </div>
+            </div>
+  
+            <div class="col-md-12">
+              <!-- Admission Information -->
+              <div class="card card-primary collapsed-card">
+                <div class="card-header" data-card-widget="collapse">
+                  <h3 class="card-title">Admission Information</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                      <div class="form-group">
+                        <label>Reason Of admission </label>
+                        <select multiple class="form-control" [(ngModel)]="this.proceedpost.reasonForAdmission">            
+                <option value="">Select Option</option>
+                          <option value="Seeking shelter and protection from serious threats">Seeking shelter and protection from serious threats</option>
+                          <option value="Forced marriage">Forced marriage</option>
+                          <option value="Early marriage">Early marriage</option>
+                          <option value="Violence and harassment">Violence and harassment</option>
+                          <option value="Lack of family/social support">Lack of family/social support</option>
+                          <!-- <option value="Mentally abnormal">Mentally abnormal</option> -->
+                          <option value="Victim of trafficking">Victim of trafficking</option>
+                          <option value="Early Child Marriage ">Early Child Marriage  </option>
+                          <option value="Missing/lost">Missing/lost</option>
+                          <option value="Missing person">Missing person</option>
+                          <option value="Abduction case">Abduction case</option>
+                          <option value="Under-Trial">Under-Trial</option>
+                          <option value="Escape from honor crimes">Escape from honor crimes</option>
+                          <option value="Vani">Vani</option>
+                          <option value="Sawara/compensation">Sawara/compensation</option>
+                          <option value="Karo-kari">Karo-kari</option>
+                          <option value="Watta satta">Watta satta</option>
+                          <option value="Marriage with Quran">Marriage with Quran</option>
+                          <option value="Deprivation from inheriting property">Deprivation from inheriting property</option>
+                          <!--<option value="Seeking financial assistance">Seeking financial assistance</option>-->
+                          <option value="Marriage of choice">Marriage of choice</option>
+                          <option value="Divorce/Khula">Divorce/Khula</option>
+                          <option value="Child custody">Child custody</option>
+                          <option value="To complete Idat">To complete Idat</option>
+                          <option value="Other">Other</option>                     
+                         
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-8 offset-md-2">
+                      <div class="form-group">
+                        <label>Nature of assistance sought </label>
+                        <select multiple class="form-control"  [(ngModel)]="this.proceedpost.natureOfAssistance">
+                          
+                          <option value="">Select Option</option>
+                          <option value="Medical">Medical</option>
+                          <option value="Medico-legal certification">Medico-legal certification</option>
+                          <option value="Psychological">Psychological</option>
+                          <option value="Legal">Legal</option>
+                          <option value="Financial">Financial</option>
+                          <option value="Shelter">Shelter</option>
+                          <option value="Child support">Child support</option>
+                          <option value="Further education">Further education</option>
+                          <option value="Vocational training">Vocational training</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Is subjected to abuse?</label>
+                        <div class="form-group clearfix">
+                          <div class="icheck-primary">
+                            <input type="radio" id="syes"  [(ngModel)]="this.proceedpost.isAbused" name="childrenradio" [value]="true">
+                            <label for="syes">Yes</label>
+                          </div>
+                          <div class="icheck-primary">
+                            <input type="radio" id="sno"  [(ngModel)]="this.proceedpost.isAbused" [value]="false" name="childrenradio">
+                            <label for="sno">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-8 offset-md-2">
+                      <div class="form-group">
+                        <label>Reason for refusing</label>
+                        <select multiple class="form-control"  [(ngModel)]="this.proceedpost.reasonOfRefuse">
+                          
+                          <option value="">select option</option>  
+                         <option value="Does not face serious security threats">Does not face serious security threats</option>   
+                              <option value="Does not require shelter">Does not require shelter</option>  
+                             <option value="Only seeking financial assistance">Only seeking financial assistance</option>        
+                             <option value="Sought shelter for herself and a male">Sought shelter for herself and a male</option>    
+                             <option value="Not a survivor of domestic abuse">Not a survivor of domestic abuse</option>                                   
+                              <option value="Is in the third trimester of pregnancy">Is in the third trimester of pregnancy</option>                                                          
+                                <option value="Serious Psychological Disorder">Serious Psychological Disorder  </option> 
+                                <option value="Other">Other</option> 
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-8 offset-md-2">
+                      <div class="form-group">
+                        <label>if yes, where has she been referred?</label>
+                        <select multiple class="form-control"  [(ngModel)]="this.proceedpost.whereHasSheReferred">
+                          
+                          <option value="">select option</option>                                                              
+                            <option value="Bali Memorial Trust">Bali Memorial Trust</option>                                                             
+                               <option value="Noor Trust">Noor Trust</option>                                                               
+                                <option value="Darul Falah">Darul Falah</option>                                                                
+                                <option value="Darul Aman">Darul Aman</option>                                                               
+                                 <option value="Child Protection and Welfare Bureau">Child Protection and Welfare Bureau</option>                                                              
+                                   <option value="Returned to court">Returned to court</option>  
+
+
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Add other fields here as needed -->
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Interview date</label>
+                        <input type="date" [(ngModel)]="this.proceedpost.interviewDate" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Admission date</label>
+                        <input type="date" [(ngModel)]="this.proceedpost.admissionDate" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Initial Statement -->
+              <div class="card card-primary collapsed-card">
+                <div class="card-header" data-card-widget="collapse">
+                  <h3 class="card-title">Initial Statement</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Initial statement</label>
+                    <textarea class="form-control" [(ngModel)]="this.proceedpost.details" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Contact Information -->
+              <div class="card card-primary collapsed-card">
+                <div class="card-header" data-card-widget="collapse">
+                  <h3 class="card-title">Contact Information</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Contact number</label>
+                        <input class="form-control"  [(ngModel)]="this.proceedpost.familyPhone" type="text" >
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" [(ngModel)]="this.proceedpost.familyName" type="text" >
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Relation</label>
+                        <select class="form-control select2" [(ngModel)]="this.proceedpost.familyRelation" style="width: 100%;">
+                          <option value="">select option</option>
+                          <option value="Husband">Husband</option>
+                          <option value="Son">Son</option>
+                          <option value="Father">Father</option>
+                          <option value="Brother">Brother</option>
+                          <option value="Sister">Sister</option>
+                          <option value="Mother">Mother</option>
+                          <option value="In-laws">In-laws</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Emergency contact</label>
+                        <input class="form-control"  [(ngModel)]="this.proceedpost.emergencyPhone"type="text" >
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control"  [(ngModel)]="this.proceedpost.emergencyName"type="text">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Relation</label>
+                        <select class="form-control select2"  [(ngModel)]="this.proceedpost.emergencyRelation"style="width: 100%;">
+                          <option value="">select option</option>
+                          <option value="Husband">Husband</option>
+                          <option value="Son">Son</option>
+                          <option value="Father">Father</option>
+                          <option value="Brother">Brother</option>
+                          <option value="Sister">Sister</option>
+                          <option value="Mother">Mother</option>
+                          <option value="In-laws">In-laws</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Add Emergency Contact fields here -->
+                  </div>
+                  
+                </div>
+              </div>
+  
+              <!-- Documents -->
+              <div class="card card-primary collapsed-card">
+                <div class="card-header" data-card-widget="collapse">
+                  <h3 class="card-title">Documents</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                      <div class="form-group">
+                        <label>List of documents in possessions</label>
+                        <select multiple class="form-control"  [(ngModel)]="this.proceedpost.listOfDocuments">
+                          <option value="">select option</option>
+                          <option value="B-form ">B-form </option>
+                          <option value="Benazir Income support card">Benazir Income support card </option>
+                          <option value="CNIC ">CNIC </option>
+                          <option value="Court documents">Court documents </option>
+                          <option value="Divorce certificate">Divorce certificate </option>
+                          <option value="Driving license">Driving license </option>
+                          <option value="Educational certificates/identification">Educational certificates/ identification </option>
+                          <option value="Medico-legal certificate">Medico-legal certificate </option>
+                          <option value="Medical documents">Medical documents </option>
+                          <option value="Nikkah nama">Nikkah nama </option>
+                          <option value="Passport">Passport </option>
+                          <option value="Police documents">Police documents </option>
+                          <option value="UNHCR asylum seeker certificate">UNHCR asylum seeker certificate </option>
+                          <option value="UNHCR Card">UNHCR Card </option>
+                          <option value="Vaccination card">Vaccination card </option>
+                          <option value="Other">Other </option>
+                          <option value="None">None </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label>Have her documents been photocopied and maintained in a file?</label>
+                        <div class="form-group clearfix">
+                          <div class="icheck-primary">
+                            <input type="radio" id="fyes"  [(ngModel)]="this.proceedpost.photocopied"name="documradio" [value]="1">
+                            <label for="fyes">Yes</label>
+                          </div>
+                          <div class="icheck-primary">
+                            <input type="radio" id="fno" [(ngModel)]="this.proceedpost.photocopied" name="documradio" [value]="0">
+                            <label for="fno">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Possessions -->
+              <div class="card card-primary collapsed-card">
+                <div class="card-header" data-card-widget="collapse">
+                  <h3 class="card-title">Possessions</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form [formGroup]="possessionForm">
+                    <div formArrayName="possessions">
+                      <div *ngFor="let possession of possessions().controls; let i=index" [formGroupName]="i" class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Item</label>
+                            <input class="form-control"  [(ngModel)]="this.proceedpost.items"formControlName="item" type="text" >
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Quantity</label>
+                            <input class="form-control"  [(ngModel)]="this.proceedpost.quantities"formControlName="quantity" type="text" >
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>In possessions of</label>
+                            <select class="form-control select2"  [(ngModel)]="this.proceedpost.inPossessionOf"formControlName="inpossessionof" style="width: 100%;">
+                              <option>Select option</option>
+                              <option>Dastak</option>
+                              <option>Resident</option>
+                              
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-end">
+                          <button (click)="removePossession(i)" class="btn btn-danger mr-1">x</button>
+                          <button (click)="addPossession()" class="btn btn-success mr-1">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+                <div class="card card-primary collapsed-card">
+                  <div class="card-header" data-card-widget="collapse">
+                    <h3 class="card-title">Communicable Diseases</h3>
+    
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                    <!-- /.card-tools -->
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Has the new admission been screened for communicable diseases??</label>
+                          <div class="form-group clearfix">
+                            <div class="icheck-primary">
+                              <input type="radio" id="dyes"  [(ngModel)]="HasScreened"name="doumentsradio" [value]="1">
+                              <label for="dyes">Yes</label>
+                            </div>
+                            <div class="icheck-primary">
+                              <input type="radio" id="dno" [(ngModel)]="HasScreened" name="doumentsradio" [value]="0">
+                              <label for="dno">No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                      <div class="col-md-6">
+
+                      </div>
+                      <div class="col-md-8 offset-md-2" *ngIf="HasScreened==1">
+                        <div class="form-group">
+                          <label>Type of test:</label>
+                          <select multiple class="form-control" [(ngModel)]="this.proceedpost.diseases">
+                            <option value="">select option</option>
+                            <option value="Covid-19">Covid-19</option>
+                            <option value="Tuberculosis">Tuberculosis</option>
+                            <option value="Malaria">Malaria</option>
+                            <option value="Dengue">Dengue</option>
+                            <option value="Chicken pox">Chicken pox</option>
+                            <option value="Hepatitus B">Hepatitus B</option>
+                            <option value="Hepatitus C">Hepatitus C</option>
+                            <option value="Hepatitus A">Hepatitus A</option>
+                            <option value="HIV and AIDS">HIV and AIDS</option>
+                            <option value="Other">Other</option>
+                            
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <div class="card card-primary collapsed-card">
+                    <div class="card-header" data-card-widget="collapse">
+                      <h3 class="card-title">Rules And Right</h3>
+      
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                      <!-- /.card-tools -->
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Has she been oriented with shelter rules & regulations and rights of residents in a language she understands?</label>
+                              <div class="form-group clearfix">
+                                <div class="icheck-primary">
+                                  <input type="radio" id="uyes" [(ngModel)]="this.proceedpost.hasBeenOriented" name="documentsradio4" [value]="true">
+                                  <label for="uyes">Yes</label>
+                                </div>
+                                <div class="icheck-primary">
+                                  <input type="radio" id="uno" [(ngModel)]="this.proceedpost.hasBeenOriented" name="documentsradio4" [value]="false">
+                                  <label for="uno">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Has she been given a copy of shelter rules & regulations for residents in a language she understands?</label>
+                              <div class="form-group clearfix">
+                                <div class="icheck-primary">
+                                  <input type="radio" id="ryes"  [(ngModel)]="this.proceedpost.givenCopyOfRules"name="documentsradio3" [value]="true">
+                                  <label for="ryes">Yes</label>
+                                </div>
+                                <div class="icheck-primary">
+                                  <input type="radio" id="rno" [(ngModel)]="this.proceedpost.givenCopyOfRules" name="documentsradio3" [value]="false">
+                                  <label for="rno">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Has she been given a copy of shelter rights of residents in a language she understands?</label>
+                              <div class="form-group clearfix">
+                                <div class="icheck-primary">
+                                  <input type="radio" id="lyes"  [(ngModel)]="this.proceedpost.givenCopyOfRights"name="documentsradio2" [value]="true">
+                                  <label for="lyes">Yes</label>
+                                </div>
+                                <div class="icheck-primary">
+                                  <input type="radio" id="lno" [(ngModel)]="this.proceedpost.givenCopyOfRights" name="documentsradio2" [value]="false">
+                                  <label for="lno">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Have you ensured confidentiality of resident's data?</label>
+                              <div class="form-group clearfix">
+                                <div class="icheck-primary">
+                                  <input type="radio" id="oyes"  [(ngModel)]="this.proceedpost.ensuredConfidentialityOfData"name="documentsradio" [value]="true">
+                                  <label for="oyes">Yes</label>
+                                </div>
+                                <div class="icheck-primary">
+                                  <input type="radio" id="ono"  [(ngModel)]="this.proceedpost.ensuredConfidentialityOfData"name="documentsradio" [value]="false">
+                                  <label for="ono">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" (click)="PostProceed()">Save</button>
+            <button class="btn btn-default mx-2">Cancel</button>
+          </div>
+      </div>
+    </div>
+  </section>
+  

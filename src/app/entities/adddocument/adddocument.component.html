@@ -1,0 +1,95 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Add Documents</h1>
+        </div><!-- /.col -->
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+     
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                  <label>Reference no.</label>
+                    <input class="form-control" [(ngModel)]="this.entity" disabled type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Document name</label>
+                    <input class="form-control"  [(ngModel)]="documentcase.name"type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="form-group col-md-12" >
+                <label for="exampleInputFile">Attach file</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" (change)="onFileSelected($event)" [(ngModel)]="documentcase.image" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Details</label>
+                    <textarea class="form-control" [(ngModel)]="documentcase.detail" rows="2" >
+                    </textarea>
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+           
+             
+        
+
+
+
+
+
+
+         
+
+
+
+       
+    
+
+
+
+
+
+
+
+        
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button class="btn btn-primary" (click)="onSubmit()">Save</button>
+        <button class="btn btn-default mx-2">Cancel</button>
+      </div>
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

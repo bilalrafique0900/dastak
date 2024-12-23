@@ -1,0 +1,92 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">All Notifications </h1>
+        
+        </div>
+        
+          
+         
+          
+        
+      </div>
+    </div>
+  </div>
+  <section class="content">
+    <div class="container-fluid">
+    <div class="card card-default">
+        <h4>Vaccinations</h4>
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+                <th >Resident reference number</th>
+                <th>Resident name</th>
+                <th>Name of child</th>
+                <th >Type of vaccinations</th>
+                <th >Due date</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of notifydata?.vaccinations">
+              <td>{{item.referenceNo}}</td>
+              <td>{{item.motherName}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.typeOfVaccination}}</td>
+              <td>{{item.nextDateOfVaccination}}</td>  
+            
+             
+             
+             
+        </tr>
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <br>
+    <div class="card card-default">
+        <h4>Court Hearings</h4>
+        <!-- /.card-header -->
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th >Resident reference number</th>
+                <th>Resident name</th>
+                <th>City of court</th>
+                <th >Next date of hearing</th>
+               
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of notifydata?.hearings">
+               
+                <td>{{item.referenceNo}}</td>
+                <td>{{item.childReferenceNo}}</td>
+                <td>{{item.title}} {{item.firstName}} {{item.lastName}} </td>
+                <td>{{item.nextDateOfHearing}}</td>
+               
+               
+               
+          </tr>
+              
+            </tbody>
+          </table>
+      
+  
+        </div>
+        <!-- /.card-body -->
+  
+      </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

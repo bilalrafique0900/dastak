@@ -1,0 +1,74 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Psychological Detail </h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+              <td>Reference Number</td>
+              <td>{{psydata.assistance.referenceNo}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{psydata.info.title}} {{psydata.info.firstName}} {{psydata.info.lastName}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>{{psydata.assistance.age}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Date when therapy session conducted</td>
+    <td>{{psydata.assistance.conductedAt | date:'fullDate'}}</td>
+    
+   
+</tr>
+
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

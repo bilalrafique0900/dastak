@@ -1,0 +1,206 @@
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Follow Up Details</h1>
+            </div><!-- /.col -->
+           
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+        <div class="card card-default">
+          
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Reference no.</label>
+                        <input class="form-control"[(ngModel)]="this.followad.referenceNo" disabled type="text" >
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Name</label>
+                        <input class="form-control"[(ngModel)]="this.followad.fullName" disabled type="text" >
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Contact</label>
+                        <input class="form-control" [(ngModel)]="this.followcase.contactNo" type="text" >
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Follow up date</label>
+                      <div class="input-group date" id="followupDate" data-target-input="nearest">
+                        <input type="date"[(ngModel)]="this.followcase.followupDate" class="form-control " data-target="#followupDate"/>
+                    </div>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Departure date</label>
+                      <div class="input-group date" id="dischargeDate" data-target-input="nearest">
+                        <input type="date" [(ngModel)]="this.followcase.dischargeDate"class="form-control " data-target="#dischargeDate"/>
+                    </div>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Current residence</label>
+                      <select class="form-control select2"[(ngModel)]="this.followcase.currentResidence" style="width: 100%;">
+                        
+                        <option value="">Select Option</option>
+                        <option value="Husband's home">Husband's home</option>
+                        <option value="Parent's home">Parent's home</option>
+                      <option value="Relative's home">Relative's home</option>
+                       <option value="Other shelter">Other shelter</option>
+                    <option value="Personal arrangement">Personal arrangement</option>
+                     <option value="Other">Other</option>                
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Current status</label>
+                      <select class="form-control select2"[(ngModel)]="this.followcase.statusOfOriginalConcern" style="width: 100%;">
+                     
+                        <option value="">Select Option</option>
+                        <option value="New concern">New concern</option>
+                        <option value="Original concern resolved">Original concern resolved</option>   
+                        <option value="Original concern recurred">Original concern recurred</option>
+                        <option value="Chose not to disclose">Chose not to disclose</option>                  
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label>Behaviour of survivor's family towards her</label>
+                     <select class="form-control select2"[(ngModel)]="this.followcase.behaviourOfFamilyTowardsHer" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Good">Good</option>
+                   <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                       
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Is the survivor currently employed?</label>
+                      <select class="form-control select2"[(ngModel)]="this.followcase.currentlyEmployed" style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                        
+                       
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Has the survivor recommended the shelter to someone else?</label>
+                      <select class="form-control select2"[(ngModel)]="this.followcase.recommendedSomeoneElseToShelter" style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                        
+                       
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label>Does the survivor consent to further follow-up by the shelter? (upto one year after departure)</label>
+                      <select class="form-control select2"[(ngModel)]="this.followcase.consentToFurtherFollowup" style="width: 100%;">
+                        <option value="">Select Option</option>
+                                            <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                       
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Frequency of follow up?</label>
+                      <select class="form-control select2" [(ngModel)]="this.followcase.Frequency"style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="After three months">After three months</option>
+                        <option value="After six months">After six months</option>
+                        
+                       
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+
+
+
+
+
+
+
+
+
+            
+              
+             
+             
+             
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer">
+    <button class="btn btn-primary" (click)="PostFollowUp()">Save</button>
+            <button class="btn btn-default mx-2">Cancel</button>
+          </div>
+        </div>
+        <!-- /.card -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->

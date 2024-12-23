@@ -1,0 +1,351 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Resident Details - FILE# {{this.file}} </h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>File no.</td>
+              <td>{{basicviewdata.parent?.fileNo}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>Reference no.</td>
+            <td>{{basicviewdata.parent?.referenceNo}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Title</td>
+        <td>{{basicviewdata.parent?.title}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>First name</td>
+    <td>{{basicviewdata.parent?.firstName}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Last name</td>
+    <td>{{basicviewdata.parent?.lastName}}</td>
+    
+   
+</tr>
+
+<tr>
+  <td>Assessment risk</td>
+  <td>{{basicviewdata.parent?.assessmentRisk}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Age</td>
+  <td>{{basicviewdata.basicInfo?.age}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Religion</td>
+  <td>{{basicviewdata.basicInfo?.religion}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Birth religion</td>
+  <td>{{basicviewdata.basicInfo?.birthReligion}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Father's name</td>
+  <td>{{basicviewdata.basicInfo?.fatherName}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Father's living status</td>
+  <td>{{basicviewdata.basicInfo?.fatherLivingStatus}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Mother's name</td>
+  <td>{{basicviewdata.basicInfo?.motherName}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Mother's living status</td>
+  <td>{{basicviewdata.basicInfo?.MotherLivingStatus}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Nationality</td>
+  <td>
+    {{basicviewdata.basicInfo.nationality}}
+    <!-- <li *ngFor="let nationality of session.getFormattedData(basicviewdata?.basicInfo?.nationality)"> {{ nationality }}</li> -->
+  </td>
+  
+ 
+</tr>
+<tr>
+  <td>Gender</td>
+  <td>{{basicviewdata.basicInfo.gender}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Literacy level</td>
+  <td>{{basicviewdata.basicInfo.literacyLevel}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Marital status</td>
+  <td>{{basicviewdata.maritalInfo.maritalStatus}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Marital category</td>
+  <td>{{basicviewdata.maritalInfo.maritalCategory}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>If separated, separated since:</td>
+  <td>{{basicviewdata.maritalInfo.separatedSince}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Wife of:</td>
+  <td>{{basicviewdata.maritalInfo.wifeOf}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>How it was arranged?</td>
+  <td>{{basicviewdata.maritalInfo.maritalType}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>In what form do you have proof of marriage?</td>
+  <td>{{basicviewdata.maritalInfo.proofOfMarriage}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Children?</td>
+  <td>{{basicviewdata.maritalInfo.haveChildren}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Name of child</td>
+  <td>{{basicviewdata.maritalInfo.accompanyingChildrenName}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Age of child</td>
+  <td>{{basicviewdata.maritalInfo.accompanyingChildrenAge}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Relation with child</td>
+  <td>{{basicviewdata.maritalInfo.accompanyingChildrenRelation}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Reference?</td>
+  <td>{{basicviewdata.referencesRecord.isReferencial}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Type of reference</td>
+  <td>{{basicviewdata.referencesRecord.typeOfReference}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Name of reference</td>
+  <td>{{basicviewdata.referencesRecord.referencialName}}</td>
+  
+ 
+</tr>
+
+<tr>
+  <td>City of reference</td>
+  <td>{{basicviewdata.referencesRecord.referencialCity}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Complete address</td>
+  <td>{{basicviewdata.basicInfo.address}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>City</td>
+  <td>{{basicviewdata.basicInfo.city}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Country	</td>
+  <td>{{basicviewdata.basicInfo.country}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Domicile province</td>
+  <td>{{basicviewdata.basicInfo.domicileProvince}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Domicile city</td>
+  <td>{{basicviewdata.basicInfo.domicileCity}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Reason of admission</td>
+  <td>{{basicviewdata.admissionRecord.reasonForAdmission}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Nature of assisstance sought</td>
+  <td>{{basicviewdata.admissionRecord.natureOfAssisstance}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Has been admitted to shelter?</td>
+  <td>{{basicviewdata.parent.isAdmitted}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Admission date</td>
+  <td>{{basicviewdata.admissionRecord.admissionDate}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>List of documents in possession:	</td>
+  <td>{{basicviewdata.document.listOfDocuments}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Have her documents been photocopied and maintained in a file?</td>
+  <td>{{basicviewdata.document.photocopied}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Item</td>
+  <td>{{basicviewdata.possession.items}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Quantity</td>
+  <td>{{basicviewdata.possession.quantities}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Has she signed the authorization letter to hand over valuables etc?</td>
+  <td>{{basicviewdata.possession.hasSignedAuthorizationLetter}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Has she been oriented with shelter rules & regulations and rights of residents in a language she understands?	</td>
+  <td>{{basicviewdata.orientation.hasBeenOriented}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Has she been given a copy of shelter rules & regulations for residents in a language she understands?	</td>
+  <td>{{basicviewdata.orientation.givenCopyOfRules}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Has she been given a copy of shelter rights of residents in a language she understands?	</td>
+  <td>{{basicviewdata.orientation.givenCopyOfRights}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Have you ensured confidentiality of resident's data?	</td>
+  <td>{{basicviewdata.orientation.ensuredConfidentialityOfData}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Additional details	</td>
+  <td>{{basicviewdata.additionalDetail.details}}</td>
+  
+ 
+</tr>
+
+
+
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

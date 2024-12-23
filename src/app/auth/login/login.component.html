@@ -1,0 +1,59 @@
+
+<div class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo" style="position: relative; margin-bottom: 20px;">
+    <a style="width: 300px;" href=""><img class="img-fluid" src="../../../assets/dist/img/dastak-logo.png" alt=""></a>
+    <p style="font-size: 16px; color: #98a6ad !important; font-weight: 600;">Women Protection and Child Care Center
+    </p>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <h3 class="login-box-msg fw-bold">Sign in</h3>
+
+
+      <form>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control"  name="email" [(ngModel)]="this.authdata.email" placeholder="Username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" name="password" [(ngModel)]="this.authdata.password" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+          
+            </div>
+          </div>
+          <br><br>
+          <!-- /.col -->
+          <div class="d-flex justify-content-center mr-12"> <!-- Add margin top -->
+            <button type="button" class="btn btn-primary btn-block px-4 py-2"  (click)="PostAll()">Log In</button>
+        </div>
+        
+          
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <!-- /.social-auth-links -->
+
+      
+    
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+</div>
+

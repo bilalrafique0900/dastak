@@ -1,0 +1,513 @@
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Departure and Feedback</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li> -->
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+  <!-- /.content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+      <!-- <div class="card-header">
+        <h3 class="card-title">Feedback</h3>
+      </div> -->
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+              <label> Reference number</label>
+                <input class="form-control" [(ngModel)]="this.legalnotice.referenceNo" disabled type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Name </label>
+                <input class="form-control"  [(ngModel)]="this.legalnotice.fullName" disabled type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>
+                Admission date</label>
+              <div class="input-group date" id="admissionAt" data-target-input="nearest">
+                <input disabled type="date" [(ngModel)]="this.legalnotice.admissionAt"  class="form-control" data-target="#admissionAt"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>
+                Departure date</label>
+              <div class="input-group date" id="dischargeDate" data-target-input="nearest">
+                <input type="date" [(ngModel)]="this.editfeeddata.dischargeDate"  class="form-control" data-target="#dischargeDate"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Did the survivor inform the shelter before departure?</label>
+              <select class="form-control select2" [(ngModel)]="SurvivorInformedShelter" style="width: 100%;">
+                <option value="">Select Option</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6"  *ngIf="SurvivorInformedShelter==0">
+            <div class="form-group">
+              <label>If no, has the police station been informed?</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.hasPoliceBeenInformed" style="width: 100%;">
+                <option value="">Select Option</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>
+                When was the police station informed?</label>
+              <div class="input-group date" id="policeInformedAt" data-target-input="nearest">
+                <input type="date"[(ngModel)]="this.editfeeddata.policeInformedAt" class="form-control" data-target="#policeInformedAt"/>
+            </div>
+            </div>
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Have all her original posessions been returned to her?</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.originalPossessionsReturned" style="width: 100%;">
+                <option value="">Select Option</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Has her family signed a raazi-nama?</label>
+              <select class="form-control select2" [(ngModel)]="this.editfeeddata.familySignedRazinama"style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Reason for leaving</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.reasonForLeaving" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Original issue resolved">Original issue resolved</option>
+                <option value="Seeking employment opportunities">Seeking employment opportunities</option>
+                <option value="Referred to other shelter">Referred to other shelter</option>
+                <option value="Disagreements with shelter">Disagreements with shelter</option>
+                <option value="Marriage with benefactor">Marriage with benefactor</option>
+                <option value="New living arrangement made">New living arrangement made</option>
+                <option value="Concern for accompanying children">Concern for accompanying children</option>
+                <option value="Concern for unaccompanied children">Concern for unaccompanied children</option>
+                <option value="Court Order">Court Order</option>
+                <option value="Other">Other</option>
+                <option value="Not mentioned">Not mentioned</option>
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Where will she reside after her departure?</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.residenceAfterDischarge" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Parent's home/immediate family">Parent's home/immediate family</option>
+                <option value="Husband's home and/or with in-laws">Husband's home and/or with in-laws</option>
+                <option value="With friend">With friend</option>
+                <option value="New husband">New husband</option>
+                <option value="Live independently">Live independently</option>
+                <option value="With relatives">With relatives</option>
+                <option value="Employer">Employer</option>
+                <option value="Institution">Institution</option>
+                <option value="Choose not to disclose">Choose not to disclose</option>
+                <option value="Other">Other</option>
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Was she given a resource list of other available services?</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.givenResourcesList" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Does the resident consent to follow-up calls?</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.consentFollowUps" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Level of risk at departure</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.levelOfRiskAtDeparture" style="width: 100%;">
+                <option value="">Select Option</option>
+                                                        <option value="Low">Low</option>
+                                                        <option value="Moderate">Moderate</option>
+                                                        <option value="High">High</option>
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label> Forwarding address</label>
+                <input class="form-control" [(ngModel)]="this.editfeeddata.forwardingAddress"type="text">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>
+                Frequency of follow-up calls?</label>
+              <select class="form-control select2"[(ngModel)]="this.editfeeddata.frequencyOfFollowUps" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Once a week">Once a week</option>
+                <option value="Twice a month">Twice a month</option>
+                <option value="Once a month">Once a month</option>
+                <option value="Once in three months">Once in three months</option>
+                <option value="Once in six months">Once in six months</option>
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+        </div>
+          <div class="row">
+            <h1>Feedback</h1>
+          </div>
+          <div class="row"> 
+                
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    How would you rate your overall experience at the Shelter?</label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.overAllExperience" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Did you feel during your stay at dastak that your rights were respected?</label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.rightsWereRespected" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Security arrangements at the shelter?</label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.securityArrangements" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Provision of food at the shelter?</label>
+                  <select class="form-control select2" [(ngModel)]="this.editfeeddata.provisionOfFood"style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Provision of clothing and accessories at the shelter?</label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.provisionOfClothingAndAccessories" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Medical/Psychological facilities at the shelter?  </label>
+                  <select class="form-control select2" [(ngModel)]="this.editfeeddata.medicalOrPsychologicalFacilities"style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Provision of legal counselling and/or assistance at the shelter? </label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.provisionOfLegalAssisstance" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Not available">Not available</option>
+                    <option value="Not offered">Not offered</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Shelter's procedure for family meetings and phone calls? </label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.provisionForFamilyMeetings" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Did you feel comfortable, secure, and was your privacy ensured during meetings?</label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.privacyEnsuredDuringMeeting" style="width: 100%;">
+                    <option value="">Select Option</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Crisis management staff's attitude and behaviour? </label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.crisisManagementAndAttitude" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Services offered her children (if any)? </label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.servicesProvidedToHerChildren" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Not available">Not available</option>
+                    <option value="Not offered">Not offered</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Shelter practices with regards to keeping children safe?</label>
+                  <select class="form-control select2"[(ngModel)]="this.editfeeddata.practicesKeepingChildrenSafe" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Were you given opportunities of participating in design of programs, daily routine, and planing of matters concerning your welfare and convenience?</label>
+                  <select class="form-control select2" [(ngModel)]="this.editfeeddata.givenOpportunitiesOfParticipating"style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Awareness programs and workshops held at the shelter? </label>
+                  <select class="form-control select2" [(ngModel)]="this.editfeeddata.awarenessProgramsAndWorkshop"style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Not available">Not available</option>
+                    <option value="Not offered">Not offered</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Do you have any further suggestions/comments or complaints?</label>
+                  <select class="form-control select2" [(ngModel)]="HasSuggestionsOrComplaints"style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-12"  *ngIf="HasSuggestionsOrComplaints==1">
+                <div class="form-group">
+                  <label>If yes, please list below</label>
+                    <textarea class="form-control"[(ngModel)]="this.editfeeddata.suggestionsOrComplaints" rows="2" placeholder="Detail ">
+                    </textarea>
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+
+          </div>
+
+        
+      </div>
+       
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="PostFollowUp()">Save</button>
+          <button class="btn btn-default mx-2">Cancel</button>
+        </div>
+
+        
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

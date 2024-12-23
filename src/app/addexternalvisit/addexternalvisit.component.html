@@ -1,0 +1,202 @@
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+      <div class="card card-default">
+        <div class="card-header">
+          <h3 class="card-title">Add visit</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                  <label> From date</label>
+                  <div class="input-group date" id="date" data-target-input="nearest">
+                    <input type="date"  [(ngModel)]="dastakvisit.date" class="form-control " data-target="#date"/>
+                </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label> To date</label>
+                  <div class="input-group date" id="toDate" data-target-input="nearest">
+                    <input type="date"  [(ngModel)]="dastakvisit.toDate" class="form-control " data-target="#toDate"/>
+                </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Time</label>
+                  <div class="input-group date" id="timepicker" data-target-input="nearest">
+                    <input type="time" [(ngModel)]="dastakvisit.time"class="form-control" data-target="#timepicker"/>
+                    
+                    </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Organisation</label>
+                    <input class="form-control"[(ngModel)]="dastakvisit.organisation" type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>  
+        </div>
+          <form [formGroup]="visitForm">
+            <div formArrayName="visitors">
+              <div *ngFor="let visitor of visitors().controls; let i=index" [formGroupName]="i" class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Name of visitor</label>
+                    <input class="form-control" formControlName="name" type="text" >
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Designation</label>
+                    <input class="form-control" formControlName="designation" type="text" >
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Detail of visitor</label>
+                    <select class="form-control" formControlName="detail" >
+                      <option>Select option</option>
+                      <option>Previous Dastak resident</option>
+                      <option>Activist</option>
+                      <option>Lawyer</option>
+                      <option>Doctor</option>
+                      <option>Psychologist/therapist</option>
+                      <option>Researcher</option>
+                      <option>Student</option>
+                      <option>Documentary Maker</option>
+                      <option>Journalist</option>
+                      <option>Government official</option>
+                      <option>NGO worker</option>
+                      <option>Member of society</option>
+                      <option>Organisation</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Contact number</label>
+                        <input class="form-control" formControlName="contact" type="text" >
+                       
+                      </div>
+                </div>
+                    <div class="col-md-12 d-flex justify-content-end">
+                      <button (click)="removeVisitor(i)" class="btn btn-danger mr-1">x</button>
+                      <button (click)="addVisitor()" class="btn btn-success  mr-1">+</button>
+                      </div>
+              </div>
+            </div>
+            
+          </form>
+          <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label>City</label>
+                    <select class="form-control select2"[(ngModel)]="dastakvisit.city" style="width: 100%;">
+                    <option >Lahore</option>
+                    <option>Kasur</option>
+                    <option>Multan</option>
+                    <option >Karachi</option>
+                    <option>Islamabad</option>
+                    <option>DG Khan</option>
+          
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Country</label>
+                  <select class="form-control select2"[(ngModel)]="dastakvisit.country" style="width: 100%;">
+                    <option >pakistan</option>
+                    <option>india</option>
+                    <option>china</option>
+          
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+
+
+
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Reason for visit</label>
+                    <select class="form-control select2"[(ngModel)]="dastakvisit.reasonForVisit" style="width: 100%;">
+                    <option >select option</option>
+                    <option>Workshop</option>
+                    <option>Training</option>
+                    <option >Seminar</option>
+                    <option>Research</option>
+                    <option>Seeking information on Dastak services</option>
+                    <option>Observation Visit</option>
+                    <option>Pjotography/Filming</option>
+                    <option >Interview</option>
+                    <option>Meeting with dastak staff</option>
+                    <option>Legal Consultation</option>
+                    <option>Observation / monitoring visit </option>
+                    <option >Other</option>
+                    
+          
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Detail of visit</label>
+                    <textarea class="form-control"[(ngModel)]="dastakvisit.detailOfVisit" rows="2" >
+                    </textarea>
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+
+
+
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Number of previous visits</label>
+                  <input class="form-control" [(ngModel)]="dastakvisit.noOfPreviousVisits"type="number" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Number of planned visits</label>
+                  <input class="form-control" [(ngModel)]="dastakvisit.noOfPlannedVisits"type="number" >
+                    
+                    
+                </div>
+            </div> 
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="Post()" >Save</button>
+          <button class="btn btn-default mx-2">Cancel</button>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+  

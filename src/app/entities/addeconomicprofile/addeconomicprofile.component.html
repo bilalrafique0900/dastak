@@ -1,0 +1,428 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Add Economic Profile</h1>
+        </div><!-- /.col -->
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+    
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                  <label>Reference no.</label>
+                    <input class="form-control"[(ngModel)]="this.legaleconomi.parents.referenceNo" disabled type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Name</label>
+                    <input class="form-control"[(ngModel)]="this.fullName" disabled type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Age</label>
+                    <input class="form-control"[(ngModel)]="this.legaleconomi.basicInfo.age" disabled type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Education</label>
+                    <input class="form-control" [(ngModel)]="this.legaleconomi.basicInfo.literacyLevel" disabled type="text" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Previous occupation of resident</label>
+                  <select class="form-control select2" [(ngModel)]="this.repost.previousOccupation" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Student"> Student</option>
+<option value="Teacher">Teacher</option>
+<option value="Housewife">Housewife</option>
+<option value="Job">Job</option>
+<option value="Domestic worker">Domestic worker</option>
+<option value="Home-based worker">Home-based worker</option>
+<option value="Agriculture (farming)">Agriculture (farming)</option>
+<option value="Business">Business</option>
+<option value="Other">Other</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Resident's source of income/maintenance</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.sourceOfResidentIncome" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Self generated">  Self generated</option>
+<option value="Profit/ Theka"> Profit/ Theka</option>
+<option value="Husband"> Husband</option>
+<option value="Family"> Family</option>
+<option value="In-laws"> In-laws</option>
+<option value="Pension"> Pension</option>
+<option value="BISP"> BISP</option>
+<option value="Charity"> Charity</option>
+<option value="Other"> Other</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Family household monthly income</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.familyIncome" style="width: 100%;">
+                  <option value="">Select Option</option>
+                    <option value="Rs. 5000 or below">Rs. 5000 or below</option>
+<option value="Rs. 5000 to 8000">Rs. 5000 to 8000</option>
+<option value="Rs. 8000 to 15000">Rs. 8000 to 15000</option>
+<option value="Rs. 15000 to 25000">Rs. 15000 to 25000</option>
+<option value="Rs. 25000 and above">Rs. 25000 and above</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Occupation of household's main breadwinner</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.occupationOfBreadwinner" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Agriculture (farming)">Agriculture (farming)</option>
+<option value="Business">Business</option>
+<option value="Office job">Office job</option>
+<option value="Unskilled labourer">Unskilled labourer</option>
+<option value="Industrial worker">Industrial worker</option>
+<option value="Unemployed">Unemployed</option>
+<option value="Other">Other</option>
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>How many individuals earn in the household?</label>
+                  <input class="form-control" [(ngModel)]="this.repost.noOfIndividualsEarn"type="number">
+                 
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>
+                    Living arrangement before admission</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.livingArrangementBeforeAdmission" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Independent"> Independent</option>
+  <option value="Husband">Husband</option>
+  <option value="In-laws">In-laws</option>
+  <option value="Own parents">Own parents</option>
+  <option value="Sibling">Sibling</option>
+  <option value="Friends">Friends</option>
+  <option value="Acquaintance">Acquaintance </option>
+  <option value="Other shelter">Other shelter</option>
+  <option value="Other">Other</option>
+                    
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Is she interested in continuing education?</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.interestedInContinuingEducation" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                    
+
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Is she already enrolled in an educational institute?</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.alreadyEnrolledInEducationalInstitute" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                    
+
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Has the shelter assisted in her admission at an external educational institute?</label>
+                  <select class="form-control select2" [(ngModel)]="this.repost.hasShelterAssistedInExternalInstituteEducation"style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Source of educational arrangements (finances/transport/books etc)</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.sourceOfEducationalArrangements" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="Self">Self</option>
+                    <option value="Shelter">Shelter</option>
+                    <option value="Parents">Parents</option>
+                    <option value="Husband">Husband</option>
+                    <option value="Scholarship">Scholarship</option>
+                    <option value="Other">Other</option>
+                    
+
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>
+                    Employment opportunity provided at shelter</label>
+                  <select class="form-control select2"[(ngModel)]="this.repost.employmentOpportunityProvided" style="width: 100%;">
+                    <option value="">Select Option</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                    
+
+                  </select>
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>If yes, duration of employment</label>
+                    <input class="form-control" [(ngModel)]="this.repost.durationOfEmployment"type="text">
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="row">
+                <h1>Shelter activities</h1>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label>
+                        Activitiy type</label>
+                      <select class="form-control select2"[(ngModel)]="this.repost.enrolledToLearnNewSkills" style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="Training">Training</option>
+                        <option value="Course">Course</option>
+                        <option value="Session">Session</option>
+                        <option value="Workshop">Workshop</option>
+                         <option value="Events">Events</option>
+                        
+    
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>
+                        Event type</label>
+                      <select class="form-control select2" [(ngModel)]="this.repost.enrolledToEvent"style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="Eid">Eid</option>
+                                               <option value="New-year">New year</option>
+                                               <option value="16-days-of-activism">16 days of activism</option>
+                                               <option value="Childrens-day">Children's day</option>
+                                                <option value="Womens-Day">Women's Day</option>
+                                                <option value="Independence-day">Independence day </option>
+                                               <option value="Picnic">Picnic</option>
+                                               <option value="Movie">Movie</option>
+                                               <option value="Others">Others</option>
+                                       
+                        
+                        
+    
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>
+                        If enrolled, detail of course</label>
+                      <select class="form-control select2"[(ngModel)]="this.repost.enrolledCourseDetail" style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="1">At shelter</option>
+                        <option value="0">External</option>
+    
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>
+                        Nature of course</label>
+                      <select class="form-control select2" [(ngModel)]="this.repost.natureOfCourse"style="width: 100%;">
+                        <option value="">Select Option</option>
+                                            <option value="Stitching">Stitching</option>
+                                                    <option value="Thread work">Thread work</option>
+													<option value="Block print">Block print</option>
+													<option value="Beautician">Beautician</option>
+													<option value="Teaching">Teaching</option>
+												    <option value="Computer">Computer</option>
+													<option value="Arts &amp; crafts">Arts &amp; crafts</option>
+													<option value="Cooking">Cooking</option>
+													<option value="Other">Other</option>
+                        
+    
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Duration of course</label>
+                        <input class="form-control"[(ngModel)]="this.repost.durationOfCourse" type="text" >
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>
+                        Course conducted by</label>
+                      <select class="form-control select2"[(ngModel)]="this.repost.courseConductedBy" style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="TEVTA">TEVTA</option>
+                        <option value="NGO">NGO</option>
+                        <option value="Private">Private</option>
+                        <option value="PVTC">PVTC</option>
+                        <option value="PCSW">PCSW</option>
+                        <option value="Qasr-e-Behbood">Qasr-e-Behbood</option>
+                        <option value="Other">Other</option>
+                        
+    
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Date of training/ workshop at the shelter</label>
+                      <div class="input-group date" id="dateOfWorkshopAtShelter" data-target-input="nearest">
+                        <input [(ngModel)]="this.repost.dateOfWorkshopAtShelter"type="date" class="form-control" data-target="#dateOfWorkshopAtShelter"/>
+                    </div>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>
+                        Subject</label>
+                      <select class="form-control select2"[(ngModel)]="this.repost.typeOfWorkshopAtShelter" style="width: 100%;">
+                        <option value="">Select Option</option>
+                        <option value="Psychological wellbeing">Psychological wellbeing</option>
+                        <option value="Safety and security">Safety and security</option>
+                        <option value="Arts and crafts">Arts and crafts</option>
+                        <option value="Dramatics">Dramatics</option>
+                        <option value="Human rights">Human rights</option>
+                        <option value="Health awareness">Health awareness</option>
+                        <option value="Skill development">Skill development</option>
+                        <option value="Other">Other</option>
+                        
+    
+                      </select>
+                        
+                        
+                      </div> 
+                    <!-- /.form-group -->
+                  </div>
+
+
+              </div>
+              
+
+
+
+
+
+
+          
+
+         
+         
+         
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button class="btn btn-primary" (click)="PostAllRE()">Save</button>
+        <button class="btn btn-default mx-2">Cancel</button>
+      </div>
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

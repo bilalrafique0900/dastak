@@ -1,0 +1,384 @@
+<div class="card-header">
+               
+    <h2 >Add Abuse Details</h2>
+    
+  </div>
+  <!-- /.content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+      <div class="card-body">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+              <label> Reference number</label>
+                <input class="form-control" [(ngModel)]="this.abuseddata.referenceNo" disabled type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Name of resident</label>
+                <input class="form-control"[(ngModel)]="this.fullName" disabled type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Name of alleged abuser</label>
+                <input class="form-control"[(ngModel)]="this.repost.abuserName"  type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Father's name of alleged abuser</label>
+                <input class="form-control" [(ngModel)]="this.repost.fatherName" type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Relationship with resident</label>
+              <select class="form-control select2"[(ngModel)]="this.repost.relationship" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Husband">Husband</option>
+                <option value="Son">Son</option>
+                <option value="Father">Father</option>
+                <option value="Brother">Brother</option>
+                <option value="Mother">Mother</option>
+                <option value="In-laws">In-laws</option>
+                <option value="Employer/Coworker">Employer/Coworker</option>
+                <option value="Stranger">Stranger</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Neighbour">Neighbour</option>
+                <option value="Acquaintance">Acquaintance</option>
+                <option value="Male Relative from own Family">Male Relative from own Family</option>
+                <option value="Male Relative from Husband's family">Male Relative from Husband's family </option>
+             
+                <option value="Other">Other</option>
+                             
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Length of relationship</label>
+                <input class="form-control" [(ngModel)]="this.repost.relationDuration"type="text">
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Duration of abuse</label>
+                <input class="form-control" [(ngModel)]="this.repost.address2"type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label> Contact number</label>
+                <input class="form-control" [(ngModel)]="this.repost.contact"type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Qualification of alleged abuser</label>
+              <select class="form-control select2" [(ngModel)]="this.repost.qualification"style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="None">None</option>
+                <option value="Primary">Primary</option>
+                <option value="Secondary">Secondary</option>
+                <option value="Matric">Matric</option>
+                <option value="12 or above">12 or above</option>
+                <option value="Informal">Informal</option>
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Profession of alleged abuser</label>
+              <select class="form-control select2"[(ngModel)]="this.repost.profession" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Agriculture (farming)">Agriculture (farming)</option>
+                <option value="Business">Business</option>
+                <option value="Office job">Office job</option>
+                <option value="Labourer">Labourer</option>
+                <option value="Industrial worker">Industrial worker</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Other">Other</option>
+               
+               
+               
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label> Address</label>
+                <input class="form-control"[(ngModel)]="this.repost.address" type="text" >
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>Type of abuse </label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.typeOfAbuse">
+                <option value="">Select Option</option>
+                <option value="Verbal">Verbal</option>
+                <option value="Threats">Threats</option>
+                <option value="Physical">Physical</option>
+                <option value="Psychological">Psychological</option>
+                <option value="Sexual">Sexual</option>
+                <option value="Economic">Economic</option>
+                <option value="Other">Other</option>
+                
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>Nature of physical abuse </label>
+              <select multiple class="form-control"[(ngModel)]="this.repost.natureOfPhysicalAbuse">
+                <option value="Beating">Beating</option>
+                <option value="Use of sharp weapon">Use of sharp weapon</option>
+                <option value="Burning with fire">Burning with fire</option>
+                <option value="Burning with acid">Burning with acid</option>
+                <option value="Shooting with gun">Shooting with gun</option>
+                <option value="Choking">Choking</option>
+                <option value="Forced child bearing">Forced child bearing</option>
+                <option value="Forced abortion">Forced abortion</option>
+                <option value="Physical confinement">Physical confinement</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+       
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>What was the family or partner's reason for inflicting abuse? </label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.reasonOfInflictingAbuse">
+                <option value="">Select Option</option>
+                <option value="Financial problems">Financial problems</option>
+                <option value="Suspicion regarding infidelity">Suspicion regarding infidelity</option>
+                <option value="Partner's drug abuse">Partner's drug abuse</option>
+                <option value="Abuser's feeling of superiority">Abuser's feeling of superiority</option>
+                <option value="Sexual problems in marriage">Sexual problems in marriage</option>
+                <option value="Forced marriage">Forced marriage</option>
+                <option value="Problems with in-laws">Problems with in-laws</option>
+                <option value="Abuser's unstable psychological health">Abuser's unstable psychological health</option>
+                <option value="Conflicts related to property">Conflicts related to property</option>
+                <option value="Personal choice in selection of partner">Personal choice in selection of partner</option>
+                <option value="Accusation of bad character/rebelliousness">Accusation of bad character/rebelliousness</option>
+                <!--<option value="Psychological issues">Psychological issues</option>-->
+                
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>What reasons does she have for tolerating abuse till now? </label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.reasonOfToleratingAbuse">
+                <option value="">Select Option</option>
+                <option value="Financial dependency">Financial dependency</option>
+                <option value="Family pressure">Family pressure</option>
+                <option value="Concern for family's honor">Concern for family's honor</option>
+                <option value="Emotional manipulation by abuser">Emotional manipulation by abuser</option>
+                <option value="Personal choice in selection of partner">Personal choice in selection of partner</option>
+                <option value="For the sake of her children">For the sake of her children</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>Sexual abuse inflicted by</label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.sexualAbuseInflictedBy">
+                <option value="Husband">Husband</option>
+                <option value="Cousin">Cousin</option>
+                <option value="Male from husband's family">Male from husband's family</option>
+                <option value="Male from own family">Male from own family</option>
+                <option value="Acquaintance">Acquaintance</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Family friend">Family friend</option>
+                <option value="Neighbor">Neighbor</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>Nature of bodily injury resulting from physical abuse </label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.natureOfBodilyInjury">
+                <option value="Bruises">Bruises</option>
+                <option value="Abrasions">Abrasions</option>
+                <option value="Cuts/wounds">Cuts/wounds</option>
+                <option value="Burns">Burns</option>
+                <option value="Swelling">Swelling</option>
+                <option value="Injury to bones">Injury to bones</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>Nature of sexual abuse that occurred</label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.natureOfSexualAbuse">
+                <option value="Rape">Rape</option>
+                <option value="Sexual assault">Sexual assault</option>
+                <option value="Attempted rape">Attempted rape</option>
+                <option value="Gang rape">Gang rape</option>
+                <option value="Molestation">Molestation</option>
+                <option value="Forced prostitution">Forced prostitution</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="form-group">
+              <label>Type in case of Economic Abuse </label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.typeOfEconomicAbuse">
+                <option value="">Select Option</option>
+                <option value="Denial of maintenance">Denial of maintenance</option>
+                <option value="Denial of child maintenance">Denial of child maintenance</option>
+                <option value="Deprivation of financial benefits">Deprivation of financial benefits</option>
+                <option value="Involuntary possession of her property">Involuntary possession of her property</option>
+                <option value="Involuntary sale of belongings ">Involuntary sale of belongings </option>
+                <option value="Prevents her from working outside the home">Prevents her from working outside the home</option>
+                <option value="Prevents her from studying">Prevents her from studying</option>
+                <option value="Forced to work">Forced to work</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Has the survivor suffered verbal abuse?</label>
+              <select class="form-control select2" [(ngModel)]="HasSufferedVerbalAbuse"style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option value="1" >Yes</option>
+                <option value="0">No</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6 "  *ngIf="HasSufferedVerbalAbuse==1">
+            <div class="form-group">
+              <label>
+                If yes, type of verbal abuse</label>
+              <select multiple class="form-control" [(ngModel)]="this.repost.typeOfVerbalAbuse">
+                <option value="Shouting">Shouting </option>
+                <option value="Profanities">Profanities </option>
+                <option value="General accusations">General accusations </option>
+                <option value="Accusations about infidelity and bad character">Accusations about infidelity and bad character </option>
+                <option value="Other">Other </option> 
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Has the survivor been threatened?</label>
+              <select class="form-control select2" [(ngModel)]="HasBeenThreatened"style="width: 100%;">
+                <option value="select option">Select option</option>
+                <option value="1" >Yes</option>
+                <option value="0">No</option>
+                
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+          <div class="col-md-6 "  *ngIf="HasBeenThreatened==1" >
+            <div class="form-group">
+              <label>If yes, nature of threats</label>
+              <select multiple class="form-control"[(ngModel)]="this.repost.natureOfThreats">
+                <option value="Death threats">Death threats</option>
+                <option value="Physical violence">Physical violence</option>
+                <option value="Acid burning">Acid burning</option>
+                <option value="Sexual violence">Sexual violence </option>
+                <option value="Violence towards children/loved ones">Violence towards children/loved ones</option>
+                <option value="Crimes in the name of honor">Crimes in the name of honor </option>
+                <option value="Blackmail">Blackmail  </option>
+                <option value="Psychological Violence">Psychological Violence</option>
+                <option value="Other Violence">Other Violence</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Detail of attempted abuse</label>
+                <textarea class="form-control" [(ngModel)]="this.repost.detailOfAttemptedAbuse" rows="2" >
+                </textarea>
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          
+        
+         
+        </div>
+      </div>
+       
+        <div class="card-footer">
+          <button class="btn btn-primary" (click)="PostAllAbuser()">Save</button>
+          <button class="btn btn-default mx-2">Cancel</button>
+        </div>
+
+        
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>
