@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
+import { SessionService } from 'src/app/core/services/session.service';
 
 @Component({
   selector: 'app-viewmeeting',
@@ -14,9 +15,10 @@ export class ViewmeetingComponent {
   meetingId:any;
   psydata: any={};
   constructor(private Srv:HttpService,
+      public session:SessionService,
      private route:ActivatedRoute
     ){
-      
+
       this.entity = this.route.snapshot.params["entity"];
       this.meetingId = this.route.snapshot.params["meetingId"];
   }

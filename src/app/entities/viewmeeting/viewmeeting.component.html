@@ -47,12 +47,59 @@
             
            
       </tr>
-      <tr>
-        <td>CreatedAt</td>
-        <td>{{psydata.data.createdAt| date:'fullDate'}}</td>
+      <tr >
+        <td>Date of meeting
+        </td>
+        <td>{{psydata.data.dateOfMeeting| date:'fullDate'}}</td>
         
        
   </tr>
+  <tr >
+    <td>Has she been oriented with shelter rules & regulations and rights of residents in a language she understands?
+    </td>
+    <td>{{psydata.data.atShelter==1?'Yes':'No'}}</td>
+    
+   
+</tr>
+<tr >
+  <td>Started at
+  </td>
+  <td>{{psydata.data.startedAt  }}</td>
+  
+ 
+</tr>
+<tr >
+  <td>Ended At</td>
+  <td>{{psydata.data.endedAt}}</td>
+  
+ 
+</tr>
+
+<tr >
+  <td>Name of visitor(s)</td>
+  <td>
+    <li *ngFor="let detail of session.getFormattedData(psydata.data.guestName)"> {{detail}}</li>
+  </td>
+  
+ 
+</tr>
+<tr >
+  <td>CNIC number of visitor(s)</td>
+  <td>
+    <li *ngFor="let detail of session.getFormattedData(psydata.data.guestCnic)"> {{detail}}</li>
+  </td>
+  
+ 
+</tr>
+<tr >
+  <td>Relation with resident</td>
+  <td>
+    <li *ngFor="let detail of session.getFormattedData(psydata.data.guestRelation)"> {{detail}}</li>
+
+  </td>
+  
+</tr>
+
 
 
             

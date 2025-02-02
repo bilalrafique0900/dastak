@@ -78,6 +78,113 @@
    
 </tr>
 
+<tr>
+  <td>Is the child under threat of physical violence?</td>
+  <td>{{ch?.underPhysicalVoilence==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Does the child require medical or psychological assistance at the time of admission</td>
+  <td>{{ch?.requireMedicalOrPsychologicalAssisstance==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Has the child been categorised as a special-needs child?</td>
+  <td>{{ch?.specialChild==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Class assigned at shelter school</td>
+  <td>{{cs?.gradeAssigned}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Shelter school entery date  </td>
+  <td>{{cs?.shelterSchoolEntryDate| date:'fullDate'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Shelter school leaving date
+  </td>
+  <td>{{cs?.shelterSchoolLeavingDate| date:'fullDate'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Impact of schooling on the child's reading ability</td>
+  <td>{{cs?.impactOnReadingAbility}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Impact of schooling on the child's writing ability</td>
+  <td>{{cs?.impactOnWritingAbility}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Impact of schooling on the child's math ability</td>
+  <td>{{cs?.impactOnMathsAbility}}</td>
+  
+ 
+</tr>
+<tr>
+  <td> Impact of schooling on the child's social ability</td>
+  <td>{{cs?.impactOnSocialAbility}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>
+    Impact of schooling on the child's extra curricular ability</td>
+  <td>{{cs?.impactOnExtraCuricularAbility}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>
+    Has the child attended any workshop/training at the shelter?</td>
+  <td>{{co?.attendedTraining==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>
+    Has the child been vaccinated?</td>
+  <td>{{co?.vaccinated==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>
+    Is the child a male above the age of 10?:</td>
+  <td>{{c?.age}}</td>
+  
+ 
+</tr>
+
+<tr>
+  <td>
+    Discharge date
+  </td>
+  <td>{{c?.dischargeDate| date:'fullDate'}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>
+    Has the child been referred to elsewhere?</td>
+  <td>{{c?.hasBeenReferred==1?'Yes':'No'}}</td>
+  
+ 
+</tr>
+
+
             
           </tbody>
         </table>

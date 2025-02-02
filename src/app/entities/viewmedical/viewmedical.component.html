@@ -41,6 +41,80 @@
               
              
         </tr>
+        <tr >
+          <td>Name of resident</td>
+          <td>{{psydata.info?.nameoOfResident}}</td>
+          
+         
+    </tr>
+
+<tr >
+  <td>Nature of chronic illness (if any) </td>
+  <td>
+    <li *ngFor="let detail of session.getFormattedData(psydata.medical?.h?.natureOfChronicIllness)"> {{detail}}</li>
+  </td>
+  
+ 
+</tr>
+<tr >
+  <td>If the resident has a history of drug abuse, select substance </td>
+  <td>
+    <li *ngFor="let detail of session.getFormattedData(psydata.medical?.h?.substancesInDrugAbused)"> {{detail}}</li>
+  </td>
+  
+ 
+</tr>
+<tr >
+  <td>Intensity of abuse</td>
+  <td>
+    <li *ngFor="let detail of session.getFormattedData(psydata.medical?.h?.intensityOfAbuse)"> {{detail}}</li>
+  </td>
+  
+ 
+</tr>
+<tr >
+  <td>Is the resident currently substance abuser?</td>
+  <td>{{psydata.medical?.h?.isCurrentlySubstanceAbuser}}</td>
+  
+ 
+</tr>
+<tr >
+  <td>Is she currently on any prescription medication?</td>
+  <td>{{psydata.medical?.h?.currentMedicalPrescription}}</td>
+  
+ 
+</tr>
+<tr >
+  <td>In case of pregnancy, list expected delivery date</td>
+  <td>{{psydata.medical?.h?.expectedDeliveryDate| date:'fullDate'}}</td>
+  
+ 
+</tr>
+<tr >
+  <td>Date when medical assistance sought</td>
+  <td>{{psydata.medical?.ma?.dateWhenSought| date:'fullDate'}}</td>
+  
+ 
+</tr>
+<tr >
+  <td>Name of clinic/hospital</td>
+  <td>{{psydata.medical?.ma?.nameOfClinicAssisting}}</td>
+  
+ 
+</tr>
+<tr >
+  <td>Contact </td>
+  <td>{{psydata.medical?.ma?.contact}}</td>
+  
+ 
+</tr>
+<tr >
+  <td>City</td>
+  <td>{{psydata.medical?.ma?.city}}</td>
+  
+ 
+</tr>
+
         <tr>
             <td>Doctor's Name</td>
             <td>{{psydata.medical?.ma?.nameOfDoctorAssisting}}</td>
@@ -56,12 +130,59 @@
        
   </tr>
   <tr>
-    <td>Contact</td>
-    <td>{{psydata.medical?.ma?.contactNo}}</td>
+    <td>contactNo2</td>
+    <td>{{psydata.medical?.ma?.contactNo2}}</td>
     
    
 </tr>
-
+<tr>
+  <td>Address</td>
+  <td>{{psydata.medical?.ma?.address}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Country</td>
+  <td>{{psydata.medical?.ma?.country}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Complaint</td>
+  <td>{{psydata.medical?.ma?.complaint}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Diagnosis</td>
+  <td>{{psydata.medical?.ma?.diagnosis}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Treatment suggested</td>
+  <td>{{psydata.medical?.ma?.treatmentSuggested}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>If the doctor recommended tests, has the shelter made arrangements to have them conducted?</td>
+  <td>{{psydata.medical?.ma?.shelterAgreedToConductTests}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Detail of test</td>
+  <td>{{psydata.medical?.ma?.detailOfTest}}</td>
+  
+ 
+</tr>
+<tr>
+  <td>Notes</td>
+  <td>{{psydata.medical?.ma?.notes}}</td>
+  
+ 
+</tr>
             
           </tbody>
         </table>

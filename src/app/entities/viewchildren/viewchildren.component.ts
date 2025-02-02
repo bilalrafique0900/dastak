@@ -15,6 +15,8 @@ export class ViewchildrenComponent {
   info:any={};
   c:any={};
   ch:any={};
+  co:any={};
+  cs:any={};
   constructor(private Srv:HttpService,
     public session:SessionService,
      private route:ActivatedRoute
@@ -35,6 +37,8 @@ export class ViewchildrenComponent {
           this.info= res.data.info;
           this.c= res.data.childInfo.c;
           this.ch= res.data.childInfo.ch;
+          this.co= res.data.childInfo.co;
+          this.cs= res.data.childInfo.cs;
         }
       },
       error: (err) => {

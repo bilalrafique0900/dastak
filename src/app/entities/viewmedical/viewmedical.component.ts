@@ -17,6 +17,7 @@ export class ViewmedicalComponent {
   constructor(private Srv:HttpService,
     public session:SessionService,
      private route:ActivatedRoute
+     
     ){
       this.file = this.route.snapshot.params["file"];
       this.entity = this.route.snapshot.params["entity"];

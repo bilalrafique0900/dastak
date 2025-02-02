@@ -23,19 +23,37 @@
               <div class="col-md-4">
                 <div class="form-group" >
                   <label>File no</label>
-                    <input class="form-control"[(ngModel)]="this.readdmission.fileNo" type="text" >
+                    <input class="form-control"[(ngModel)]="readdmission.fileNo" 
+                    name="fileNo"
+                    #fileNo="ngModel"
+                    required
+                    type="text" >
                     
                     
                   </div> 
+                  <div *ngIf="fileNo.invalid && submitted && (!readdmission.fileNo   || readdmission.fileNo.trim() === '')"
+                  class="text-danger">
+                  <small>File No is <strong>required</strong></small>
+                  
+                 </div>
                 <!-- /.form-group -->
               </div>
               <div class="col-md-4">
                 <div class="form-group" >
                   <label>Reference no</label>
-                    <input class="form-control"[(ngModel)]="this.readdmission.referenceNo" type="text" >
+                    <input class="form-control"[(ngModel)]="this.readdmission.referenceNo"
+                    name="referenceNo"
+                    #referenceNo="ngModel"
+                    required
+                     type="text" >
                     
                     
                   </div> 
+                  <div *ngIf="referenceNo.invalid && submitted && (!readdmission.referenceNo   || readdmission.referenceNo.trim() === '')"
+                  class="text-danger">
+                  <small>Reference No is <strong>required</strong></small>
+                  
+                 </div>
                 <!-- /.form-group -->
               </div>
               <div class="col-md-4">
@@ -67,19 +85,38 @@
             <div class="col-md-3">
                 <div class="form-group" >
                   <label>First name</label>
-                    <input class="form-control"[(ngModel)]="this.readdmission.firstName" type="text" >
+                    <input class="form-control"[(ngModel)]="this.readdmission.firstName"
+                    name="firstName"
+                    #firstName="ngModel"
+                    required
+                     type="text" >
                     
                     
                   </div> 
+                  <div *ngIf="firstName.invalid && submitted && (!readdmission.firstName   || readdmission.firstName.trim() === '')"
+                  class="text-danger">
+                  <small>First Name is <strong>required</strong></small>
+                  
+                 </div>
                 <!-- /.form-group -->
               </div>
               <div class="col-md-3">
                 <div class="form-group" >
                   <label>Last name</label>
-                    <input class="form-control" [(ngModel)]="this.readdmission.lastName"type="text" >
+                    <input class="form-control" [(ngModel)]="this.readdmission.lastName"
+                    name="lastName"
+                    #lastName="ngModel"
+                    required
+                    type="text" >
+
                     
                     
                   </div> 
+                  <div *ngIf="lastName.invalid && submitted && (!readdmission.lastName   || readdmission.lastName.trim() === '')"
+                  class="text-danger">
+                  <small>Last Name is <strong>required</strong></small>
+                  
+                 </div>
                 <!-- /.form-group -->
               </div>
               <div class="col-md-3">
@@ -142,8 +179,17 @@
                                                             <div class="form-group" >
                                                               <label>Date of birth</label>
                                                               <div class="input-group date" id="dateOfBirth" data-target-input="nearest">
-                                                                <input type="date" [(ngModel)]="this.readdmission.dateOfBirth"class="form-control " data-target="#dateOfBirth"/>
+                                                                <input type="date" [(ngModel)]="this.readdmission.dateOfBirth"
+                                                                name="dateOfBirth"
+                                                                #dateOfBirth="ngModel"
+                                                                required
+                                                                class="form-control " data-target="#dateOfBirth"/>
                                                             </div>
+                                                            <div *ngIf="dateOfBirth.invalid && submitted && (!readdmission.dateOfBirth   || readdmission.dateOfBirth.trim() === '')"
+                                                            class="text-danger">
+                                                            <small>DateOfBirth is <strong>required</strong></small>
+                                                            
+                                                           </div>
                                                             </div>
                                                             <!-- /.form-group -->
                                                           </div>
@@ -152,7 +198,11 @@
                                                           <div class="col-md-4">
                                                             <div class="form-group">
                                                               <label>Religion</label>
-                                                              <select class="form-control select2" [(ngModel)]="this.readdmission.religion" style="width: 100%;">
+                                                              <select class="form-control select2" [(ngModel)]="this.readdmission.religion"
+                                                              name="religion"
+                                                              #religion="ngModel"
+                                                              required
+                                                               style="width: 100%;">
                                                                 <option value="section Option" >Select Option</option>
                                                                 <option value="Islam">Islam</option>
                                                                 <option value="Ahmedi">Ahmedi</option>
@@ -167,6 +217,11 @@
                                                                 
                                                                 
                                                               </div> 
+                                                              <div *ngIf="religion.invalid && submitted && (!readdmission.religion   || readdmission.religion.trim() === '')"
+                                                              class="text-danger">
+                                                              <small>Religion is <strong>required</strong></small>
+                                                              
+                                                             </div>
                                                             <!-- /.form-group -->
                                                           </div>
                          <div class="col-md-4">
@@ -199,10 +254,19 @@
                                                           <div class="col-md-3">
                                                             <div class="form-group"  >
                                                               <label>Father name</label>
-                                                                <input class="form-control"[(ngModel)]="this.readdmission.fatherName" type="text" >
+                                                                <input class="form-control"[(ngModel)]="this.readdmission.fatherName" 
+                                                                name="fatherName"
+                                                                #fatherName="ngModel"
+                                                                required
+                                                                type="text" >
                                                                 
                                                                 
                                                               </div> 
+                                                              <div *ngIf="fatherName.invalid && submitted && (!readdmission.fatherName   || readdmission.fatherName.trim() === '')"
+                                                              class="text-danger">
+                                                              <small>FatherName is <strong>required</strong></small>
+                                                              
+                                                             </div>
                                                             
                                                           </div>
                                                           <div class="col-md-3">
@@ -231,10 +295,18 @@
                                                           <div class="col-md-3">
                                                             <div class="form-group" >
                                                               <label>Mother name</label>
-                                                                <input class="form-control" type="text"[(ngModel)]="this.readdmission.motherName">
+                                                                <input class="form-control" type="text"[(ngModel)]="this.readdmission.motherName"
+                                                                name="motherName"
+                                                                #motherName="ngModel"
+                                                                required>
                                                                 
                                                                 
                                                               </div> 
+                                                              <div *ngIf="motherName.invalid && submitted && (!readdmission.motherName   || readdmission.motherName.trim() === '')"
+                                                              class="text-danger">
+                                                              <small>motherName is <strong>required</strong></small>
+                                                              
+                                                             </div>
                                                             
                                                           </div> 
                                                           <div class="col-md-3">
@@ -345,31 +417,43 @@
                                                           </div>
                                 
                                 
-                                                          <div class="col-md-4">
-                                                            <div class="form-group" >
-                                                              <label>Age</label>
-                                                                <input class="form-control" [(ngModel)]="this.readdmission.age"type="text">
+          <div class="col-md-4">
+        <div class="form-group" >
+        <label>Age</label>
+        <input class="form-control" [(ngModel)]="readdmission.age"
+         name="age"
+         #age="ngModel"
+         required
+         type="text">
                                                                 
                                                                 
-                                                              </div> 
-                                                            <!-- /.form-group -->
-                                                          </div>
+       </div> 
+       <div *ngIf="age.invalid && submitted && (!readdmission.age   || readdmission.age.trim() === '')"
+        class="text-danger">Age is required.</div>
+        
+       </div>
                                 
-                                                          <div class="col-md-4">
-                                                            <div class="form-group" >
-                                                              <label>Gender</label>
-                                                              <select class="form-control select2" [(ngModel)]="this.readdmission.gender" style="width: 100%;">
-                                                                <option value="select Option" >Select Option</option>
-                                                                <option value="Female">Female</option>
-                                                                <option value="Transgender">Transgender</option>
-                                                                <option value="Undefined">Undefined</option>
-                                                      
-                                                              </select>
-                                                                
-                                                                
-                                                              </div> 
-                                                            <!-- /.form-group -->
-                                                          </div>
+ <div class="col-md-4">
+  <div class="form-group">
+    <label>Gender</label>
+    <select class="form-control select2" [(ngModel)]="readdmission.gender"
+     #gender="ngModel"
+      name="gender"
+       required style="width: 100%;">
+      <option value="" disabled selected>Select Option</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Transgender">Transgender</option>
+      <option value="Undefined">Undefined</option>
+    </select>
+    
+    <div *ngIf="gender.invalid && submitted && (!readdmission.gender   || readdmission.gender.trim() === '')" class="text-danger">Gender is required.
+
+    </div>
+      
+  </div>
+</div>
+
                                                           <div class="col-md-4">
                                                             <div class="form-group" >
                                                               <label>Literacy level</label>
@@ -564,6 +648,8 @@
                                 
                                                 
                                                       <div class="row">
+                                                       
+                                                        
                                                       <div class="col-md-3">
                                                         <div class="form-group"  >
                                                           <label>Children?</label>
@@ -1052,16 +1138,27 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group" >
                                                                   <label> Complete address</label>
-                                                                    <input class="form-control"[(ngModel)]="this.readdmission.Address"  type="text" >
+                                                                    <input class="form-control"[(ngModel)]="this.readdmission.Address" 
+                                                                    #Address="ngModel"
+                                                                    name="Address"
+                                                                     required 
+                                                                     type="text" >
                                                                     
                                                                     
                                                                   </div> 
+                                                                  <div *ngIf="Address.invalid && submitted && (!readdmission.Address   || readdmission.Address.trim() === '')"
+                                                              class="text-danger">
+                                                              <small>Address is <strong>required</strong></small>
+                                                              
+                                                             </div>
                                                                 <!-- /.form-group -->
                                                               </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                               <label> city</label>
-                                                              <select class="form-control select2"  formControlName="this.readdmission.city" style="width: 100%;">
+                                                              <select class="form-control select2"  formControlName="this.readdmission.city" 
+
+                                                              style="width: 100%;">
                                                                 <option value="" disabled="" selected="">Select The City</option>
                                                                 <option value="Islamabad">Islamabad</option>
                                                                 <option value="" disabled="">Punjab Cities</option>
@@ -1307,13 +1404,18 @@
                                                               </select>
                                                                 
                                                                 
-                                                              </div> 
+                                                              </div>
+                                                            
                                                             <!-- /.form-group -->
                                                           </div>     
                                                           <div class="col-md-6">
                                                             <div class="form-group">
                                                               <label> Country</label>
-                                                              <select class="form-control select2"  [(ngModel)]="this.readdmission.country" style="width: 100%;">
+                                                              <select class="form-control select2" 
+                                                              #country="ngModel"
+                                                              name="country"
+                                                               required 
+                                                                [(ngModel)]="this.readdmission.country" style="width: 100%;">
                                                                 <option >Select option</option>
                                                                 <option>pakistan</option>
                                                                 <option>Iran</option>
@@ -1327,6 +1429,11 @@
                                                                 
                                                                 
                                                               </div> 
+                                                              <div *ngIf="country.invalid && submitted && (!readdmission.country   || readdmission.country.trim() === '')"
+                                                              class="text-danger">
+                                                              <small>country is <strong>required</strong></small>
+                                                              
+                                                             </div>
                                                             <!-- /.form-group -->
                                                           </div> 
                                                         </div>            
@@ -1647,7 +1754,7 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <button class="btn btn-primary" (click)="PostAllRE()">Save</button>
+            <button class="btn btn-primary" (click)="submitted=true;PostAllRE()">Save</button>
             <button class="btn btn-default mx-2">Cancel</button>
           </div>
         </div>

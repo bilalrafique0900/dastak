@@ -275,7 +275,7 @@
 </tr>
 <tr>
   <td>Has been admitted to shelter?</td>
-  <td>{{basicviewdata.parent?.isAdmitted}}</td>
+  <td>{{basicviewdata.parent?.isAdmitted==1?'Yes':'No'}}</td>
   
  
 </tr>
@@ -295,7 +295,7 @@
 </tr>
 <tr>
   <td>Have her documents been photocopied and maintained in a file?</td>
-  <td>{{basicviewdata.document?.photocopied}}</td>
+  <td>{{basicviewdata.document?.photocopied==1?'Yes':'No'}}</td>
   
  
 </tr>
@@ -317,31 +317,31 @@
 </tr>
 <tr>
   <td>Has she signed the authorization letter to hand over valuables etc?</td>
-  <td>{{basicviewdata.possession?.hasSignedAuthorizationLetter}}</td>
+  <td>{{basicviewdata.possession?.hasSignedAuthorizationLetter==1?'Yes':'No'}}</td>
   
  
 </tr>
 <tr>
   <td>Has she been oriented with shelter rules & regulations and rights of residents in a language she understands?	</td>
-  <td>{{basicviewdata.orientation?.hasBeenOriented}}</td>
+  <td>{{basicviewdata.orientation?.hasBeenOriented==1?'Yes':'No'}}</td>
   
  
 </tr>
 <tr>
   <td>Has she been given a copy of shelter rules & regulations for residents in a language she understands?	</td>
-  <td>{{basicviewdata.orientation?.givenCopyOfRules}}</td>
+  <td>{{basicviewdata.orientation?.givenCopyOfRules==1?'Yes':'No'}}</td>
   
  
 </tr>
 <tr>
   <td>Has she been given a copy of shelter rights of residents in a language she understands?	</td>
-  <td>{{basicviewdata.orientation?.givenCopyOfRights}}</td>
+  <td>{{basicviewdata.orientation?.givenCopyOfRights==1?'Yes':'No'}}</td>
   
  
 </tr>
 <tr>
   <td>Have you ensured confidentiality of resident's data?	</td>
-  <td>{{basicviewdata.orientation?.ensuredConfidentialityOfData}}</td>
+  <td>{{basicviewdata.orientation?.ensuredConfidentialityOfData==1?'Yes':'No'}}</td>
   
  
 </tr>
