@@ -7,7 +7,7 @@ export class SessionService {
   public token: string | null = sessionStorage.getItem('token');
 
   ApiKey: string = '58d4c8fd-f704-49ba-ae38-4dd20a5bea00';
-  BasePath= 'http://localhost:5269/';
+  BasePath= 'http://172.25.18.97:8085/';
   FilePath="wwwroot\\upload";
   get GetUserName() {
     return sessionStorage.getItem('UserName') || '';
@@ -33,7 +33,9 @@ export class SessionService {
 export class SessionConfig {
   constructor() { }
 
-  public static onlineUrl: string = 'http://localhost:5269/'
+  //public static onlineUrl: string = 'http://localhost:5269/'
+  public static onlineUrl: string = 'http://172.25.18.97:8085/'
+
 
   // public static onlineUrl: string = 'https://localhost:5001/api/'
   // public static FilesPath: string = 'https://srv.masareefi.com/'

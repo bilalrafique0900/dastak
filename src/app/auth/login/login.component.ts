@@ -35,6 +35,7 @@ this.router.navigate(['auth/verification'], { state: { email: this.authdata.emai
         this.toastr.error('Invalid Credentials!', 'Error');
       },
       error: (err) => {
+        debugger
         this.toastr.error('Invalid Credentials!', 'Error');
        // this.usernameError = err ? err.Message : '';
       },

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="content-header">
+         <div class="container-fluid">
+           <div class="row mb-2">
+             <div class="col-sm-11">
+               <h1 class="m-0">Role Permission</h1>
+             </div>
+           </div>
+         </div>
+     </div>
+      
+     <div class="row row-sm">
+         <div class="col-sm-12 col-lg-12 col-xl-12">
+             <div class="card custom-card">
+                 <div class="p-3 border-bottom">
+                     <div class="d-flex align-items-center mb-3">
+                         <h5 class="mb-0">Select Role</h5>
+                     </div>
+                     <select class="form-control" [(ngModel)]="selectedRole" (change)="onRoleChange()">
+                         <option value="">Select a Role</option>
+                         <option value="admin">Admin</option>
+                         <option value="manager">Manager</option>
+                         <option value="employee">Employee</option>
+                         <option value="super">Super</option>
+                     </select>
+                 </div>
+             </div>
+         </div>
+     </div>
+ 
+     <div class="row row-sm mt-3" *ngFor="let card of roleCards">
+         <div class="col-sm-12 col-lg-12 col-xl-12">
+             <div class="card custom-card">
+                 <div class="p-3">
+                     <h5>{{ card.title }}</h5>
+                     <button class="btn btn-primary" style="padding: 5px 25px;" (click)="onSave(card.role)">Save</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ 

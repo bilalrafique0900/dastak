@@ -30,6 +30,7 @@ import { ViewinterventionComponent } from './viewintervention/viewintervention.c
 import { HttpClientModule } from '@angular/common/http';
 import { FollowuprecordComponent } from './followuprecord/followuprecord.component';
 import { ViewdastakvisitComponent } from './viewdastakvisit/viewdastakvisit.component';
+import { RolePermissionComponent } from './role-permission/role-permission.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ViewdastakvisitComponent } from './viewdastakvisit/viewdastakvisit.comp
     AddinterventionComponent,
     ViewinterventionComponent,
     FollowuprecordComponent,
-    ViewdastakvisitComponent
+    ViewdastakvisitComponent,
+    RolePermissionComponent
   ],
   imports: [
     CommonModule,

@@ -20,7 +20,7 @@ export class NewadmissionComponent implements OnInit {
   
   ReferenceForm!: FormGroup;
   ChildrenForm!: FormGroup;
-    
+  submitted=false;
 
   constructor(private fb: FormBuilder,private cb: FormBuilder,
     private route:ActivatedRoute,
@@ -37,6 +37,10 @@ export class NewadmissionComponent implements OnInit {
   }
 
   PostAllRE() {
+    if (this.readdmission.invalid) {
+      return; // Stop function execution if the form is invalid
+    }
+  
     this.readdmission.partnerAbusedInDrug = 0;
    
     this.readdmission.maritalStatus = this.maritalstatus;

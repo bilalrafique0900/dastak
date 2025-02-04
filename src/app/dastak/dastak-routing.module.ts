@@ -26,6 +26,7 @@ import { AddinterventionComponent } from './addintervention/addintervention.comp
 import { ViewinterventionComponent } from './viewintervention/viewintervention.component';
 import { FollowuprecordComponent } from './followuprecord/followuprecord.component';
 import { ViewdastakvisitComponent } from './viewdastakvisit/viewdastakvisit.component';
+import { RolePermissionComponent } from './role-permission/role-permission.component';
 
 
 const routes: Routes = [
@@ -106,6 +107,9 @@ const routes: Routes = [
   },
   { path:'viewintervention/:entity/:Id',
     component:ViewinterventionComponent
+  },
+  { path:'role-permission',
+    component:RolePermissionComponent
   },
 ];
 
