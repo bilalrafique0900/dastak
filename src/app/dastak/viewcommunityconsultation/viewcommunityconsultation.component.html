@@ -1,0 +1,166 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Legal Detail</h1>
+        
+        </div><!-- /.col -->
+        
+          
+         
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <div class="card-body p-0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style=>
+                Questions</th>
+              
+              <th>		Answers</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reference numberr</td>
+              <td>{{legaldetaildata.referenceNo}}</td>
+              
+             
+        </tr>
+             <tr>
+              <td>Name</td>
+              <td>{{legaldetaildata.name}}</td>
+              
+             
+        </tr>
+        <tr>
+            <td>Type of assistance</td>
+            <td>{{legaldetaildata.typeOfAssistance}}</td>
+            
+           
+      </tr>
+      <tr>
+            <td>Legal advice sought</td>
+            <td>{{legaldetaildata.legalAdviceSought==1?'Yes':'No'}}</td>
+            
+           
+      </tr>
+      <tr>
+            <td>Legal assistance sought</td>
+            <td>{{legaldetaildata.legalAssistanceSought==1?'Yes':'No'}}</td>
+            
+           
+      </tr>
+      <tr>
+            <td>Legal notice sent</td>
+            <td>{{legaldetaildata.legalNoticeSent==1?'Yes':'No'}}</td>
+            
+           
+      </tr>
+      <tr>
+            <td>Date when legal notice sent</td>
+                <td>{{legaldetaildata.dateWhenLegalNoticeSent| date:'fullDate'}}</td>
+            <!-- <td>{{legaldetaildata.dateWhenLegalNoticeSent}}</td> -->
+            
+           
+      </tr>
+      <tr>
+            <td>Legal notice sent to</td>
+            <td>{{legaldetaildata.legalNoticeSentTo}}</td>
+            
+           
+      </tr>
+      <tr>
+        <td>Nature of legal concern</td>
+        <td>{{legaldetaildata.natureOfLegalConcern}}</td>
+        
+       
+  </tr>
+  <tr>
+    <td>Case filed by</td>
+    <td>{{legaldetaildata.caseFiledBy}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Case filed against</td>
+    <td>{{legaldetaildata.caseFiledAgainst}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Name of lawyer</td>
+    <td>{{legaldetaildata.nameOfLawyer}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Contact of lawyer</td>
+    <td>{{legaldetaildata.contactOfLawyer}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Court	</td>
+    <td>{{legaldetaildata.court}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Province of court</td>
+    <td>{{legaldetaildata.provinceOfCourt}}</td>
+    
+   
+</tr>
+<tr>
+    <td>City of court</td>
+    <td>{{legaldetaildata.cityOfCourt}}</td>
+    
+   
+</tr>
+<tr>
+    <td>Next date of hearing</td>
+    <td>{{legaldetaildata.nextDateOfHearing| date:'fullDate'}}</td>
+    <!-- <td>{{legaldetaildata.nextDateOfHearing}}</td> -->
+    
+   
+</tr>
+<tr>
+    <td>Status of case</td>
+    <td>{{legaldetaildata.statusOfCase}}</td>
+    
+   
+</tr>
+
+<tr>
+    <td>Outcome</td>
+    <td>{{legaldetaildata.outcome}}</td>
+    
+   
+</tr>
+            
+          </tbody>
+        </table>
+    
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

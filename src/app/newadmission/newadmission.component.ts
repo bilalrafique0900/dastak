@@ -10,7 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NewadmissionComponent implements OnInit {
   readdmission: any={};
+  auto: any={};
   entity:any;
+  file:any;
   IsReference=0;
   maritalstatus='single';
   Motherlivigstatus='alive';
@@ -34,21 +36,43 @@ export class NewadmissionComponent implements OnInit {
     this.ChildrenForm = this.fb.group({
       childrens: this.fb.array([this.createChildrenGroup()])
     });
+  
+    this.file = this.route.snapshot.params["file"];
+    this.entity = this.route.snapshot.params["entity"];
+  this.GetAll();
+  
   }
-
+  GetAll() {
+    this.Srv.GetData(`NewAdmission/autofields`).subscribe({
+      next: (res: any) => {
+        
+        if (res.data) {
+          
+          this.auto = res.data;
+this.readdmission.fileNo=this.auto.fileNo;
+this.readdmission.referenceNo=this.auto.referenceNo;
+        }
+      },
+      error: (err) => {
+       // this.usernameError = err ? err.Message : '';
+      },
+    });
+  }
   PostAllRE() {
     if (this.readdmission.invalid) {
       return; // Stop function execution if the form is invalid
     }
   
     this.readdmission.partnerAbusedInDrug = 0;
-   
+    this.readdmission.isReadmission=0;
+    this.readdmission.isAdmitted=0;
     this.readdmission.maritalStatus = this.maritalstatus;
     this.readdmission.haveChildren = this.IsChildren;
     this.readdmission.fatherLivingStatus = this.Fatherlivigstatus;
     this.readdmission.motherLivingStatus = this.Motherlivigstatus;
     this.readdmission.isReferential=this.IsReference;
     this.readdmission.currentlyExpecting=this.IsCurrently;
+    debugger;
     this.readdmission.proofOfMarriage=JSON.stringify(this.readdmission.proofOfMarriage);
     const childrensArray = this.ChildrenForm.get('childrens') as FormArray;
     // Or, if you want to loop through all the visitors and get their 'name' values
@@ -60,12 +84,12 @@ export class NewadmissionComponent implements OnInit {
     this.readdmission.accompanyingChildrenRelation=JSON.stringify(childrenChildsRelations);
     const referencesArray = this.ReferenceForm.get('references') as FormArray;
     // Or, if you want to loop through all the visitors and get their 'name' values
-    const referenceNameofReferences = referencesArray.controls.map(reference => reference.get('nameofReference')?.value);
-    const referenceTypeofReferences = referencesArray.controls.map(reference => reference.get('typeofReference')?.value);
-    const referenceCityofReferences = referencesArray.controls.map(reference => reference.get('cityofReference')?.value);
-    this.readdmission.nameOfReference=JSON.stringify(referenceNameofReferences);
+    const referenceNameofReferences = referencesArray.controls.map(reference => reference.get('referencialName')?.value);
+    const referenceTypeofReferences = referencesArray.controls.map(reference => reference.get('typeOfReference')?.value);
+    const referenceCityofReferences = referencesArray.controls.map(reference => reference.get('referencialCity')?.value);
+    this.readdmission.referencialName=JSON.stringify(referenceNameofReferences);
     this.readdmission.typeOfReference=JSON.stringify(referenceTypeofReferences);
-    this.readdmission.cityOfReference=JSON.stringify(referenceCityofReferences);
+    this.readdmission.referencialCity=JSON.stringify(referenceCityofReferences);
     
     this.Srv.PostData(`NewAdmission/readmission`,this.readdmission).subscribe({
       next: (res: any) => {

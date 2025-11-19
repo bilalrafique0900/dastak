@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
@@ -19,6 +19,10 @@ export class ReadmissionComponent implements OnInit {
   entity:any;
   ReferenceForm!: FormGroup;
   ChildrenForm!: FormGroup;
+  updatebasic: any={};
+  maritalstatus: any;
+  Motherlivigstatus: any;
+  Fatherlivigstatus: any;
   
     
 
@@ -27,31 +31,194 @@ export class ReadmissionComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute
      ,private Srv:HttpService) {
+      debugger;
     this.file = this.route.snapshot.params["file"];
   this.entity = this.route.snapshot.params["entity"];
+  this.readdmission.fileNo2=this.file;
+  this.readdmission.referenceNo2=this.entity;
 this.GetAll(); 
+
   
 
   }
+ 
   
 
-GetAll() {
-  this.Srv.GetData(`Menu/getlegalreadmission?file=`+this.file+'&entity='+this.entity).subscribe({
+// GetAll() {
+//   this.Srv.GetData(`Menu/getlegalreadmission?file=`+this.file+'&entity='+this.entity).subscribe({
+//     next: (res: any) => {
+      
+//       if (res.data) {       
+//         this.legaladmission = res.data;
+      
+//       }
+//     },
+//     error: (err) => {
+//      // this.usernameError = err ? err.Message : '';
+//     },
+//   });
+
+//}
+
+ GetAll() {
+    
+    this.Srv.GetData(`NewAdmission/getinfo?entity=`+this.entity).subscribe({
+      next: (res: any) => {
+        
+        if (res.data) {
+          
+          this.updatebasic = res.data;
+          //this.readdmission.referenceNo=this.entity;
+          this.readdmission.assessmentRisk= this.updatebasic.assessmentRisk;
+          this.readdmission.dateOfBirth= this.updatebasic.dateOfBirth;
+          this.readdmission.age= this.updatebasic.age;
+          this.readdmission.religion= this.updatebasic.religion;
+          this.readdmission.birthReligion= this.updatebasic.birthReligion;
+          this.readdmission.fatherName= this.updatebasic.fatherName;
+         // this.readdmission.fatherLivingStatus= this.updatebasic.fatherLivingStatus;
+          this.Fatherlivigstatus=this.updatebasic.fatherLivingStatus;
+          this.readdmission.motherName= this.updatebasic.motherName;
+//this.readdmission.motherLivingStatus= this.updatebasic.motherLivingStatus;
+          this.Motherlivigstatus=this.updatebasic.motherLivingStatus;
+          this.readdmission.guardianName= this.updatebasic.guardianName;
+          this.readdmission.guardianRelation= this.updatebasic.guardianRelation;
+          this.readdmission.nationality= this.updatebasic.nationality;
+          this.readdmission.gender= this.updatebasic.gender;
+          this.readdmission.literacyLevel= this.updatebasic.literacyLevel;
+          this.readdmission.phone= this.updatebasic.phone;
+          this.readdmission.ethinicity= this.updatebasic.ethinicity;
+              this.readdmission.cnic= this.updatebasic.cnic;
+          this.readdmission.passportNo= this.updatebasic.passportNo;
+
+
+         // this.readdmission.maritalStatus= this.updatebasic.maritalStatus;
+          this.maritalstatus=this.updatebasic.maritalStatus;
+          this.readdmission.separatedSince= this.updatebasic.separatedSince;
+          this.readdmission.maritalCategory= this.updatebasic.maritalCategory;
+          this.readdmission.maritalType= this.updatebasic.maritalType;
+          this.readdmission.wifeOf= this.updatebasic.wifeOf;
+          this.readdmission.partnerAbusedInDrug= this.updatebasic.partnerAbusedInDrug;
+          // Parse the JSON string back into its original form (e.g., an array or object)
+this.readdmission.proofOfMarriage = JSON.parse(this.updatebasic.proofOfMarriage);
+
+       //   this.readdmission.proofOfMarriage= this.updatebasic.proofOfMarriage;
+      //    this.readdmission.haveChildren= this.updatebasic.haveChildren;
+          this.IsChildren=this.updatebasic.haveChildren;
+          // this.readdmission.accompanyingChildrenName= this.updatebasic.accompanyingChildrenName;
+          // this.readdmission.accompanyingChildrenAge= this.updatebasic.accompanyingChildrenAge;
+          // this.readdmission.accompanyingChildrenRelation= this.updatebasic.accompanyingChildrenRelation;
+         
+         // Parse the JSON strings back into arrays
+const childrenChildsNames = JSON.parse(this.updatebasic.accompanyingChildrenName);
+const childrenChildsAges = JSON.parse(this.updatebasic.accompanyingChildrenAge);
+const childrenChildsRelations = JSON.parse(this.updatebasic.accompanyingChildrenRelation);
+
+// Get the FormArray
+const childrensArray = this.ChildrenForm.get('childrens') as FormArray;
+
+// Ensure the FormArray has enough controls for the data
+childrenChildsNames.forEach((name: string, index: number) => {
+  if (index >= childrensArray.length) {
+    // If there are not enough form controls, create new ones
+    childrensArray.push(new FormGroup({
+      childsName: new FormControl(''),
+      childsAge: new FormControl(''),
+      childsRelation: new FormControl('')
+    }));
+  }
+
+  // Set the values
+  const childrenGroup = childrensArray.at(index) as FormGroup;
+  childrenGroup.get('childsName')?.setValue(name);
+  childrenGroup.get('childsAge')?.setValue(childrenChildsAges[index]);
+  childrenGroup.get('childsRelation')?.setValue(childrenChildsRelations[index]);
+});
+
+         
+         
+         ////////////////////////////////////////
+        //  this.readdmission.currentlyExpecting= this.updatebasic.currentlyExpecting;
+          this.IsCurrently=this.updatebasic.currentlyExpecting;
+          this.readdmission.expectedDeliveryDate= this.updatebasic.expectedDeliveryDate;
+
+
+//this.readdmission.IsReference= this.updatebasic.isReferencial;
+          this.IsReference=this.updatebasic.isReferencial;
+          // this.readdmission.referencialCity= this.updatebasic.referencialCity;
+          // this.readdmission.referencialName= this.updatebasic.referencialName;
+          // this.readdmission.typeOfReference= this.updatebasic.typeOfReference;
+
+
+// Parse the JSON strings back into arrays
+const referenceNameofReferences = JSON.parse(this.updatebasic.referencialName);
+const referenceTypeofReferences = JSON.parse(this.updatebasic.typeOfReference);
+const referenceCityofReferences = JSON.parse(this.updatebasic.referencialCity);
+
+// Get the FormArray
+const referencesArray = this.ReferenceForm.get('references') as FormArray;
+
+// Ensure the FormArray has enough controls for the data
+referenceNameofReferences.forEach((name: string, index: number) => {
+  if (index >= referencesArray.length) {
+    // If there are not enough form controls, create new ones
+    referencesArray.push(new FormGroup({
+      nameofReference: new FormControl(''),
+      typeofReference: new FormControl(''),
+      cityofReference: new FormControl('')
+    }));
+  }
+
+  // Set the values for each reference
+  const referenceGroup = referencesArray.at(index) as FormGroup;
+  referenceGroup.get('nameofReference')?.setValue(name);
+  referenceGroup.get('typeofReference')?.setValue(referenceTypeofReferences[index]);
+  referenceGroup.get('cityofReference')?.setValue(referenceCityofReferences[index]);
+});
+
+
+
+
+
+
+          ///////////////////////
+          this.readdmission.address= this.updatebasic.address;
+          this.readdmission.city= this.updatebasic.city;
+          this.readdmission.country= this.updatebasic.country;     
+          this.readdmission.domicileCity= this.updatebasic.domicileCity;
+          this.readdmission.domicileProvince= this.updatebasic.domicileProvince;
+          
+          //this.readdmission.referenceNo=this.updatebasic.referenceNo;
+          //this.readdmission.fileNo=this.updatebasic.fileNo;
+          
+
+        }
+      },
+      error: (err) => {
+       // this.usernameError = err ? err.Message : '';
+      },
+    });
+
+
+      this.Srv.GetData(`NewAdmission/autofields`).subscribe({
     next: (res: any) => {
       
       if (res.data) {
-        
-        this.legaladmission = res.data;
-
+        this.readdmission.fileNo=res.data.fileNo;
+        this.readdmission.referenceNo=res.data.referenceNo;
       }
     },
     error: (err) => {
      // this.usernameError = err ? err.Message : '';
     },
   });
-}
+  }
   PostAllRE() {
-    
+    this.readdmission.isReadmission=1;
+    this.readdmission.isAdmitted=0;
+    this.readdmission.firstName=this.updatebasic.firstName;
+    this.readdmission.lastName=this.updatebasic.lastName;
+    this.readdmission.title=this.updatebasic.title;
+
     this.readdmission.proofOfMarriage=JSON.stringify(this.readdmission.proofOfMarriage);
     this.readdmission.cityofReference=JSON.stringify(this.readdmission.cityofReference);
     this.readdmission.isReferencial=JSON.stringify(this.IsReference);
@@ -70,17 +237,16 @@ GetAll() {
     const referenceNameofReferences = referencesArray.controls.map(reference => reference.get('nameofReference')?.value);
     const referenceTypeofReferences = referencesArray.controls.map(reference => reference.get('typeofReference')?.value);
     const referenceCityofReferences = referencesArray.controls.map(reference => reference.get('cityofReference')?.value);
-    this.readdmission.referencialName=JSON.stringify(referenceNameofReferences);
+    this.readdmission.nameOfReference=JSON.stringify(referenceNameofReferences);
     this.readdmission.typeOfReference=JSON.stringify(referenceTypeofReferences);
-    this.readdmission.referencialCity=JSON.stringify(referenceCityofReferences);
+    this.readdmission.cityOfReference=JSON.stringify(referenceCityofReferences);
     this.readdmission.partnerAbusedInDrug=0;
     this.Srv.PostData(`NewAdmission/readmission`,this.readdmission).subscribe({
       next: (res: any) => {
         
         if (res.data) {
-          
           this.readdmission = res.data;
-          this.router.navigate(['/dastak/allclosedfiles',]);
+          this.router.navigate(['/dastak/proceedapplication',this.readdmission.fileNo,this.readdmission.referenceNo]);
         }
       },
       error: (err) => {

@@ -26,9 +26,9 @@ export class LoginComponent {
     
     this.Srv.PostData(`Auth/postauth?Email=`+this.authdata.email+'&Password='+this.authdata.password,null).subscribe({
       next: (res: any) => {
-        debugger;
         if (res.data.status) {
           sessionStorage.setItem('UserName',res.data.user.name);
+          sessionStorage.setItem('Role',res.data.user.userCategory);
 this.router.navigate(['auth/verification'], { state: { email: this.authdata.email }});
           
         }else

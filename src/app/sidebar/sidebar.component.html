@@ -47,20 +47,127 @@
             </a>
           </li>
           <li class="nav-item">
-            <a routerLink="entities/files" class="nav-link">
-              <i class="far fa-file-pdf mr-1"></i>
+            <a href="#" class="nav-link">
+              <i class="fas fa-users mr-1"></i>
               <p>
-                Files
+                Shelter
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="entities/files" class="nav-link">
+                  <i class="far fa-file-pdf mr-1"></i>
+                  <p>
+                    Files
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item" *ngIf="session.loginrole!='Data Entery Operator'">
+                <a routerLink="newadmission" class="nav-link">
+                  <i class="fas fa-user nav-icon"></i>
+                  <p>
+                    New Admission
+                  </p>
+                </a>
+              </li>
+
+            </ul>
           </li>
-          <li class="nav-item">
-            <a routerLink="addcaller" class="nav-link">
-              <i class="fas fa-phone-volume mr-1"></i>
+          <li class="nav-item" *ngIf="session.loginrole!='Data Entery Operator'">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users mr-1"></i>
               <p>
-                Add Caller
+                Cummunity
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a  routerLink="/dastak/communityconsultations" class="nav-link">
+                  <i class="fas fa-balance-scale-right mr-1"></i>Add Legal Aid For Community Consultations
+                </a>
+                
+           
+              </li>
+              <li class="nav-item">
+                <a  routerLink="/dastak/allcommunityconsultations" class="nav-link">
+                   <i class="fas fa-balance-scale-right mr-1"></i> All Legal Aid For Community Consultations
+                </a>
+              </li>
+
+
+            </ul>
+                 <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a  routerLink="/dastak/interventioncommunity" class="nav-link">
+                  <i class="fas fa-balance-scale-right mr-1"></i>Add Intervention For Community Consultations
+                </a>
+                
+           
+              </li>
+              <li class="nav-item">
+                <a  routerLink="/dastak/allinterventioncommunity" class="nav-link">
+                   <i class="fas fa-balance-scale-right mr-1"></i> All Intervention For Community Consultations
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+          <li class="nav-item" *ngIf="session.loginrole!='Data Entery Operator'">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users mr-1"></i>
+              <p>
+                Visits
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a  routerLink="/dastak/allexternalvisits"  class="nav-link">
+                  <i class="fas fa-smile mr-1"></i>
+                  <p>All Visits to Dastak </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a  routerLink="/dastak/allvisitsbydastakstaff"  class="nav-link">
+                  <i class="fas fa-smile mr-1"></i>
+                  <p>All Visits From Dastak </p>
+                </a>
+              </li>
+
+
+            </ul>
+          </li>
+          <li class="nav-item" *ngIf="session.loginrole!='Data Entery Operator'">
+            <a href="#" class="nav-link">
+              <i class="fas fa-users mr-1"></i>
+              <p>
+                Users
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a routerLink="allfiles" class="nav-link">
+                  <i class="far fa-file-pdf mr-1"></i>
+                  <p>
+                    All Files
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="reports" class="nav-link">
+                  <i class=" fas fa-th-list"></i>
+                  <p>
+                    REPORTS
+                  </p>
+                </a>
+              </li>
+
+            </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -80,19 +187,19 @@
               <li class="nav-item">
                 <a routerLink= "addvisitbydastakstaff" class="nav-link">
                   <i class="fas fa-users mr-1"></i>
-                  <p>Add Visit By Dastak </p>
+                  <p>Add Visit From Dastak </p>
                 </a> 
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a routerLink="newadmission" class="nav-link">
               <i class="fas fa-user nav-icon"></i>
               <p>
                 New Admission
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="far fa-eye mr-1"></i>
@@ -101,7 +208,7 @@
                 <i class="fas fa-angle-left right"></i> 
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview" *ngIf="session.loginrole!='Data Entery Operator'">
               <li class="nav-item">
                 <a routerLink="/dastak/allpendingfiles"  class="nav-link">
                   <i class="far fa-clock mr-1"></i>
@@ -116,30 +223,33 @@
               </li>
             </ul>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a  routerLink="/dastak/allexternalvisits"  class="nav-link">
-                  <i class="fas fa-smile mr-1"></i>
-                  <p>All Visits to Dastak </p>
-                </a>
-              </li>
-              <li class="nav-item">
+            
+              <li class="nav-item" *ngIf="session.loginrole!='Data Entery Operator'">
                 <a routerLink= "/dastak/allcallers" class="nav-link">
                  <i class="fas fa-headset mr-1"></i>
                   <p>All Callers</p>
                 </a> 
               </li>
-            </ul>
-            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a  routerLink="/dastak/allvisitsbydastakstaff"  class="nav-link">
-                  <i class="fas fa-smile mr-1"></i>
-                  <p>All Visits By Dastak </p>
+                <a routerLink="addcaller" class="nav-link">
+                  <i class="fas fa-phone-volume mr-1"></i>
+                  <p>
+                    Add Caller
+                  </p>
                 </a>
               </li>
+            </ul>
+            <ul class="nav nav-treeview" *ngIf="session.loginrole!='Data Entery Operator'">
               <li class="nav-item">
                 <a routerLink= "/dastak/allusers" class="nav-link">
                   <i class="far fa-user mr-1"></i>
                   <p>All Users</p>
+                </a> 
+              </li>
+              <!-- <li class="nav-item">
+                <a routerLink= "/dastak/role" class="nav-link">
+                  <i class="far fa-user mr-1"></i>
+                  <p>Role</p>
                 </a> 
               </li>
               <li class="nav-item">
@@ -147,10 +257,31 @@
                   <i class="far fa-user mr-1"></i>
                   <p>Role-Permission</p>
                 </a> 
+              </li> -->
+             
+            </ul>
+          </li>
+           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa-eye mr-1"></i>
+              <p>
+                General Inquiry
+                <i class="fas fa-angle-left right"></i> 
+              </p>
+            </a>
+           <ul class="nav nav-treeview">
+             
+              <li class="nav-item" *ngIf="session.loginrole!='Data Entery Operator'">
+                <a routerLink="generalform" class="nav-link">
+                  <i class="fas fa-phone-volume mr-1"></i>
+                  <p>
+                    General Inquiry Form
+                  </p>
+                </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a routerLink="allfiles" class="nav-link">
               <i class="far fa-file-pdf mr-1"></i>
               <p>
@@ -165,7 +296,7 @@
                 REPORTS
               </p>
             </a>
-          </li>
+          </li> -->
          
         
         </ul>

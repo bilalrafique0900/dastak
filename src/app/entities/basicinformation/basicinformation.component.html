@@ -117,7 +117,8 @@
 <tr>
   <td>Nationality</td>
   <td>
-    <li *ngFor="let detail of session.getFormattedData(basicviewdata.basicInfo?.nationality)"> {{ detail }}</li>
+     {{basicviewdata.basicInfo.nationality}}
+    <!-- <li *ngFor="let detail of session.getFormattedData(basicviewdata.basicInfo?.nationality)"> {{ detail }}</li> -->
   </td>
   
  
@@ -148,7 +149,7 @@
 </tr>
 <tr>
   <td>If separated, separated since:</td>
-  <td>{{basicviewdata.maritalInfo?.separatedSince}}</td>
+  <td>{{basicviewdata.maritalInfo?.separatedSince|date:'fullDate'}}</td>
   
  
 </tr>

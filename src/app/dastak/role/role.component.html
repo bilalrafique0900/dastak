@@ -1,0 +1,159 @@
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-11">
+          <h1 class="m-0">Manage the all Role</h1>
+        
+        </div><!-- /.col -->
+        
+          
+            
+          
+        
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        <div class=" d-flex justify-content-end">
+            <button class="btn btn-primary" routerLink="/dastak/addnewusers"><i class="fas fa-plus"></i></button>
+        
+          </div>
+      <!-- /.card-header -->
+      <!-- /.card-header -->
+      <!-- <div class="card-body p-0"  >
+        <div class="row">
+            
+                <div class="card-header">
+                    <div class="card-title">Please add Role here</div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="roleForm" novalidate (ngSubmit)="formSubmit()">
+                            <div class="row mg-b-20">
+                                <div class="parsley-input col-md-6" id="fnWrapper">
+                                    <label>Role Name: <span class="tx-danger">*</span></label>
+                                    <input class="form-control" formControlName="RoleName" (ngModelChange)="isRecordExist()" placeholder="Enter Role name"
+                                        [ngClass]="{'has-success': basicFormControl['RoleName'].valid}">
+                                    <div *ngIf="(basicFormControl['RoleName'].touched || submitted) && (basicFormControl['RoleName'].errors?.['required'])"
+                                        class="tx-danger">
+                                        <small>Role Name is <strong>required</strong></small>
+                                    </div>
+                                </div>
+                                <div class="parsley-input col-md-6" id="fnWrapper">
+                                    <label>Default Url: <span class="tx-danger">*</span></label>
+                                    <input class="form-control" formControlName="DefaultUrl" (ngModelChange)="isRecordExist()" placeholder="Default Url"
+                                        [ngClass]="{'has-success': basicFormControl['DefaultUrl'].valid}">
+                                    <div *ngIf="(basicFormControl['DefaultUrl'].touched || submitted) && (basicFormControl['DefaultUrl'].errors?.['required'])"
+                                        class="tx-danger">
+                                        <small>Default Url is <strong>required</strong></small>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="mg-t-30">
+                            <button class="btn btn-primary pd-x-20" type="submit">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            
+        </div>
+    </div> -->
+      <div class="card-body p-0">
+     
+        <div class="row" >
+            <div class="col-lg-12">
+                
+                    
+                    <div class="card-body p-0"  >
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style=>Role name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                
+                                    
+                                      
+                                <tbody>
+                                    <tr >
+                                        <td>Super</td>
+                                        <td>
+        
+                                            <span >
+                                                <button  type="button" class="btn btn-sm btn-primary">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button  id="bDel" type="button"
+                                                    class="btn mx-3 btn-sm btn-danger">
+                                                    <i class="fas fa-times"></i>   </button>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td>Admin</td>
+                                        <td>
+        
+                                            <span >
+                                                <button  type="button" class="btn btn-sm btn-primary">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button  id="bDel" type="button"
+                                                    class="btn mx-3 btn-sm btn-danger">
+                                                    <i class="fas fa-times"></i>       </button>                                         
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td>Guest</td>
+                                        <td>
+        
+                                            <span >
+                                                <button  type="button" class="btn btn-sm btn-primary">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button  id="bDel" type="button"
+                                                    class="btn mx-3 btn-sm btn-danger">
+                                                    <i class="fas fa-times"></i>                                             
+                                                </button>
+                                            </span>
+                                            </td> 
+                                    </tr>
+                                    <tr >
+                                        <td>Employee</td>
+                                        <td>
+        
+                                            <span >
+                                                <button  type="button" class="btn btn-sm btn-primary">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button  id="bDel" type="button"
+                                                    class="btn mx-3 btn-sm btn-danger">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                             
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        
+                      
+                    </div>
+                
+            </div>
+        </div>
+
+      </div>
+      <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>

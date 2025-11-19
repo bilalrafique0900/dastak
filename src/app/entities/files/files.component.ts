@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
+import { SessionService } from 'src/app/core/services/session.service';
 
 @Component({
   selector: 'app-files',
@@ -17,7 +18,8 @@ export class FilesComponent {
   }
   newfile: any[]=[];
   constructor(private Srv:HttpService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public session: SessionService
   ){
     this.searchQuery='';
     this.route.queryParams.subscribe(params => {
@@ -35,7 +37,6 @@ export class FilesComponent {
         next: (res: any) => {
           
           if (res.data) {
-            debugger;
             this.newfile = res.data;
             this.searchQuery='';
           }

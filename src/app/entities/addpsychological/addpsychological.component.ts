@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup ,Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
@@ -15,6 +15,7 @@ export class AddpsychologicalComponent {
   file : any;
   entity:any;
   fullName='';
+    ChildrenForm!: FormGroup;
  
     
 
@@ -25,6 +26,9 @@ export class AddpsychologicalComponent {
      ,private Srv:HttpService) {
     this.file = this.route.snapshot.params["file"];
   this.entity = this.route.snapshot.params["entity"];
+   this.ChildrenForm = this.fb.group({
+      childrens: this.fb.array([this.createChildrenGroup()])
+    });
 this.GetAll(); 
   
 
@@ -47,7 +51,24 @@ GetAll() {
     },
   });
 }
-
+ removeChildren(index: number): void {
+    if(this.childrens().length>1)
+    this.childrens().removeAt(index);
+  }
+  addChildren(): void {
+    this.childrens().push(this.createChildrenGroup());
+  }
+  createChildrenGroup(): FormGroup {
+      return this.cb.group({
+        Name: ['', Validators.required],
+        childAge: ['', Validators.required],
+       
+        
+      });
+    }
+    childrens(): FormArray {
+      return this.ChildrenForm.get('childrens') as FormArray;
+    }
 
 
 PostAllPHY() {
@@ -56,6 +77,8 @@ PostAllPHY() {
   this.repost.nameOfResident = this.fullName;
   this.repost.startedAt=this.repost.startedAt+':00';
   this.repost.endedAt=this.repost.endedAt+':00';
+    const childrensArray = this.ChildrenForm.get('childrens') as FormArray;
+    this.repost.ChildPsychologicalAssistances=childrensArray.value;
  // this.repost.startAt=this.convertTimeStringToTimeSpan(this.repost.startAt);
   //this.repost.endedAt=this.convertTimeStringToTimeSpan(this.repost.endedAt);
   

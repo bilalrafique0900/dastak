@@ -88,24 +88,24 @@
                                       </a>
 
                                    
-                                      <a class="btn btn-app" title="Basic Information" [routerLink]="['/entities/basicinformation', item.fileNo, item.referenceNo]">
+                                      <a class="btn btn-app" title="Basic Information" *ngIf="session.loginrole!='Data Entery Operator'" [routerLink]="['/entities/basicinformation', item.fileNo, item.referenceNo]">
                                         <span class="badge bg-teal"></span>
                                         <i class="fas fa-eye"></i> View
                                       </a>
 
-                                      <a class="btn btn-app"  title="Rights Checklist" [routerLink]="['/entities/rightschecklist', item.referenceNo]">
+                                      <a class="btn btn-app"  title="Rights Checklist" *ngIf="session.loginrole!='Data Entery Operator'" [routerLink]="['/entities/rightschecklist', item.referenceNo]">
                                         <span class="badge bg-teal"></span>
                                         <i class="fas fa-check"></i> Approve
                                       </a>
 
-                                      <a class="btn btn-app"  title="Departure" [routerLink]="['/entities/departure', item.fileNo, item.referenceNo]">
+                                      <a class="btn btn-app"  title="Departure" *ngIf="session.loginrole!='Data Entery Operator'" [routerLink]="['/entities/departure', item.fileNo, item.referenceNo]">
                                         <span class="badge bg-teal"></span>
                                         <i class="fas fa-handshake"></i> Departure
                                       </a>
                                     
 
                                   
-                                      <div class="dropdown-menu">
+                                      <div class="dropdown-menu" *ngIf="session.loginrole!='Data Entery Operator'">
                                         <a class="dropdown-item" [routerLink]="['/entities/editbasicinformation', item.referenceNo]">
                                           <i class="far fa-edit mr-1"></i> Edit Basic Information
                                         </a>
@@ -128,7 +128,7 @@
                                           <i class="far fa-money-bill-alt mr-1"></i> Economic Profile
                                         </a>
                                         <a class="dropdown-item" [routerLink]="['/entities/meetingrecord', item.fileNo, item.referenceNo]">
-                                          <i class="far fa-handshake mr-1"></i> Meeting Record
+                                          <i class="far fa-handshake mr-1"></i>  Visit Record
                                         </a>
                                         <a class="dropdown-item" [routerLink]="['/entities/medicalrecord', item.fileNo, item.referenceNo]">
                                           <i class="fas fa-briefcase-medical mr-1"></i> Medical Record
@@ -140,18 +140,13 @@
                                           <i class="fas fa-file mr-1"></i> Documents
                                         </a>
                                       </div>
+                                          <div class="dropdown-menu" *ngIf="session.loginrole=='Data Entery Operator'">
+                                        <a class="dropdown-item" [routerLink]="['/entities/legaldetail', item.fileNo, item.referenceNo]">
+                                          <i class="fas fa-balance-scale-right mr-1"></i> Legal Detail
+                                        </a> 
+                                      </div>
                                     </div>
                                   </div>
-                                  
-
-
-
-
-
-
-
-
-
                                 </div>
                                 <!-- /.description-block -->
                               </div>

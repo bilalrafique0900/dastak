@@ -29,6 +29,7 @@ export class MainLayoutComponent {
   }
   logout(){
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('Role');
     this.session.token=null;
     this.router.navigate(['/auth/login']);
   }

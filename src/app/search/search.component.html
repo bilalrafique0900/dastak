@@ -81,7 +81,7 @@
 
                                   <div class="flex-container">
                                     <div class="button-group">
-                                    
+                                    <ng-container *ngIf="item.status==='Resident'">
                                       <a class="btn btn-app dropdown-toggle" data-toggle="dropdown">
                                         <span class="badge bg-teal"></span>
                                         <i class="fas fa-edit"></i> Edit
@@ -140,6 +140,56 @@
                                           <i class="fas fa-file mr-1"></i> Documents
                                         </a>
                                       </div>
+                                    </ng-container>
+                                    <ng-container *ngIf="item.status==='Pending File'">
+                                <a class="btn btn-app" title="Proceed Application" [routerLink]="['/dastak/proceedapplication', item.fileNo, item.referenceNo]">
+                                  <span class="badge bg-teal"></span>
+                                  <i class="fas fa-check"></i>Proceed 
+                                </a>
+
+                                <a class="btn btn-app"  title="Discard"  (click)="Delete(item.fileNo,item.referenceNo)">
+                                  <span class="badge bg-teal"></span>
+                                  <i class="fas fa-times"></i>Discard
+                                </a>
+                                    </ng-container>
+                                    <ng-container *ngIf="item.status==='Close File'">
+          <a class="btn btn-app dropdown-toggle" data-toggle="dropdown">
+                                  <span class="badge bg-teal"></span>
+                                  <i class="fas fa-edit"></i> Edit
+                                </a>
+
+                             
+                                <a class="btn btn-app"title="Basic Information"  [routerLink]="['/dastak/basicinformation',item.fileNo,item.referenceNo]">
+                                  <span class="badge bg-teal"></span>
+                                  <i class="fas fa-eye"></i> Basic Information
+                                </a>
+
+                                <a class="btn btn-app"   title="Rights Checklist"  [routerLink]="['/dastak/rightschecklist',item.referenceNo]">
+                                  <span class="badge bg-teal"></span>
+                                  <i class="fas fa-check"></i> Rights Checklist
+                                </a>
+
+                               
+                              
+
+                            
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" routerLink="/dastak/readmission" [routerLink]="['/dastak/readmission',item.fileNo,item.referenceNo]">
+                                    <i class="far fa-edit mr-1"></i> Readmission
+                                  </a>
+                                  <a class="dropdown-item"routerLink="/dastak/legaldetail" [routerLink]="['/dastak/legaldetail',item.fileNo,item.referenceNo]">
+                                    <i class="far fa-edit mr-1"></i> Legal Detail
+                                  </a>
+                                  <a class="dropdown-item"  routerLink="/dastak/interventions" [routerLink]="['/dastak/interventions',item.fileNo,item.referenceNo]">
+                                    <i class="fas fa-child mr-1"></i> Interventions
+                                  </a>
+                                  <a class="dropdown-item" [routerLink]="['/dastak/followuprecord',item.fileNo,item.referenceNo]">
+                                    <i class="far fa-hand-paper mr-1"></i>Follow Up
+                                  </a>
+                              
+                             
+                                </div>
+                                    </ng-container>
                                     </div>
                                   </div>
                                   

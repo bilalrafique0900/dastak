@@ -21,7 +21,13 @@ export class InterventionsComponent {
   this.GetAll();
   }
   GetAll() {
-    this.Srv.GetData(`Interventions/getintervention?file=`+this.file+'&entity='+this.entity).subscribe({
+    let entity=this.entity;
+    if(this.entity==undefined || this.entity==null || this.entity=='undefined' || this.entity=='null')
+      entity='';
+    let file=this.file;
+    if(this.file==undefined || this.file==null || this.file=='undefined' || this.file=='null')
+      file='';
+    this.Srv.GetData(`Interventions/getintervention?file=`+file+'&entity='+entity).subscribe({
       next: (res: any) => {
         
         if (res.data) {

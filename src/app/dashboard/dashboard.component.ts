@@ -73,6 +73,24 @@ this.chartOptions7.data[0].dataPoints = admissionsyear.map((value: number, index
   };
 });
 
+
+const Average =this.dashboarddata?.averagedaysstayLastYear; // API response data for departures
+// Update chartOptions4 dataPoints dynamically
+
+this.chartOptions19.data[0].dataPoints = Average.map((value: any, index: number) => {
+  debugger;
+  const currentDate = new Date(); // Get the current date
+  const newDate = new Date(currentDate); // Create a new Date object to avoid mutation
+  newDate.setMonth(currentDate.getMonth() - index); // Subtract the index from the current month
+
+  const monthName = newDate.toLocaleString('default', { month: 'short' }); // Get the short month name (e.g., "Jan", "Feb")
+  
+  return {
+    label: monthName,  // Use short month name as label
+    y: value.averageDays  // Set the 'y' value to the departure data from API
+  };
+});
+
 const departureyear =this.dashboarddata.departureLastYear; // API response data for departures
 // Update chartOptions4 dataPoints dynamically
 this.chartOptions8.data[0].dataPoints = departureyear.map((value: number, index: number) => {
@@ -204,6 +222,36 @@ this.chartOptions15.data[0].dataPoints = psychological.map((value: number, index
 	  ]
 	  },]
   }
+  
+
+  chartOptions19 = {
+	  animationEnabled: true,
+	  title: {
+		text: "Average Stay "
+	  },
+	  axisY: {
+		title: " "
+	  },
+	  data: [{
+	    type: "column",	
+      color: "#ffc107",
+	    dataPoints:[
+        { x: 'Sep', y: 71 },
+        { x: 'Sep', y: 55 },
+        { x: 'Sep', y: 50 },
+        { x: 'Sep', y: 65 },
+        { x: 'Sep', y: 95 },
+        { x: 'Sep', y: 68 },
+        { x: 'Sep', y: 28 },
+        { x: 'Sep', y: 34 },
+        { x: 'Sep', y: 14 },
+        { x: 'Sep', y: 14 },
+        { x: 'Sep', y: 14 },
+        { x: 'Sep', y: 14 }
+	  ]
+	  },]
+  }
+
   // chartOptions8 = {
 	//   animationEnabled: true,
 	//   title: {

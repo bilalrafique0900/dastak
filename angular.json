@@ -25,7 +25,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+               {
+                "input": "src/styles.css",
+                "bundleName": "app"
+              },
+              {
+                "input": "node_modules/ngx-toastr/toastr.css",
+                "bundleName": "toastr"
+              }
             ],
             "scripts": []
           },
