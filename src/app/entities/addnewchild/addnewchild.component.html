@@ -37,18 +37,18 @@
               </div> 
             <!-- /.form-group -->
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="form-group">
-              <label>child's name</label>
+              <label>Name of child</label>
                 <input class="form-control" type="text" [(ngModel)]="this.repost.name" >
                 
                 
               </div> 
             <!-- /.form-group -->
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="form-group">
-              <label>Child' age</label>
+              <label>Age of child</label>
               <select class="form-control select2" [(ngModel)]="this.repost.age" style="width: 100%;">
                 <option value="">Select Option</option>
                 <option value="Less than 1">Less than 1 year</option>
@@ -76,7 +76,25 @@
               </div> 
             <!-- /.form-group -->
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Child's relation</label>
+              <select class="form-control" type="text" [(ngModel)]="this.repost.gender">
+                <option>Select option</option>
+                <option value="Son">Son</option>
+                <option value="Daughter">Daughter</option>
+                <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                <option value="Niece">Niece</option>
+                <option value="Nephew">Nephew</option>
+                <option value="Cousin">Cousin</option>
+                <option value="Other">Other</option>
+               
+                
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
             <div class="form-group">
               <label>Child's assigned gender at birth</label>
               <select class="form-control select2"  [(ngModel)]="this.repost.gender"style="width: 100%;">
@@ -93,7 +111,7 @@
               </div> 
             <!-- /.form-group -->
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="form-group">
               <label>Condition of personal hygiene at admission</label>
               <select class="form-control select2" [(ngModel)]="this.repost.hygiene" style="width: 100%;">
@@ -320,7 +338,7 @@
           </div>
           <div class="col-md-4"  *ngIf="AttendedTraining==1">
             <div class="form-group">
-              <label>If yes, nature of training/ workshop:</label>
+              <label>If yes, nature of training/ workshop</label>
               <select multiple class="form-control" [(ngModel)]="this.repost.natureOfTraining">
                 <option value="Human Rights">Human Rights</option>
                 <option value="Arts and crafts">Arts and crafts</option>
@@ -486,7 +504,7 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label>Is the child a male above the age of 10?:</label>
+              <label>Is the child a male above the age of 10?</label>
               <select class="form-control select2" [(ngModel)]="IsChildMaleAbove10" style="width: 100%;">
         
                 <option value="select option">Select option</option>
@@ -499,7 +517,7 @@
           </div>
           <div class="col-md-4" *ngIf="IsChildMaleAbove10==1">
             <div class="form-group">
-              <label>If yes, where has the male child been sent to?:</label>
+              <label>If yes, where has the male child been sent to?</label>
               <select class="form-control select2" [(ngModel)]="this.repost.whereMaleChildBeenSent" style="width: 100%;">
                 <option value="">Select Option</option>
                 <option value="SOS Mother and Child Centre">SOS Mother and Child Centre</option>

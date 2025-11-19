@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
@@ -15,25 +16,78 @@ export class ProceedapplicationComponent implements OnInit {
   possession:any;
   HasScreened=0;
   entity: any;
+  file: any;
+
 
   constructor(private pb: FormBuilder,
     private fb: FormBuilder
       ,private cb: FormBuilder ,
+     // private toastr:ToastrService,
       private router:Router,
       private Srv:HttpService,
       private route:ActivatedRoute
   ) {
     
     this.entity = this.route.snapshot.params["entity"];
+    this.file = this.route.snapshot.params["file"];
   this.GetAll(); 
   }
   GetAll() {
-    this.Srv.GetData(`Menu/geteditbasicinfo?entity=`+this.entity).subscribe({
+    this.Srv.GetData(`Menu/getproceedinfoforreadmission?entity=`+this.entity).subscribe({
       next: (res: any) => {
         
         if (res.data) {
+          debugger;
+          this.pendadd = res.data.parentinfo;
+          if(res.data.admissioninfo!=null){
+            if(res.data.admissioninfo.reasonForAdmission!=null)
+          this.proceedpost.reasonForAdmission = JSON.parse(res.data.admissioninfo.reasonForAdmission);
+          if(res.data.admissioninfo.natureOfAssisstance!=null)
+          this.proceedpost.natureOfAssistance = JSON.parse(res.data.admissioninfo.natureOfAssisstance);
+          if(res.data.admissioninfo.reasonOfRefuse!=null)
+          this.proceedpost.reasonOfRefuse = JSON.parse(res.data.admissioninfo.reasonOfRefuse);
+          if(res.data.admissioninfo.whereHasSheReferred!=null)
+          this.proceedpost.whereHasSheReferred = JSON.parse(res.data.admissioninfo.whereHasSheReferred);
+        this.proceedpost.isAbused = res.data.admissioninfo.isAbused?true:false;
+        if(res.data.admissioninfo.interviewDate!=null)
+        this.proceedpost.interviewDate = res.data.admissioninfo.interviewDate.toISOString().slice(0, 10);;
+        if(res.data.admissioninfo.admissionDate!=null)
+        this.proceedpost.admissionDate =new Date(res.data.admissioninfo.admissionDate).toISOString().slice(0, 10);
           
-          this.pendadd = res.data;
+          }
+          if(res.data.contactinfo!=null){
+            this.proceedpost.familyPhone = res.data.contactinfo.familyPhone
+            this.proceedpost.familyName = res.data.contactinfo.familyName
+            this.proceedpost.familyRelation = res.data.contactinfo.familyRelation
+            this.proceedpost.emergencyPhone = res.data.contactinfo.emergencyPhone
+            this.proceedpost.emergencyName = res.data.contactinfo.emergencyName
+            this.proceedpost.emergencyRelation = res.data.contactinfo.emergencyRelation
+
+          }
+
+          if(res.data.additionaldetailsinfo!=null){
+            this.proceedpost.details = res.data.additionaldetailsinfo.details
+            
+
+          }
+          if(res.data.documentinfo!=null){
+            if(res.data.documentinfo.listOfDocuments!=null)
+              this.proceedpost.listOfDocuments = JSON.parse(res.data.documentinfo.listOfDocuments);            
+            this.proceedpost.photocopied = res.data.documentinfo.photocopied==1?1:0;
+
+          }
+        
+        if(res.data.possessioninfo!=null){
+          // this.proceedpost.items = res.data.possessioninfo.items
+          // this.proceedpost.quantities = res.data.possessioninfo.quantities
+          // this.proceedpost.inPossessionOf = res.data.possessioninfo.inPossessionOf
+        }
+        if(res.data.communicableDiseasesinfo!=null){
+          if(res.data.communicableDiseasesinfo.diseases!=null)
+            this.proceedpost.diseases = JSON.parse(res.data.communicableDiseasesinfo.diseases);            
+          this.proceedpost.HasScreened = res.data.communicableDiseasesinfo.HasScreened==1?1:0;
+
+        }
 
         }
       },
@@ -43,9 +97,11 @@ export class ProceedapplicationComponent implements OnInit {
     });
   }
   PostProceed() {
-
-    
     this.proceedpost.name = this.pendadd.fullName;
+    this.proceedpost.referenceNo = this.entity;
+    this.proceedpost.fileNo = this.file;
+    this.proceedpost.isAdmitted=true;
+    this.proceedpost.isReadmission=this.pendadd.isReadmission? true : false;
     this.proceedpost.reasonForAdmission=JSON.stringify(this.proceedpost.reasonForAdmission);
     this.proceedpost.natureOfAssistance=JSON.stringify(this.proceedpost.natureOfAssistance);
     this.proceedpost.reasonOfRefuse=JSON.stringify(this.proceedpost.reasonOfRefuse);
@@ -65,16 +121,15 @@ export class ProceedapplicationComponent implements OnInit {
     
     this.Srv.PostData(`Pending/postproceeddata`,this.proceedpost).subscribe({
       next: (res: any) => {
-        
-        if (res.data) {
-          
-          //this.legalcase = res.data;
-          this.router.navigate(['/entities/files',]);
-        }
-      },
-      error: (err) => {
-       // this.usernameError = err ? err.Message : '';
-      },
+       if (res) {
+    //  this.legalcase =res.data
+    // // ✅ Just navigate after success
+      this.router.navigate(['/entities/files']);
+       }
+    },
+    error: (err) => {
+   //  this.usernameError = err ? err.Message : '';
+    },
     });
   }
 

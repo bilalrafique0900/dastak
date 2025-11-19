@@ -70,6 +70,9 @@ const routes: Routes = [
 ,
 { path:'legaldetail/:file/:entity',
   component:LegaldetailComponent
+},
+{ path:'legaldetail',
+  component:LegaldetailComponent
 }
 ,
 { path:'addlegaldetail/:file/:entity',
@@ -77,6 +80,9 @@ const routes: Routes = [
 }
 ,
 { path:'interventions/:file/:entity',
+  component:InterventionsComponent
+},
+{ path:'interventions',
   component:InterventionsComponent
 }
 ,

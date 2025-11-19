@@ -62,6 +62,7 @@ export class EditbasicinformationComponent implements OnInit {
           this.readdmission.literacyLevel= this.updatebasic.literacyLevel;
           this.readdmission.phone= this.updatebasic.phone;
           this.readdmission.ethinicity= this.updatebasic.ethinicity;
+                this.readdmission.cnic= this.updatebasic.cnic;
           this.readdmission.passportNo= this.updatebasic.passportNo;
 
 
@@ -194,12 +195,12 @@ referenceNameofReferences.forEach((name: string, index: number) => {
     this.readdmission.accompanyingChildrenRelation=JSON.stringify(childrenChildsRelations);
     const referencesArray = this.ReferenceForm.get('references') as FormArray;
     // Or, if you want to loop through all the visitors and get their 'name' values
-    const referenceNameofReferences = referencesArray.controls.map(reference => reference.get('nameofReference')?.value);
-    const referenceTypeofReferences = referencesArray.controls.map(reference => reference.get('typeofReference')?.value);
-    const referenceCityofReferences = referencesArray.controls.map(reference => reference.get('cityofReference')?.value);
-    this.readdmission.nameOfReference=JSON.stringify(referenceNameofReferences);
+    const referenceNameofReferences = referencesArray.controls.map(reference => reference.get('referencialName')?.value);
+    const referenceTypeofReferences = referencesArray.controls.map(reference => reference.get('typeOfReference')?.value);
+    const referenceCityofReferences = referencesArray.controls.map(reference => reference.get('referencialCity')?.value);
+    this.readdmission.referencialName=JSON.stringify(referenceNameofReferences);
     this.readdmission.typeOfReference=JSON.stringify(referenceTypeofReferences);
-    this.readdmission.cityOfReference=JSON.stringify(referenceCityofReferences);
+    this.readdmission.referencialCity=JSON.stringify(referenceCityofReferences);
     
     this.Srv.PostData(`NewAdmission/postinfo`,this.readdmission).subscribe({
       next: (res: any) => {

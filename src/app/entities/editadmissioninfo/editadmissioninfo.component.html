@@ -93,11 +93,11 @@
                         <label>Is subjected to abuse?</label>
                         <div class="form-group clearfix">
                           <div class="icheck-primary">
-                            <input type="radio" id="syes"  [(ngModel)]="this.proceedpost.isAbused" name="childrenradio" [value]="true">
+                            <input type="radio" id="syes"  [(ngModel)]="this.proceedpost.isAbused" name="childrenradio" [value]="1">
                             <label for="syes">Yes</label>
                           </div>
                           <div class="icheck-primary">
-                            <input type="radio" id="sno"  [(ngModel)]="this.proceedpost.isAbused" [value]="false" name="childrenradio">
+                            <input type="radio" id="sno"  [(ngModel)]="this.proceedpost.isAbused" [value]="0" name="childrenradio">
                             <label for="sno">No</label>
                           </div>
                         </div>
@@ -183,6 +183,21 @@
                 </div>
                 <div class="card-body">
                   <div class="row">
+                       <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Did the resident consent to her family being informed of her admission at the shelter? </label>
+                              <div class="form-group clearfix">
+                                <div class="icheck-primary">
+                                  <input type="radio" id="yyes"  [(ngModel)]="this.proceedpost.concentToInformFamily"name="documentsradio22" [value]="1">
+                                  <label for="yyes">Yes</label>
+                                </div>
+                                <div class="icheck-primary">
+                                  <input type="radio" id="yno" [(ngModel)]="this.proceedpost.concentToInformFamily" name="documentsradio22" [value]="0">
+                                  <label for="yno">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div> 
                     <div class="col-md-4">
                       <div class="form-group">
                         <label>Contact number</label>
@@ -314,19 +329,19 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label>Item</label>
-                            <input class="form-control"  [(ngModel)]="this.proceedpost.items"formControlName="item" type="text" >
+                            <input class="form-control"  formControlName="item" type="text" >
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label>Quantity</label>
-                            <input class="form-control"  [(ngModel)]="this.proceedpost.quantities"formControlName="quantity" type="text" >
+                            <input class="form-control"  formControlName="quantity" type="text" >
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label>In possessions of</label>
-                            <select class="form-control select2"  [(ngModel)]="this.proceedpost.inPossessionOf"formControlName="inpossessionof" style="width: 100%;">
+                            <select class="form-control select2" formControlName="inpossessionof" style="width: 100%;">
                               <option>Select option</option>
                               <option>Dastak</option>
                               <option>Resident</option>
@@ -334,6 +349,7 @@
                             </select>
                           </div>
                         </div>
+                        
                         <div class="col-md-12 d-flex justify-content-end">
                           <button (click)="removePossession(i)" class="btn btn-danger mr-1">x</button>
                           <button (click)="addPossession()" class="btn btn-success mr-1">+</button>
@@ -358,7 +374,7 @@
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                          <label>Has the new admission been screened for communicable diseases??</label>
+                          <label>Has the new admission been screened for communicable diseases?</label>
                           <div class="form-group clearfix">
                             <div class="icheck-primary">
                               <input type="radio" id="dyes"  [(ngModel)]="HasScreened"name="doumentsradio" [value]="1">
@@ -376,7 +392,7 @@
                       </div>
                       <div class="col-md-8 offset-md-2" *ngIf="HasScreened==1">
                         <div class="form-group">
-                          <label>Type of test:</label>
+                          <label>Type of test</label>
                           <select multiple class="form-control" [(ngModel)]="this.proceedpost.diseases">
                             <option value="">select option</option>
                             <option value="Covid-19">Covid-19</option>

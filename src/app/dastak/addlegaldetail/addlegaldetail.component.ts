@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class AddlegaldetailComponent {
   entity: any;
   constructor(private fb: FormBuilder
     ,private cb: FormBuilder ,
+      private router:Router,
     private Srv:HttpService,
     private route:ActivatedRoute
   ){
@@ -46,7 +47,7 @@ export class AddlegaldetailComponent {
         if (res.data) {
           
           //this.legalcase = res.data;
-
+          this.router.navigate(["/dastak/legaldetail",this.file,this.entity]);
         }
       },
       error: (err) => {

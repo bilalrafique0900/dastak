@@ -27,6 +27,7 @@
                     name="fileNo"
                     #fileNo="ngModel"
                     required
+                    
                     type="text" >
                     
                     
@@ -45,6 +46,7 @@
                     name="referenceNo"
                     #referenceNo="ngModel"
                     required
+                    
                      type="text" >
                     
                     
@@ -390,9 +392,9 @@
                                                             <div class="form-group">
                                                               <label>Nationality</label>
                                                               <select class="form-control select2"  [(ngModel)]="this.readdmission.nationality" style="width: 100%;">
-                                                                <option  value="Pashton">pakistan</option>
+                                                                <option  value="Pakistan">Pakistan</option>
                                                                 
-                                                                <option value="iran">iran</option>
+                                                                <option value="Iran">Iran</option>
                                                                 <option  value="Afghanistan">Afghanistan</option>
                                                                 <option value="USA">USA</option>
                                                                 <option value="UK">UK</option>
@@ -410,6 +412,15 @@
                                                             <div class="form-group" >
                                                               <label>Passport number</label>
                                                                 <input class="form-control"  [(ngModel)]="this.readdmission.passportNo"type="text" >
+                                                                
+                                                                
+                                                              </div> 
+                                                            <!-- /.form-group -->
+                                                          </div>
+                                                              <div class="col-md-4">
+                                                            <div class="form-group" >
+                                                              <label>CNIC</label>
+                                                                <input class="form-control"  [(ngModel)]="this.readdmission.cnic"type="text" >
                                                                 
                                                                 
                                                               </div> 
@@ -441,7 +452,6 @@
       name="gender"
        required style="width: 100%;">
       <option value="" disabled selected>Select Option</option>
-      <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Transgender">Transgender</option>
       <option value="Undefined">Undefined</option>
@@ -465,9 +475,9 @@
                                                                 <option value="Intermediate">Intermediate</option>
                                                                 <option value="Matric">Matric</option>
                                                                 <option value="Religious course">Religious course</option> 
-                                                                <option value="Undermatric">Undermatric</option>
+                                                                <option value="Undermatric">Under matric</option>
                                                                 <option value="Non-Formal Education">Non-Formal Education</option>
-                                                                <option value="Illitrate">Illitrate</option>
+                                                                <option value="Illitrate">Illiterate</option>
                                                       
                                                               </select>
                                                                 
@@ -475,7 +485,7 @@
                                                               </div> 
                                                             <!-- /.form-group -->
                                                           </div>
-                                                          <div class="col-md-6">
+                                                          <div class="col-md-4">
                                                             <div class="form-group" >
                                                               <label>Phone</label>
                                                                 <input class="form-control" [(ngModel)]="this.readdmission.phone"type="text" >
@@ -484,7 +494,7 @@
                                                               </div> 
                                                             <!-- /.form-group -->
                                                           </div>
-                                                          <div class="col-md-6">
+                                                          <div class="col-md-4">
                                                             <div class="form-group" >
                                                               <label> Alternate phone</label>
                                                                 <input class="form-control" [(ngModel)]="this.readdmission.phone2" type="text" >
@@ -581,7 +591,7 @@
                                                             </div> 
                                                             <div class="col-md-4">
                                                               <div class="form-group"  >
-                                                                <label>If separated,since when:</label>
+                                                                <label>If separated,since when</label>
                                                                 <div class="input-group date" id="separatedSince" data-target-input="nearest">
                                                                   <input type="date"[(ngModel)]="this.readdmission.separatedSince"  class="form-control " data-target="#separatedSince"/>
                                                               </div>
@@ -590,7 +600,7 @@
                                                             </div>
                                                             <div class="col-md-4">
                                                               <div class="form-group" >
-                                                                <label> AGE of marriage </label>
+                                                                <label> Age of marriage </label>
                                                                   <input class="form-control" [(ngModel)]="this.readdmission.ageOfMarriage"  type="text" >
                                                                   
                                                                   
@@ -599,7 +609,7 @@
                                                             </div>
                                                             <div class="col-md-4">
                                                               <div class="form-group" >
-                                                                <label> Wife of:</label>
+                                                                <label> Wife of</label>
                                                                   <input class="form-control"  [(ngModel)]="this.readdmission.wifeOf"type="text" >
                                                                   
                                                                   
@@ -828,17 +838,17 @@
                                                                         <div class="col-md-3">
                                                                             <div class="form-group"  >
                                                                               <label>Name of reference</label>
-                                                                              <input class="form-control" formControlName="nameofReference" type="text" >
+                                                                              <input class="form-control" formControlName="referencialName" type="text" >
                                                                             </div>
                                                                           </div>
                                                                           <div class="col-md-3">
                                                                             <div class="form-group">
                                                                               <label>Type of reference</label>
-                                                                              <select class="form-control select2"  formControlName="typeofReference" style="width: 100%;" >
+                                                                              <select class="form-control select2"  formControlName="typeOfReference" style="width: 100%;" >
                                                                                 <option >Select Option</option>
                                                                                 <option value="Court referral">Court referral</option>
                                                                                 <option value="Police">Police</option>
-                                                                                <option value="Former Dastak resident">Former Dastak resident</option>
+                                                                                <option value="Former Dastak resident">Former dastak resident</option>
                                                                                 <option value="Community Number">Community member</option>
                                                                                 <option value="Relative">Relative</option>
                                                                                 <option  value="Other shelter">Other shelter</option>
@@ -856,7 +866,7 @@
                                                                           <div class="col-md-3">
                                                                             <div class="form-group">
                                                                               <label>city of reference</label>
-                                                                              <select class="form-control select2" formControlName="cityofReference" style="width: 100%;">
+                                                                              <select class="form-control select2" formControlName="referencialCity" style="width: 100%;">
                                                                                 <option value="" disabled="" selected="">Select The City</option>
                                                                                 <option value="Islamabad">Islamabad</option>
                                                                                 <option value="" disabled="">Punjab Cities</option>
@@ -1417,7 +1427,7 @@
                                                                required 
                                                                 [(ngModel)]="this.readdmission.country" style="width: 100%;">
                                                                 <option >Select option</option>
-                                                                <option>pakistan</option>
+                                                                <option>Pakistan</option>
                                                                 <option>Iran</option>
                                                                 <option>Afghanistan</option>
                                                                 

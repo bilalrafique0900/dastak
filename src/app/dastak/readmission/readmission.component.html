@@ -24,7 +24,7 @@
               <div class="col-md-4 col-sm-12 col-md-4 my-1">
                 <div class="form-group">
                   <label>File no</label>
-                    <input class="form-control" [(ngModel)]="this.readdmission.fileNo" type="text">
+                    <input class="form-control" [(ngModel)]="this.readdmission.fileNo"  type="text">
                     
                     
                   </div> 
@@ -33,7 +33,7 @@
               <div class="col-md-4 col-sm-12 col-md-4 my-1">
                 <div class="form-group"  >
                   <label>Reference no</label>
-                    <input class="form-control"[(ngModel)]="this.readdmission.referenceNo" type="text" >
+                    <input class="form-control"[(ngModel)]="this.readdmission.referenceNo"  type="text" >
                     
                     
                   </div> 
@@ -45,7 +45,7 @@
           <div class="col-md-4">
 <div class="form-group">
   <label>Title</label>
-  <select class="form-control select2" [(ngModel)]="this.legaladmission.title" style="width: 100%;">
+  <select class="form-control select2" [(ngModel)]="this.updatebasic.title" style="width: 100%;">
     <option value="Mrs.">Mrs.</option>
     <option value="Miss" >Miss</option>
     <option value="Ms">Ms</option>
@@ -60,16 +60,16 @@
             <div class="col-md-4">
                 <div class="form-group" >
                   <label>First name</label>
-                    <input class="form-control" [(ngModel)]="this.legaladmission.firstName" type="text" >
+                    <input class="form-control" [(ngModel)]="this.updatebasic.firstName" type="text" >
                     
-                    
+                  
                   </div> 
                 <!-- /.form-group -->
               </div>
               <div class="col-md-4">
                 <div class="form-group" >
                   <label>Last name</label>
-                    <input class="form-control" [(ngModel)]="this.legaladmission.lastName" type="text" >
+                    <input class="form-control" [(ngModel)]="this.updatebasic.lastName" type="text" >
                     
                     
                   </div> 
@@ -189,13 +189,13 @@
                                                             <label>Father status</label>
                                                             <div class="form-group clearfix">
                                                               <div class="icheck-primary d-inline">
-                                                                <input type="radio"[(ngModel)]="this.readdmission.fatherLivingStatus" id="falive" name="fstatus" >
+                                                                <input type="radio"[(ngModel)]="this.readdmission.fatherLivingStatus" value="Alive" id="falive" name="fstatus" >
                                                                 <label for="falive">
                                                                   Alive
                                                                 </label>
                                                               </div>
                                                               <div class="icheck-primary d-inline">
-                                                                <input type="radio" id="fdeseased" [(ngModel)]="this.readdmission.fatherLivingStatus"name="fstatus">
+                                                                <input type="radio" id="fdeseased" [(ngModel)]="this.readdmission.fatherLivingStatus" value="Deseased" name="fstatus">
                                                                 <label for="fdeseased">
                                                                   Deseased
                                                                 </label>
@@ -221,13 +221,13 @@
                                                             <label>Mother status</label>
                                                             <div class="form-group clearfix">
                                                               <div class="icheck-primary d-inline">
-                                                                <input type="radio" id="radioPrimary1"[(ngModel)]="this.readdmission.motherLivingStatus" name="mstatus" >
+                                                                <input type="radio" id="radioPrimary1" value="Alive" [(ngModel)]="this.readdmission.motherLivingStatus" name="mstatus" >
                                                                 <label for="radioPrimary1">
                                                                   Alive
                                                                 </label>
                                                               </div>
                                                               <div class="icheck-primary d-inline">
-                                                                <input type="radio" id="radioPrimary2" [(ngModel)]="this.readdmission.motherLivingStatus"name="mstatus">
+                                                                <input type="radio" id="radioPrimary2" value="Deseased" [(ngModel)]="this.readdmission.motherLivingStatus"name="mstatus">
                                                                 <label for="radioPrimary2">
                                                                   Deseased
                                                                 </label>
@@ -297,9 +297,9 @@
                                                           <div class="form-group">
                                                             <label>Nationality</label>
                                                            <select class="form-control select2"  [(ngModel)]="this.readdmission.nationality" style="width: 100%;">
-                                                            <option  value="Pashton">pakistan</option>
+                                                            <option  value="Pakistan">Pakistan</option>
                                                                 
-                                                            <option value="iran">iran</option>
+                                                            <option value="Iran">Iran</option>
                                                             <option  value="Afghanistan">Afghanistan</option>
                                                             <option value="USA">USA</option>
                                                             <option value="UK">UK</option>
@@ -323,6 +323,15 @@
                                                           <!-- /.form-group -->
                                                         </div>
                               
+                                                         <div class="col-md-4">
+                                                          <div class="form-group" >
+                                                            <label>CNIC</label>
+                                                              <input class="form-control"  [(ngModel)]="this.readdmission.cnic"type="text" >
+                                                              
+                                                              
+                                                            </div> 
+                                                          <!-- /.form-group -->
+                                                        </div>
                               
                               
                               
@@ -361,9 +370,9 @@
                                                               <option value="Intermediate">Intermediate</option>
                                                               <option value="Matric">Matric</option>
                                                               <option value="Religious course">Religious course</option> 
-                                                              <option value="Undermatric">Undermatric</option>
+                                                              <option value="Undermatric">Under matric</option>
                                                               <option value="Non-Formal Education">Non-Formal Education</option>
-                                                              <option value="Illitrate">Illitrate</option>
+                                                              <option value="Illitrate">illiterate</option>
                                                     
                                                             </select>
                                                               
@@ -371,7 +380,7 @@
                                                             </div> 
                                                           <!-- /.form-group -->
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                           <div class="form-group" >
                                                             <label>Phone</label>
                                                               <input class="form-control" [(ngModel)]="this.readdmission.phone"type="text" >
@@ -380,7 +389,7 @@
                                                             </div> 
                                                           <!-- /.form-group -->
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                           <div class="form-group" >
                                                             <label> Alternate phone</label>
                                                               <input class="form-control" [(ngModel)]="this.readdmission.phone2" type="text" >
@@ -477,7 +486,7 @@
                                                           </div> 
                                                           <div class="col-md-4">
                                                             <div class="form-group"  >
-                                                              <label>If separated,since when:</label>
+                                                              <label>If separated,since when</label>
                                                               <div class="input-group date" id="separatedSince" data-target-input="nearest">
                                                                 <input type="date"[(ngModel)]="this.readdmission.separatedSince"  class="form-control " data-target="#separatedSince"/>
                                                             </div>
@@ -486,7 +495,7 @@
                                                           </div>
                                                           <div class="col-md-4">
                                                             <div class="form-group" >
-                                                              <label> Wife Of:</label>
+                                                              <label> Wife Of</label>
                                                                 <input class="form-control"  [(ngModel)]="this.readdmission.wifeOf"type="text" >
                                                                 
                                                                 
@@ -630,13 +639,13 @@
                                                         </label>
                                                       <div class="form-group clearfix">
                                                         <div class="icheck-primary">
-                                                          <input type="radio" id="cryes" name="currentlyradio" [value]="1"  [(ngModel)]="IsCurrently">
+                                                          <input type="radio" id="cryes" name="currentlyradio" [value]="1"  [(ngModel)]="this.readdmission.CurrentlyExpecting">
                                                           <label for="cryes">
                                                             Yes
                                                           </label>
                                                         </div>
                                                         <div class="icheck-primary">
-                                                          <input type="radio" id="crno" [(ngModel)]="IsCurrently" [value]="0" name="currentlyradio">
+                                                          <input type="radio" id="crno" [(ngModel)]="this.readdmission.CurrentlyExpecting" [value]="0" name="currentlyradio">
                                                           <label for="crno">
                                                             No
                                                           </label>

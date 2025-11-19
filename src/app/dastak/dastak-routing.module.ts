@@ -5,8 +5,10 @@ import { AllpendingfilesComponent } from './allpendingfiles/allpendingfiles.comp
 import { AllclosedfilesComponent } from './allclosedfiles/allclosedfiles.component';
 import { AllexternalvisitsComponent } from './allexternalvisits/allexternalvisits.component';
 import { AllcallersComponent } from './allcallers/allcallers.component';
+import { GeneralformsComponent } from './generalforms/generalforms.component';
 import { AllvisitsbydastakstaffComponent } from './allvisitsbydastakstaff/allvisitsbydastakstaff.component';
 import { AllusersComponent } from './allusers/allusers.component';
+
 import { ProceedapplicationComponent } from './proceedapplication/proceedapplication.component';
 import { ReadmissionComponent } from './readmission/readmission.component';
 import { LegaldetailComponent } from './legaldetail/legaldetail.component';
@@ -27,8 +29,16 @@ import { ViewinterventionComponent } from './viewintervention/viewintervention.c
 import { FollowuprecordComponent } from './followuprecord/followuprecord.component';
 import { ViewdastakvisitComponent } from './viewdastakvisit/viewdastakvisit.component';
 import { RolePermissionComponent } from './role-permission/role-permission.component';
+import { RoleComponent } from './role/role.component';
+import { CommunityConsultationsComponent } from './communityconsultations/communityconsultations.component';
+import { AllCommunityConsultationsComponent } from './allcommunityconsultations/allcommunityconsultations.component';
 
+import { EditcommunityconsultationComponent } from './editcommunityconsultation/editcommunityconsultation.component';
 
+import { ViewcommunityconsultationComponent } from './viewcommunityconsultation/viewcommunityconsultation.component';
+import { AllinterventioncommunityComponent } from './allinterventioncommunity/allinterventioncommunity.component';
+import { InterventioncommunityComponent } from './interventioncommunity/interventioncommunity.component';
+import { EditinterventioncommunityComponent } from './editinterventioncommunity/editinterventioncommunity.component';
 const routes: Routes = [
   { path:'',
     component:AllpendingfilesComponent
@@ -45,11 +55,26 @@ const routes: Routes = [
   { path:'allcallers',
     component:AllcallersComponent
   },
+  { path:'generalforms',
+    component:GeneralformsComponent
+  },
   { path:'allvisitsbydastakstaff',
     component:AllvisitsbydastakstaffComponent
   },
   { path:'allusers',
     component:AllusersComponent
+  },
+    { path:'communityconsultations',
+    component:CommunityConsultationsComponent
+  },
+   { path:'allcommunityconsultations',
+    component:AllCommunityConsultationsComponent
+  },
+      { path:'interventioncommunity',
+    component:InterventioncommunityComponent
+  },
+   { path:'allinterventioncommunity',
+    component:AllinterventioncommunityComponent
   },
   { path:'proceedapplication/:file/:entity',
     component:ProceedapplicationComponent
@@ -102,6 +127,15 @@ const routes: Routes = [
   { path:'editlegal/:file/:entity/:caseId',
     component: EditlegalComponent
   },
+    { path:'editcommunityconsultation/:EditlegalId',
+    component: EditcommunityconsultationComponent
+  },
+   { path:'editinterventioncommunity/:EditinterventionId',
+    component: EditinterventioncommunityComponent
+  },
+      { path:'viewcommunityconsultation/:EditlegalId',
+    component: ViewcommunityconsultationComponent
+  },
   { path:'updatelegal/:file/:entity/:caseId',
     component:UpdatelegalComponent
   },
@@ -110,6 +144,9 @@ const routes: Routes = [
   },
   { path:'role-permission',
     component:RolePermissionComponent
+  },
+  { path:'role',
+    component:RoleComponent
   },
 ];
 

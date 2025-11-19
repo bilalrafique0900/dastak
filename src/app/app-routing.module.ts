@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddcallerComponent } from './addcaller/addcaller.component';
+import { GeneralformComponent } from './generalform/generalform.component';
 import { AddexternalvisitComponent } from './addexternalvisit/addexternalvisit.component';
 import { AddvisitbydastakstaffComponent } from './addvisitbydastakstaff/addvisitbydastakstaff.component';
 import { NewadmissionComponent } from './newadmission/newadmission.component';
@@ -24,6 +25,8 @@ const routes: Routes = [
       { path: '',component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'addcaller', component: AddcallerComponent },
+      { path: 'generalform', component: GeneralformComponent },
+        { path: 'generalform', component: AddcallerComponent },
       { path: 'addexternalvisit', component: AddexternalvisitComponent },
       { path: 'addvisitbydastakstaff', component: AddvisitbydastakstaffComponent },
       { path: 'newadmission', component: NewadmissionComponent },

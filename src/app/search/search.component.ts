@@ -45,4 +45,19 @@ export class SearchComponent {
         },
       });
     }
+      Delete(file:any,entity:any) {
+    this.Srv.GetData(`Pending/deletepending?file=`+file+'&entity='+entity).subscribe({
+      next: (res: any) => {
+        
+        if (res.message) {
+          
+          this.Getfile();
+
+        }
+      },
+      error: (err) => {
+       // this.usernameError = err ? err.Message : '';
+      },
+    });
+  }
 }

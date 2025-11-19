@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup ,Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
@@ -15,6 +15,7 @@ export class AddmedicalComponent {
   file : any;
   entity:any;
   fullName='';
+  ChildrenForm!: FormGroup;
  
     
 
@@ -25,6 +26,9 @@ export class AddmedicalComponent {
      ,private Srv:HttpService) {
     this.file = this.route.snapshot.params["file"];
   this.entity = this.route.snapshot.params["entity"];
+   this.ChildrenForm = this.fb.group({
+      childrens: this.fb.array([this.createChildrenGroup()])
+    });
 this.GetAll(); 
   
 
@@ -55,6 +59,8 @@ PostAllMedical() {
   this.repost.substancesInDrugAbused=JSON.stringify(this.repost.substancesInDrugAbused);
   this.repost.intensityOfAbuse=JSON.stringify(this.repost.intensityOfAbuse);
   this.repost.intensityOfCurrentAbuse=JSON.stringify(this.repost.intensityOfCurrentAbuse);
+   const childrensArray = this.ChildrenForm.get('childrens') as FormArray;
+    this.repost.ChildMedicalAssistances=childrensArray.value;
   
   
   this.Srv.PostData(`Medical/postmedicaladd`,this.repost).subscribe({
@@ -71,4 +77,22 @@ this.router.navigate(['/entities/medicalrecord',this.file,this.entity]);
     },
   });
 }
+ removeChildren(index: number): void {
+    if(this.childrens().length>1)
+    this.childrens().removeAt(index);
+  }
+  addChildren(): void {
+    this.childrens().push(this.createChildrenGroup());
+  }
+ createChildrenGroup(): FormGroup {
+    return this.cb.group({
+      Name: ['', Validators.required],
+      Age: ['', Validators.required],
+     
+      
+    });
+  }
+  childrens(): FormArray {
+    return this.ChildrenForm.get('childrens') as FormArray;
+  }
 }

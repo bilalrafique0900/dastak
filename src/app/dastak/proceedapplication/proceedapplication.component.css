@@ -1,0 +1,19 @@
+/* .toast-top-right {
+    position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+}
+::ng-deep .overlay-container{
+    position: absolute;
+    top: 41px;
+    left: 50%;
+    width: 41%;
+    transform: translateX(-50%);
+   }
+   ::ng-deep .overlay-container #toast-container .toast-error {
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+} */

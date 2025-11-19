@@ -104,7 +104,7 @@
                 <div class="inner">
                   <h3>{{this.dashboarddata?.stats?.readmissions}}</h3>
   
-                  <p>Re-admissions since 1991</p>
+                  <p>Re-admissions In Last 12 Months</p>
                   <div class="icon">
                     <!-- <i class="fas fa-snowflake" aria-hidden="true"></i> -->
                     <!-- <i class="fas fa-sync" aria-hidden="true"></i> -->
@@ -127,7 +127,7 @@
                   <h3>{{this.dashboarddata?.stats?.childrensince_1991}}</h3>
   
                   <p>Number of Children
-                    Since 1991</p>
+                    In Last 12 Months</p>
                     <div class="icon">
                       <i class="fa fa-child" aria-hidden="true"></i>
                     </div>
@@ -144,7 +144,7 @@
                   <h3>{{this.dashboarddata?.stats?.averageDays}} Days</h3>
   
                   <p>Average length of Stay 
-                    since 1991</p>
+                    In Last 12 Months</p>
                     <div class="icon">
                       <!-- <i class="far fa-calendar-alt" aria-hidden="true"></i> -->
                       <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -185,6 +185,31 @@
           
           
           
+
+              <section class="col-lg-6 connectedSortable">
+
+
+
+
+              <div class="card card-outline card-info">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    Average stay at <strong>Shelter</strong> Graph
+                  </h3>
+                </div>
+                
+                <div class="card-body p-0"> 
+
+                  <div *ngIf="this.dashboarddata?.averagedaysstayLastYear">
+                    <canvasjs-chart [options]="chartOptions19" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
+                </div>
+            
+                </div>
+                <div class="card-footer">
+                  Average stay at shelter in last 12 months
+                </div>
+              </div>
+            </section>  
                    
             <section class="col-lg-6 connectedSortable">
 
@@ -197,7 +222,7 @@
                     Shelter <strong>Admissions</strong> Graph
                   </h3>
                 </div>
-                <!-- /.card-header -->
+                
                 <div class="card-body p-0">
 
                   <div *ngIf="this.dashboarddata?.admissionsLastYear">
@@ -332,6 +357,7 @@
               </div>
        
             </section>
+            
           
             
             <!-- <section class="col-lg-6 connectedSortable">
@@ -413,9 +439,9 @@
                   <div *ngIf="this.dashboarddata?.topCities">
                     <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
                 </div>  
-                </div><!-- /.card-body -->
+                </div>
               </div>
-              <!-- /.card -->
+              
             </section>
             <section class="col-lg-6 connectedSortable">
             
@@ -424,7 +450,7 @@
         <div class="card-header">
           <h3 class="card-title">Literacy Level since 1991</h3>
         </div>
-        <!-- /.card-header -->
+        
         <div class="card-body">
           <table class="table table-striped">
             <thead>
@@ -475,7 +501,7 @@
  
 </tr>
 <tr>
-  <td>Undermatric</td>
+  <td>Under matric</td>
   <td>{{this.dashboarddata?.stats?.literacyLevel?.Undermatric}}</td>
   
  
@@ -487,7 +513,7 @@
  
 </tr>
 <tr>
-  <td>Illitrate</td>
+  <td>Illiterate</td>
   <td>{{this.dashboarddata?.stats?.literacyLevel?.Illiterate}}</td>
   
  
@@ -574,7 +600,7 @@
            
           </tr>
           <tr>
-            <td>Under Age Marriage</td>
+            <td>Under age marriage</td>
             <td>{{this.dashboarddata?.stats?.reasonOfAdmission?.[ 'Under Age Marriage']}}</td>
             
            
@@ -616,14 +642,14 @@
               
               <div class="card card-warning">
                 <div class="card-header">
-                  <h3 class="card-title">Types of Abuse</h3>
+                  <h3 class="card-title">Types of abuse</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table class="table table-striped" *ngIf="this.dashboarddata?.stats?.abuseType">
                     <thead>
                       <tr>
-                        <th >Type of Abuser</th>
+                        <th >Type of abuser</th>
                         <th>Total Number Since 1991</th>
                         <th>Currently</th>
                         
@@ -693,7 +719,7 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th >Relation of Abuse</th>
+                        <th >Relation of abuse</th>
                         <th>Total Number Since 1991</th>
                         <th>Currently</th>
                         
@@ -801,7 +827,7 @@
  
 </tr>
 <tr >
-  <td>Male Relative from own Family</td>
+  <td>Male relative from own family</td>
   <td>{{this.dashboarddata?.stats?.abuserrelation?.['Male Relative from own Family']?.totalCount}}</td>
   <td>{{this.dashboarddata?.stats?.abuserrelation?.['Male Relative from own Family']?.activeCount}}</td>
 
@@ -810,7 +836,7 @@
  
 </tr>
 <tr >
-  <td>Male Relative from Husband's family</td>
+  <td>Male relative from husband's family</td>
   <td>{{this.dashboarddata?.stats?.abuserrelation?.["Male Relative from Husband's family"]?.totalCount}}</td>
   <td>{{this.dashboarddata?.stats?.abuserrelation?.["Male Relative from Husband's family"]?.activeCount}}</td>
 

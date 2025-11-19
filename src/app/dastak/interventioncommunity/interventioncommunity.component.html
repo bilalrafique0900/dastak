@@ -1,0 +1,1311 @@
+<div class="card-header">
+               
+    <h1 class="card-title ">Add Interventions</h1>
+    
+  </div>
+  <section class="content">
+    <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+      <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                  <label>Date</label>
+                  <div class="input-group date" id="interventionDate" data-target-input="nearest">
+                    <input type="date" class="form-control" [(ngModel)]="this.interventioncase.interventionDate" data-target="#interventionDate"/>
+                </div>
+                </div>
+                <!-- /.form-group -->
+              </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                  <label>Reference number</label>
+                    <input class="form-control" [(ngModel)]="this.interventioncase.referenceNo" >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Name of resident</label>
+                    <input class="form-control" [(ngModel)]="this.interventioncase.name"  >
+                    
+                    
+                  </div> 
+                <!-- /.form-group -->
+              </div>
+   
+            
+             
+              <div class="col-md-12">
+              <div class="card card-primary collapsed-card">
+                <div class="card-header" data-card-widget="collapse">
+                  <h3 class="card-title">Registering FIR</h3>
+  
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Nature of intervention</label>
+                                <input class="form-control"  [(ngModel)]="this.DetailsOfIntervention[0].natureOfIntervention" type="text">
+                                
+                                
+                              </div> 
+                            <!-- /.form-group -->
+                          </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Detail of intervention</label>
+                              <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[0].detail" style="width: 100%;">
+                               
+                                <option value="">Select Option</option>
+                                <option value="Written statement of complainant prepared">Written statement of complainant prepared</option>
+                                <option value="Complainant accompanied to police station">Complainant accompanied to police station</option>
+                                <option value="Keep copy of FIR with endorsement of receipt from Police Station">Keep copy of FIR with endorsement of receipt from Police Station</option>
+                                <option value="Assisted in receiving a copy of FIR ">Assisted in receiving a copy of FIR </option>
+                                <option value="Other">Other</option>
+                                
+                      "
+                              </select>
+                                
+                                
+                              </div> 
+                            <!-- /.form-group -->
+                          </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Additional detail of intervention</label>
+                            <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[0].additionalDetails" rows="2">
+                            </textarea>
+                            
+                          </div> 
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Complications</label>
+                          <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[0].complications" style="width: 100%;">
+                           
+                            <option value="">Select Option</option>
+                           <option value="Police refusing or delaying registeration of case">Police refusing or delaying registeration of case</option>
+                            <option value="Police consider injuries to be insufficient for registration of case">Police consider injuries to be insufficient for registration of case</option>
+                           <option value="Complainant wishes to withdraw case">Complainant wishes to withdraw case</option>
+                          <option value="Other">Other</option>
+
+                            
+                  
+                          </select>
+                            
+                            
+                          </div> 
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Additional detail of complications</label>
+                            <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[0].additionalComplications"rows="2" >
+                            </textarea>
+                            
+                          </div> 
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Outcome</label>
+                            <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[0].outcome" rows="2" >
+                            </textarea>
+                            
+                          </div> 
+                        <!-- /.form-group -->
+                      </div>
+                      
+
+
+                     
+                   
+
+
+
+
+                   
+                     
+                </div>
+                <!-- /.card-body -->
+             
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-primary collapsed-card">
+          <div class="card-header" data-card-widget="collapse">
+            <h3 class="card-title">Medico-legal examination and report</h3>
+    
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <!-- /.card-tools -->
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body"> 
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Nature of intervention</label>
+                          <input class="form-control"[(ngModel)]="this.DetailsOfIntervention[1].natureOfIntervention"  type="text" >
+                          
+                          
+                        </div> 
+                      <!-- /.form-group -->
+                    </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Detail of intervention</label>
+                        <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[1].detail"  style="width: 100%;">
+                        
+                         
+                          <option value="">Select Option</option>
+                          <option value="Obtain written consent to undergo examination">Obtain written consent to undergo examination</option>
+                          <option value="Concerned police station sent written request for examination">Concerned police station sent written request for examination</option>
+                          <option value="Accompany the resident for the examination">Accompany the resident for the examination</option>
+                          <option value="Assist resident to obtain report when its ready">Assist resident to obtain report when its ready</option>
+                          <option value="In case of refusal or delay in examination, obtained written confirmation of having produced the resident and reason for refusal or delay">In case of refusal or delay in examination, obtained written confirmation of having produced the resident and reason for refusal or delay</option>
+                          <option value="Other">Other</option>       
+                          
+                
+                        </select>
+                          
+                          
+                        </div> 
+                      <!-- /.form-group -->
+                    </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Additional detail of intervention</label>
+                      <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[1].additionalDetails" rows="2" >
+                      </textarea>
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Complications</label>
+                    <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[1].complications" style="width: 100%;">
+                     
+                      <option value="">Select Option</option>
+                     <option value="Medico-legal officer unavailable">Medico-legal officer unavailable</option>
+                     <option value="Resident refusing examination after initial agreement">Resident refusing examination after initial agreement</option>
+                <option value="Injuries recorded incorrectly or understated in report">Injuries recorded incorrectly or understated in report</option>
+                   <option value="Police not cooperating or causing delays">Police not cooperating or causing delays</option>
+                     <option value="Other">Other</option>
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Additional detail of complications</label>
+                      <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[1].additionalComplications"rows="2" >
+                      </textarea>
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Outcome</label>
+                      <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[1].outcome" rows="2" >
+                      </textarea>
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+                
+    
+    
+               
+             
+    
+    
+    
+    
+             
+               
+          </div>
+          <!-- /.card-body -->
+       
+      </div>
+    </div>
+    </div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Contact with police</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control"  [(ngModel)]="this.DetailsOfIntervention[2].natureOfIntervention"type="text">
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[2].detail" style="width: 100%;">
+                
+                      <option value="">Select Option</option>
+                      <option value="Intervention with police for any action regarding investigation of a case that is already registered">Intervention with police for any action regarding investigation of a case that is already registered</option>
+                      <option value="Information to police in case of threat to the residentDemo">Information to police in case of threat to the resident</option>
+                      <option value="Requested physical protection for the resident">Requested physical protection for the resident</option>
+                      <option value="Contact with police in case of a resident named in a FIR as witness/abductee">Contact with police in case of a resident named in a FIR as witness/abductee</option>
+                      <option value="Police visit with purpose of producing resident in court">Police visit with purpose of producing resident in court</option>
+                      <option value="Obtained signed verification from police if woman is taken from Dastak under police protection to specified court">Obtained signed verification from police if woman is taken from Dastak under police protection to specified court</option>
+                      <option value="Request FIR copy/resident's documents">Request FIR copy/resident's documents</option>
+                      <option value="Local SHO informed of a minor's admission">Local SHO informed of a minor's admission</option>
+                      <option value="Local SHO informed of resident's uninformed departure">Local SHO informed of resident's uninformed departure</option>
+                      <option value="Other">Other</option>       
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[2].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[2].complications" style="width: 100%;">
+                  
+                  
+                  <option value="">Select Option</option>
+                  <option value="Police taking no action on complaint or request for protection">Police taking no action on complaint or request for protection</option>
+                  <option value="The woman refuses to appear before the court, and the summons is addressed to Dastak management">The woman refuses to appear before the court, and the summons is addressed to Dastak management</option>
+                  <option value="Police insist on taking custody of resident who is not an accused">Police insist on taking custody of resident who is not an accused</option>
+                  <option value="The police come to the office accompanied by relatives or other persons inimical to the woman, or the staff/resident suspect collusion of the police with any of the above.">The police come to the office accompanied by relatives or other persons inimical to the woman, or the staff/resident suspect collusion of the police with any of the above. </option>
+                  <option value="The police are not from a police station where any proceedings in connection with the case are in progress">The police are not from a police station where any proceedings in connection with the case are in progress</option>
+                  <option value="The police arrive at the office after office timing">The police arrive at the office after office timing</option>
+                  <option value="The police require the woman to be produced in court, but are not accompanied by a woman police officer">The police require the woman to be produced in court, but are not accompanied by a woman police officer</option>               
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[2].additionalComplications" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[2].outcome" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Related to foreign women</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text"[(ngModel)]="this.DetailsOfIntervention[3].natureOfIntervention" >
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[3].detail" style="width: 100%;">
+                   
+                      <option value="">Select Option</option>
+                      <option value="Regularisation of status">Regularisation of status</option>
+                      <option value="Assistance with documents for herself and children">Assistance with documents for herself and children</option>
+                      <option value="Assistance with repatriation to home country">Assistance with repatriation to home country</option>
+                      <option value="Admission form forwarded to Registration office (as per Registration Rules 1966)">Admission form forwarded to Registration office (as per Registration Rules 1966)</option>
+                      <option value="Other">Other</option>          
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[3].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[3].complications"style="width: 100%;">
+                  
+                  <option value="">Select Option</option>
+                  <option value="Police taking no action on complaint or request for protection">Police taking no action on complaint or request for protection</option>
+                  <option value="The woman refuses to appear before the court, and the summons is addressed to Dastak management">The woman refuses to appear before the court, and the summons is addressed to Dastak management</option>
+                  <option value="Police insist on taking custody of resident who is not an accused">Police insist on taking custody of resident who is not an accused</option>
+                  <option value="The police come to the office accompanied by relatives or other persons inimical to the woman, or the staff/resident suspect collusion of the police with any of the above.">The police come to the office accompanied by relatives or other persons inimical to the woman, or the staff/resident suspect collusion of the police with any of the above. </option>
+                  <option value="The police are not from a police station where any proceedings in connection with the case are in progress">The police are not from a police station where any proceedings in connection with the case are in progress</option>
+                  <option value="The police arrive at the office after office timing">The police arrive at the office after office timing</option>
+                  <option value="The police require the woman to be produced in court, but are not accompanied by a woman police officer">The police require the woman to be produced in court, but are not accompanied by a woman police officer</option>   
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[3].additionalComplications" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[3].outcome"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Search for family</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" [(ngModel)]="this.DetailsOfIntervention[4].natureOfIntervention" type="text" >
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[4].detail" style="width: 100%;">
+                     
+                      <option value="">Select Option</option>
+                      <option value="Newspaper office approached for publication of announcement for search">Newspaper office approached for publication of announcement for search</option>
+                      <option value="In case of minor, Child Protection Bureau approached">In case of minor, Child Protection Bureau approached</option>
+                      <option value="If area of person sought is known, concerned police station approached">If area of person sought is known, concerned police station approached</option>
+                      <option value="Search on social media">Search on social media </option>
+                      <option value="NGO approached">NGO approached </option>             
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[4].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[4].complications" style="width: 100%;">
+                                    <option value="">Select Option</option>
+                  <option value="Lack of agreement on terms of mediation">Lack of agreement on terms of mediation</option>
+                  <option value="Mediation process hampered due to unavailability or lack of consent of family">Mediation process hampered due to unavailability or lack of consent of family</option>   
+                  
+                  
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[4].additionalComplications"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[4].outcome"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Reconciliation</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text" [(ngModel)]="this.DetailsOfIntervention[5].natureOfIntervention">
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[5].detail"  style="width: 100%;">
+                      
+                      <option value="">Select Option</option>
+                      <option value="Mediation with husband">Mediation with husband</option>
+                      <option value="Mediation with parents">Mediation with parents</option>
+                      <option value="Alternative Dispute Resolution engaged">Alternative Dispute Resolution engaged</option>
+                      <option value="Jirga involved">Jirga involved</option>
+                      <option value="Other">Other</option>            
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[5].additionalDetails"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[5].complications"style="width: 100%;">
+                  
+              
+                  <option value="">Select Option</option>
+                  <option value="Lack of agreement on terms of mediation">Lack of agreement on terms of mediation</option>
+                  <option value="Mediation process hampered due to unavailability or lack of consent of family">Mediation process hampered due to unavailability or lack of consent of family</option>     
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[5].additionalComplications" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[5].outcome" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Legal advice</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text"[(ngModel)]="this.DetailsOfIntervention[6].natureOfIntervention" >
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[6].detail"  style="width: 100%;">
+                     
+                      
+                      <option value="">Select Option</option>
+                      <option value="Advice related to criminal case against resident's supporters">Advice related to criminal case against resident's supporters</option>
+                      <option value="General legal advice to resident">General legal advice to resident</option>                 
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[6].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[6].complications"style="width: 100%;">
+                   <option value="">Select Option</option>
+                           <option value="Police refusing or delaying registeration of case">Police refusing or delaying registeration of case</option>
+                            <option value="Police consider injuries to be insufficient for registration of case">Police consider injuries to be insufficient for registration of case</option>
+                           <option value="Complainant wishes to withdraw case">Complainant wishes to withdraw case</option>
+                          <option value="Other">Other</option>
+                 
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[6].additionalComplications"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[6].outcome"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Assistance with residents documents</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text"[(ngModel)]="this.DetailsOfIntervention[7].natureOfIntervention" >
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[7].detail" style="width: 100%;">
+                     
+                      <option value="">Select Option</option>
+                      <option value="Contact Union Council">Contact Union Council</option>
+                      <option value="Contact Union Council">Contact Revenue Department</option>
+                      <option value="Contact Union Council">Contact Banks </option>                    
+                      <option value="Contact Nikkah registrar">Contact Nikkah registrar</option>
+                      <option value="Contact relevant court">Contact relevant court</option>
+                      <option value="Contact Board of Education">Contact Board of Education/Institute</option>
+                      <option value="Contact NADRA">Contact NADRA</option>                 
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[7].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[7].complications"style="width: 100%;">
+                           <option value="">Select Option</option>
+                  <option value="Lack of agreement on terms of mediation">Lack of agreement on terms of mediation</option>
+                  <option value="Mediation process hampered due to unavailability or lack of consent of family">Mediation process hampered due to unavailability or lack of consent of family</option>   
+                 
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[7].additionalComplications"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[7].outcome" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Contact with external lawyer</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of Intervention</label>
+                      <input class="form-control" type="text"[(ngModel)]="this.DetailsOfIntervention[8].natureOfIntervention" >
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[8].detail" style="width: 100%;">
+                      
+                      <option value="">Select Option</option>
+                      <option value="Legal advice/information/documents provided to external lawyer of resident">Legal advice/information/documents provided to external lawyer of resident</option>
+                      <option value="Legal advice/information/documents sought from external lawyer of resident">Legal advice/information/documents sought from external lawyer of resident</option>
+                      <option value="Legal advice/information/documents provided to resident's supporter">Legal advice/information/documents provided to resident's supporter</option>
+                      <option value="Legal assistance of resident outside of Lahore">Legal assistance of resident outside of Lahore</option>
+                      <option value="Other">Other</option>                  
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[8].additionalDetails" rows="2">
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[8].complications"style="width: 100%;">
+                   <option value="">Select Option</option>
+                           <option value="Police refusing or delaying registeration of case">Police refusing or delaying registeration of case</option>
+                            <option value="Police consider injuries to be insufficient for registration of case">Police consider injuries to be insufficient for registration of case</option>
+                           <option value="Complainant wishes to withdraw case">Complainant wishes to withdraw case</option>
+                          <option value="Other">Other</option>
+                 
+                  
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[8].additionalComplications"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[8].outcome"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Referral of resident</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text" [(ngModel)]="this.DetailsOfIntervention[9].natureOfIntervention">
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[9].detail"  style="width: 100%;">
+                      
+                      <option value="">Select Option</option>
+                      <option value="For vocational training">For vocational training</option>
+                      <option value="For medical treatment">For medical treatment</option>
+                      <option value="For financial assistance">For financial assistance</option>
+                      <option value="For child support">For child support</option>
+                      <option value="For economic rehabilitation">For economic rehabilitation</option>
+                      <option value="For legal assistance">For legal assistance</option>
+                      <option value="For shelter">For shelter</option>
+                      <option value="For further education">For further education</option>
+                      <option value="Other">Other</option>                   
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[9].additionalDetails"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[9].complications"style="width: 100%;">
+                  <option value="">Select Option</option>
+                      <option value="Intervention with police for any action regarding investigation of a case that is already registered">Intervention with police for any action regarding investigation of a case that is already registered</option>
+                      <option value="Information to police in case of threat to the residentDemo">Information to police in case of threat to the resident</option>
+                      <option value="Requested physical protection for the resident">Requested physical protection for the resident</option>
+                      <option value="Contact with police in case of a resident named in a FIR as witness/abductee">Contact with police in case of a resident named in a FIR as witness/abductee</option>
+                      <option value="Police visit with purpose of producing resident in court">Police visit with purpose of producing resident in court</option>
+
+                      <option value="Other">Other</option>  
+        
+                  
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of Complications</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[9].additionalComplications"rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[9].outcome" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Dastak documentation</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text" [(ngModel)]="this.DetailsOfIntervention[10].natureOfIntervention">
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[10].detail"  style="width: 100%;">
+                      
+                      <option value="">Select Option</option>
+                      <option value="Provided with residence certificate">Provided with residence certificate</option>
+                      <option value="Informed resident's family of her presence at shelter (with her consent)">Informed resident's family of her presence at shelter (with her consent)</option>
+                      <option value="Child Protection Bureau informed of admission of minor">Child Protection Bureau informed of admission of minor</option>
+                      <option value="Other">Other</option>                  
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[10].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[10].complications" style="width: 100%;">
+               <option value="">Select Option</option>
+                      <option value="Intervention with police for any action regarding investigation of a case that is already registered">Intervention with police for any action regarding investigation of a case that is already registered</option>
+                      <option value="Information to police in case of threat to the residentDemo">Information to police in case of threat to the resident</option>
+                      <option value="Requested physical protection for the resident">Requested physical protection for the resident</option>
+                      <option value="Contact with police in case of a resident named in a FIR as witness/abductee">Contact with police in case of a resident named in a FIR as witness/abductee</option>
+                      <option value="Police visit with purpose of producing resident in court">Police visit with purpose of producing resident in court</option>
+                      <option value="Obtained signed verification from police if woman is taken from Dastak under police protection to specified court">Obtained signed verification from police if woman is taken from Dastak under police protection to specified court</option>
+                      <option value="Request FIR copy/resident's documents">Request FIR copy/resident's documents</option>
+                      <option value="Local SHO informed of a minor's admission">Local SHO informed of a minor's admission</option>
+                      <option value="Local SHO informed of resident's uninformed departure">Local SHO informed of resident's uninformed departure</option>
+                      <option value="Other">Other</option>  
+                
+                  
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[10].additionalComplications" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[10].outcome" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+<div class="col-md-12">
+    <div class="card card-primary collapsed-card">
+      <div class="card-header" data-card-widget="collapse">
+        <h3 class="card-title">Emergency interventions</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body"> 
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Nature of intervention</label>
+                      <input class="form-control" type="text"[(ngModel)]="this.DetailsOfIntervention[11].natureOfIntervention" >
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Detail of intervention</label>
+                    <select class="form-control select2" [(ngModel)]="this.DetailsOfIntervention[11].detail" style="width: 100%;">
+                     
+                      <option value="">Select Option</option>
+                      <option value="Medical">Medical</option>
+                      <option value="Psychological">Psychological</option>
+                      <option value="Legal">Legal</option>
+                      <option value="Other">Other</option>           
+            
+                    </select>
+                      
+                      
+                    </div> 
+                  <!-- /.form-group -->
+                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of intervention</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[11].additionalDetails" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Complications</label>
+                <select class="form-control select2"[(ngModel)]="this.DetailsOfIntervention[11].complications" style="width: 100%;">
+                  <option value="">Select Option</option>
+                      <option value="Intervention with police for any action regarding investigation of a case that is already registered">Intervention with police for any action regarding investigation of a case that is already registered</option>
+                      <option value="Information to police in case of threat to the residentDemo">Information to police in case of threat to the resident</option>
+                      <option value="Requested physical protection for the resident">Requested physical protection for the resident</option>
+                      <option value="Contact with police in case of a resident named in a FIR as witness/abductee">Contact with police in case of a resident named in a FIR as witness/abductee</option>
+                      <option value="Police visit with purpose of producing resident in court">Police visit with purpose of producing resident in court</option>
+                      <option value="Obtained signed verification from police if woman is taken from Dastak under police protection to specified court">Obtained signed verification from police if woman is taken from Dastak under police protection to specified court</option>
+                      <option value="Request FIR copy/resident's documents">Request FIR copy/resident's documents</option>
+                      <option value="Local SHO informed of a minor's admission">Local SHO informed of a minor's admission</option>
+                      <option value="Local SHO informed of resident's uninformed departure">Local SHO informed of resident's uninformed departure</option>
+                      <option value="Other">Other</option>  
+                
+                  
+        
+                </select>
+                  
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Additional detail of complications</label>
+                  <textarea class="form-control"[(ngModel)]="this.DetailsOfIntervention[11].additionalComplications" rows="2" >
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Outcome</label>
+                  <textarea class="form-control" [(ngModel)]="this.DetailsOfIntervention[11].outcome"rows="2">
+                  </textarea>
+                  
+                </div> 
+              <!-- /.form-group -->
+            </div>
+            
+
+
+           
+         
+
+
+
+
+         
+           
+      </div>
+      <!-- /.card-body -->
+   
+  </div>
+</div>
+</div>
+
+        </div>
+      </div>
+        <div class="card-footer">
+            <button class="btn btn-primary  " (click)="PostIntervention()">Save</button>
+            <button class="btn btn-default mx-2 ">Cancel</button>
+          </div>
+    </div>
+</div>
+  </section>

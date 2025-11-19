@@ -8,6 +8,6 @@ import { SessionService } from '../core/services/session.service';
 })
 export class SidebarComponent {
   constructor(public session:SessionService){
-  
+
   }
 }

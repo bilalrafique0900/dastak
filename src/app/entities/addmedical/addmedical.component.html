@@ -45,6 +45,71 @@
               </select>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Medical assistance provided to</label>
+              <select class="form-control select2"  [(ngModel)]="this.repost.medicalAssistanceProvidedTo" style="width: 100%;">
+                <option value="">Select Option</option>
+                <option value="Women">Women</option>
+                <option value="Accompanying child"> Accompanying child</option>
+                
+              </select>
+                
+                
+              </div> 
+            <!-- /.form-group -->
+          </div>
+           </div>
+          <div class="row" *ngIf="this.repost.medicalAssistanceProvidedTo=='Accompanying child'">
+          <form [formGroup]="ChildrenForm" >
+                                                        <div formArrayName="childrens">
+                                                          <div *ngFor="let children of childrens().controls; let i=index" [formGroupName]="i" class="row">
+                                                          
+                                                            <div class="col-md-6">
+                                                              <div class="form-group" >
+                                                                <label>Child's name</label>
+                                                                <input class="form-control" formControlName="Name" type="text" placeholder="name">
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                              <div class="form-group">
+                                                                <label>Child's age</label>
+                                                                <select class="form-control" formControlName="Age">
+                                                                  <option>Select option</option>
+                                                                  <option value="Less than 1 ">Less than 1 year</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                                  <option value="6">6</option>
+                                                                  <option value="7">7</option>
+                                                                  <option value="8">8</option>
+                                                                  <option value="9">9</option>
+                                                                  <option value="10">10</option>
+                                                                  <option value="11">11</option>
+                                                                  <option value="12">12</option>
+                                                                  <option value="13">13</option>
+                                                                  <option value="14">14</option>
+                                                                  <option value="15">15</option>
+                                                                  <option value="16">16</option>
+                                                                  <option value="Above 16">Above 16 years</option>
+                                                                  
+                                                                </select>
+                                                              </div>
+                                                            </div>
+                                                     
+                                                            
+                                                                <div class="col-md-12 d-flex justify-content-end align-items-center">
+                                                                  <button (click)="removeChildren(i)" class="btn btn-danger mr-1">x</button>
+                                                                  <button (click)="addChildren()" class="btn btn-success  mr-1">+</button>
+                                                                  </div>
+                                                          </div>
+                                                        </div>
+                                                        
+                                                      </form>
+</div>
+<div class="row">
           <div class="col-md-6 ">
             <div class="form-group">
               <label>Nature of chronic illness (if any)</label>
@@ -127,7 +192,7 @@
             </div>
             <!-- /.form-group -->
           </div>
-          </div>
+         </div>
           <div class="row">
             <h3>Medical assistance</h3>
           </div>

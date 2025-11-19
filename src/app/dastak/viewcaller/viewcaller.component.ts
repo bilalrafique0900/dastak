@@ -19,7 +19,14 @@ export class ViewcallerComponent {
   ngOnInit(){
 this.GetCallerById();
   }
-
+  formatToAmPm(time: string): string {
+  // time should be "HH:mm"
+  const [hourStr, minute] = time.split(':');
+  let hour = parseInt(hourStr, 10);
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  hour = hour % 12 || 12; // Convert 0 → 12 for midnight
+  return `${hour}:${minute} ${ampm}`;
+}
   GetCallerById() {
     this.Srv.GetData(`AllCallers/getcallersbyid?id=`+this.CallerId).subscribe({
       next: (res: any) => {

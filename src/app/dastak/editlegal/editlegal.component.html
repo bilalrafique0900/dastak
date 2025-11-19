@@ -127,27 +127,7 @@
                               </div> 
                             <!-- /.form-group -->
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label>Reason for withdrawal</label>
-                              <select class="form-control select2" [(ngModel)]="this.editlegaldata.reasonForWithdrawal" style="width: 100%;">
-                                <option value="">Select Option</option>
-                                            <option value="Family signed raazi-nama">Family signed raazi-nama</option>
-                                            <option value="Original issue resolved">Original issue resolved</option>
-                                            <option value="Judicial process is too complicated">Judicial process is too complicated</option>
-                                            <option value="Case taking too long">Case taking too long</option>
-                                            <option value="Case is too costly">Case is too costly</option>
-                                            <option value="Social stigma">Social stigma</option>
-                                            <option value="Facing threats/harassment">Facing threats/harassment</option>
-                                            <option value="Other">Other</option>    
-                                
-                      
-                              </select>
-                                
-                                
-                              </div> 
-                            <!-- /.form-group -->
-                          </div>
+                        
                           <div class="col-md-6">
                             <div class="form-group">
                               <label>Nature of legal concern</label>
@@ -191,7 +171,7 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group" >
-                              <label>Case filed by:</label>
+                              <label>Case filed by</label>
                               <select class="form-control select2" [(ngModel)]="this.editlegaldata.caseFiledBy" style="width: 100%;">
                                 <option value="">Select Option</option>
                                 <option value="Self">Self</option>
@@ -209,9 +189,9 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label>Case filed against:</label>
+                              <label>Case filed against</label>
                               <select class="form-control select2" [(ngModel)]="this.editlegaldata.caseFiledAgainst" style="width: 100%;">
-                                <option>select option</option>
+                                
                                
                                 <option value="">Select Option</option>
                                 <option value="Father">Father</option>
@@ -227,8 +207,17 @@
                             <!-- /.form-group -->
                           </div>
                           <div class="col-md-6">
+                            <div class="form-group" >
+                              <label>Date of filing</label>
+                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                <input type="date" [(ngModel)]="this.editlegaldata.dateoffiling"  class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                            </div>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <div class="col-md-6">
                             <div class="form-group">
-                              <label>Who assigned the lawyer?
+                              <label>Legal aid received from?
                               </label>
                               <select class="form-control select2" [(ngModel)]="this.editlegaldata.isLawyerShelterAssigned" style="width: 100%;">
                                 <option value="">Select Option</option>
@@ -263,14 +252,15 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label>Court:</label>
+                              <label>Court</label>
                               <select class="form-control select2" [(ngModel)]="this.editlegaldata.court" style="width: 100%;">
                                 <option value="">Select Option</option>                                                     
                                 <option value="Guardian court">Union council</option>     
                                 <option value="Family court">Family court</option>
                                 <option value="GBV court">GBV court</option>
                                 <option value="Sessions / District court">Sessions / District court</option>                                      
-                                <option value="Civil court">Civil court</option>                                      
+                                <option value="Civil court">Civil court</option>      
+                                <option value="Civil court">Domestic violence</option>                                 
                                 <option value="Magistrate court">Magistrate court</option>                                      
                                 <option value="High court">High court</option>                                      
                                 <option value="Anti-Terrorism court">Anti-Terrorism court</option>                                      
@@ -305,7 +295,7 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label> City Of court:</label>
+                              <label> City of court</label>
                               <select class="form-control select2" [(ngModel)]="this.editlegaldata.cityOfCourt" style="width: 100%;">
                                 <option value="">Select Option</option>
                                 <option value="Islamabad">Islamabad</option>
@@ -585,10 +575,31 @@
                           <select class="form-control select2" [(ngModel)]="this.editlegaldata.statusOfCase" style="width: 100%;">
                             <option value="">Select Option</option>
                             <option value="Disposed">Disposed</option>
-                            <option value="Decree">Decree</option>
-                            <option value="Withdraw">Withdraw</option>                                      
+                            <option value="Decree">Decreed</option>
+                            <option value="Withdraw">Withdrawn</option>                                      
                             <option value="Pending">Pending</option>                          
                             
+                            
+                  
+                          </select>
+                            
+                            
+                          </div> 
+                        <!-- /.form-group -->
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Reason for withdrawal</label>
+                          <select class="form-control select2" [(ngModel)]="this.editlegaldata.reasonForWithdrawal" style="width: 100%;">
+                            <option value="">Select Option</option>
+                                        <option value="Family signed raazi-nama">Family signed raazi-nama</option>
+                                        <option value="Original issue resolved">Original issue resolved</option>
+                                        <option value="Judicial process is too complicated">Judicial process is too complicated</option>
+                                        <option value="Case taking too long">Case taking too long</option>
+                                        <option value="Case is too costly">Case is too costly</option>
+                                        <option value="Social stigma">Social stigma</option>
+                                        <option value="Facing threats/harassment">Facing threats/harassment</option>
+                                        <option value="Other">Other</option>    
                             
                   
                           </select>

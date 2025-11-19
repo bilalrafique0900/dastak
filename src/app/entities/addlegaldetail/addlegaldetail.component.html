@@ -127,27 +127,7 @@
                               </div> 
                             <!-- /.form-group -->
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label>Reason for Withdrawal</label>
-                              <select class="form-control select2" [(ngModel)]="this.legalcase.reasonForWithdrawal" style="width: 100%;">
-                                <option value="">Select Option</option>
-                                            <option value="Family signed raazi-nama">Family signed raazi-nama</option>
-                                            <option value="Original issue resolved">Original issue resolved</option>
-                                            <option value="Judicial process is too complicated">Judicial process is too complicated</option>
-                                            <option value="Case taking too long">Case taking too long</option>
-                                            <option value="Case is too costly">Case is too costly</option>
-                                            <option value="Social stigma">Social stigma</option>
-                                            <option value="Facing threats/harassment">Facing threats/harassment</option>
-                                            <option value="Other">Other</option>    
-                                
-                      
-                              </select>
-                                
-                                
-                              </div> 
-                            <!-- /.form-group -->
-                          </div>
+                        
                           <div class="col-md-6">
                             <div class="form-group">
                               <label>Nature of Legal Concern</label>
@@ -191,7 +171,7 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group" >
-                              <label>Case Filed by:</label>
+                              <label>Case Filed by</label>
                               <select class="form-control select2" [(ngModel)]="this.legalcase.caseFiledBy" style="width: 100%;">
                                 <option value="">Select Option</option>
                                 <option value="Self">Self</option>
@@ -227,8 +207,18 @@
                             <!-- /.form-group -->
                           </div>
                           <div class="col-md-6">
+                            <div class="form-group" >
+                              <label>Date of filing</label>
+                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                <input type="date" [(ngModel)]="this.legalcase.dateoffiling"  class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                            </div>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <div class="col-md-6">
                             <div class="form-group">
-                              <label> Who assigned the Lawyer? </label>
+                              <label>Legal aid received from?
+                              </label>
                               <select class="form-control select2" [(ngModel)]="this.legalcase.isLawyerShelterAssigned" style="width: 100%;">
                                 <option value="">Select Option</option>
                                 <option value="1">Dastak</option>
@@ -262,7 +252,7 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label>Court:</label>
+                              <label>Court</label>
                               <select class="form-control select2" [(ngModel)]="this.legalcase.court" style="width: 100%;">
                                 <option value="">Select Option</option>                                                     
                                 <option value="Guardian court">Union council</option>     
@@ -596,7 +586,27 @@
                           </div> 
                         <!-- /.form-group -->
                       </div>
-                   
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Reason for Withdrawal</label>
+                          <select class="form-control select2" [(ngModel)]="this.legalcase.reasonForWithdrawal" style="width: 100%;">
+                            <option value="">Select Option</option>
+                                        <option value="Family signed raazi-nama">Family signed raazi-nama</option>
+                                        <option value="Original issue resolved">Original issue resolved</option>
+                                        <option value="Judicial process is too complicated">Judicial process is too complicated</option>
+                                        <option value="Case taking too long">Case taking too long</option>
+                                        <option value="Case is too costly">Case is too costly</option>
+                                        <option value="Social stigma">Social stigma</option>
+                                        <option value="Facing threats/harassment">Facing threats/harassment</option>
+                                        <option value="Other">Other</option>    
+                            
+                  
+                          </select>
+                            
+                            
+                          </div> 
+                        <!-- /.form-group -->
+                      </div>
 
 
 

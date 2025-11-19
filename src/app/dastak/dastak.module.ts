@@ -7,6 +7,7 @@ import { AllpendingfilesComponent } from './allpendingfiles/allpendingfiles.comp
 import { AllclosedfilesComponent } from './allclosedfiles/allclosedfiles.component';
 import { AllexternalvisitsComponent } from './allexternalvisits/allexternalvisits.component';
 import { AllcallersComponent } from './allcallers/allcallers.component';
+import { GeneralformsComponent } from './generalforms/generalforms.component';
 import { AllvisitsbydastakstaffComponent } from './allvisitsbydastakstaff/allvisitsbydastakstaff.component';
 import { AllusersComponent } from './allusers/allusers.component';
 import { ProceedapplicationComponent } from './proceedapplication/proceedapplication.component';
@@ -23,6 +24,7 @@ import { EditComponent } from './edit/edit.component';
 import { AddnewusersComponent } from './addnewusers/addnewusers.component';
 import { AddlegaldetailComponent } from './addlegaldetail/addlegaldetail.component';
 import { ViewlegalComponent } from './viewlegal/viewlegal.component';
+import { EditcommunityconsultationComponent } from './editcommunityconsultation/editcommunityconsultation.component';
 import { EditlegalComponent } from './editlegal/editlegal.component';
 import { UpdatelegalComponent } from './updatelegal/updatelegal.component';
 import { AddinterventionComponent } from './addintervention/addintervention.component';
@@ -31,15 +33,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { FollowuprecordComponent } from './followuprecord/followuprecord.component';
 import { ViewdastakvisitComponent } from './viewdastakvisit/viewdastakvisit.component';
 import { RolePermissionComponent } from './role-permission/role-permission.component';
-
+import { RoleComponent } from './role/role.component';
+import { CommunityConsultationsComponent } from './communityconsultations/communityconsultations.component';
+import { AllCommunityConsultationsComponent } from './allcommunityconsultations/allcommunityconsultations.component';
+import { ViewcommunityconsultationComponent } from './viewcommunityconsultation/viewcommunityconsultation.component';
+import { AllinterventioncommunityComponent } from './allinterventioncommunity/allinterventioncommunity.component';
+import { InterventioncommunityComponent } from './interventioncommunity/interventioncommunity.component';
+import { EditinterventioncommunityComponent } from './editinterventioncommunity/editinterventioncommunity.component';
 
 @NgModule({
   declarations: [
-    
     AllpendingfilesComponent,
     AllclosedfilesComponent,
     AllexternalvisitsComponent,
     AllcallersComponent,
+    GeneralformsComponent,
     AllvisitsbydastakstaffComponent,
     AllusersComponent,
     ProceedapplicationComponent,
@@ -61,14 +69,22 @@ import { RolePermissionComponent } from './role-permission/role-permission.compo
     ViewinterventionComponent,
     FollowuprecordComponent,
     ViewdastakvisitComponent,
-    RolePermissionComponent
+    RolePermissionComponent,
+    RoleComponent,
+   CommunityConsultationsComponent,
+    AllCommunityConsultationsComponent,
+     EditcommunityconsultationComponent,
+     ViewcommunityconsultationComponent,
+     AllinterventioncommunityComponent,
+     InterventioncommunityComponent,
+     EditinterventioncommunityComponent
   ],
   imports: [
     CommonModule,
      HttpClientModule,
     DastakRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,  
   ]
 })
 export class DastakModule { }
