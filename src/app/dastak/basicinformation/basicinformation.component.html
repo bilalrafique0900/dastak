@@ -287,6 +287,12 @@
  
 </tr>
 <tr>
+  <td>Departure date</td>
+  <td>{{basicviewdata.discharge?.dischargeDate| date:'fullDate'}}</td>
+  
+ 
+</tr>
+<tr>
   <td>List of documents in possession:	</td>
   <td>
     <li *ngFor="let detail of session.getFormattedData(basicviewdata.document?.listOfDocuments)"> {{ detail }}</li>

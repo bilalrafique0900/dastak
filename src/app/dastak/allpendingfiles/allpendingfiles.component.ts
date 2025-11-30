@@ -33,16 +33,17 @@ export class AllpendingfilesComponent {
     this.Srv.GetData(`Pending/deletepending?file=`+file+'&entity='+entity).subscribe({
       next: (res: any) => {
         
-        if (res.message) {
+        
           
-          this.GetAll();
+          
 
-        }
+       
       },
       error: (err) => {
        // this.usernameError = err ? err.Message : '';
       },
     });
+    this.GetAll();
   }
  
 

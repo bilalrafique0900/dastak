@@ -177,7 +177,7 @@
                                                     <!-- /.card-header -->
                                                     <div class="card-body"> 
                                                         <div class="row">
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-3">
                                                             <div class="form-group" >
                                                               <label>Date of birth</label>
                                                               <div class="input-group date" id="dateOfBirth" data-target-input="nearest">
@@ -187,17 +187,31 @@
                                                                 required
                                                                 class="form-control " data-target="#dateOfBirth"/>
                                                             </div>
-                                                            <div *ngIf="dateOfBirth.invalid && submitted && (!readdmission.dateOfBirth   || readdmission.dateOfBirth.trim() === '')"
+                                                            <!-- <div *ngIf="!this.readdmission.dateOfBirth &&submitted "
                                                             class="text-danger">
                                                             <small>DateOfBirth is <strong>required</strong></small>
                                                             
-                                                           </div>
+                                                           </div> -->
                                                             </div>
                                                             <!-- /.form-group -->
                                                           </div>
-                                                  
+                                                    <div class="col-md-3">
+        <div class="form-group" >
+        <label>Age</label>
+        <input class="form-control" [(ngModel)]="readdmission.age"
+         name="age"
+         #age="ngModel"
+         required
+         type="text">
+                                                                
+                                                                
+       </div> 
+       <div *ngIf="age.invalid && submitted && (!readdmission.age   || readdmission.age.trim() === '')"
+        class="text-danger">Age is required.</div>
+        
+       </div>
                                                         
-                                                          <div class="col-md-4">
+                                                          <div class="col-md-3">
                                                             <div class="form-group">
                                                               <label>Religion</label>
                                                               <select class="form-control select2" [(ngModel)]="this.readdmission.religion"
@@ -226,10 +240,12 @@
                                                              </div>
                                                             <!-- /.form-group -->
                                                           </div>
-                         <div class="col-md-4">
+                         <div class="col-md-3">
                                                             <div class="form-group">
                                                               <label>Birth religion</label>
-                                                              <select class="form-control select2" [(ngModel)]="this.readdmission.birthReligion" style="width: 100%;">
+                                                              <select class="form-control select2" [(ngModel)]="readdmission.birthReligion"       #cnic="ngModel"
+                                                                       required 
+                                                                       style="width: 100%;">
                                                                 <option value="section Option" >Select Option</option>
                                                                 <option value="Islam">Islam</option>
                                                                 <option value="Ahmedi">Ahmedi</option>
@@ -244,7 +260,11 @@
                                                                 
                                                                 
                                                               </div> 
-                                                            <!-- /.form-group -->
+                                                                <div *ngIf="!this.readdmission.birthReligion &&submitted "
+                                                            class="text-danger">
+                                                            <small>Birth Religion is <strong>required</strong></small>
+                                                            
+                                                           </div>
                                                           </div>
                                 
                                 
@@ -256,7 +276,7 @@
                                                           <div class="col-md-3">
                                                             <div class="form-group"  >
                                                               <label>Father name</label>
-                                                                <input class="form-control"[(ngModel)]="this.readdmission.fatherName" 
+                                                                <input class="form-control"[(ngModel)]="readdmission.fatherName" 
                                                                 name="fatherName"
                                                                 #fatherName="ngModel"
                                                                 required
@@ -297,18 +317,18 @@
                                                           <div class="col-md-3">
                                                             <div class="form-group" >
                                                               <label>Mother name</label>
-                                                                <input class="form-control" type="text"[(ngModel)]="this.readdmission.motherName"
+                                                                <input class="form-control" type="text"[(ngModel)]="readdmission.motherName"
                                                                 name="motherName"
                                                                 #motherName="ngModel"
                                                                 required>
                                                                 
                                                                 
                                                               </div> 
-                                                              <div *ngIf="motherName.invalid && submitted && (!readdmission.motherName   || readdmission.motherName.trim() === '')"
+                                                              <!-- <div *ngIf="motherName.invalid && submitted && (!readdmission.motherName   || readdmission.motherName.trim() === '')"
                                                               class="text-danger">
                                                               <small>motherName is <strong>required</strong></small>
                                                               
-                                                             </div>
+                                                             </div> -->
                                                             
                                                           </div> 
                                                           <div class="col-md-3">
@@ -404,9 +424,12 @@
                                                       
                                                               </select>
                                                                 
-                                                                
+                                                                    
+    <div *ngIf="submitted && (!readdmission.nationality || readdmission.nationality.trim() === '')" class="text-danger">
+  Nationality is required.
+</div>
                                                               </div> 
-                                                            <!-- /.form-group -->
+                                                   
                                                           </div>
                                                           <div class="col-md-4">
                                                             <div class="form-group" >
@@ -417,32 +440,34 @@
                                                               </div> 
                                                             <!-- /.form-group -->
                                                           </div>
-                                                              <div class="col-md-4">
+                                                              <!-- <div class="col-md-4">
                                                             <div class="form-group" >
                                                               <label>CNIC</label>
                                                                 <input class="form-control"  [(ngModel)]="this.readdmission.cnic"type="text" >
                                                                 
                                                                 
                                                               </div> 
-                                                            <!-- /.form-group -->
-                                                          </div>
+                                                            
+                                                          </div> -->
                                 
-                                
-          <div class="col-md-4">
-        <div class="form-group" >
-        <label>Age</label>
-        <input class="form-control" [(ngModel)]="readdmission.age"
-         name="age"
-         #age="ngModel"
+                                                          <div class="col-md-4">
+  <div class="form-group">
+    <label>CNIC</label>
+    <input class="form-control"
+           type="text"
+           maxlength="15"
+           [(ngModel)]="readdmission.cnic"
+             #cnic="ngModel"
          required
-         type="text">
-                                                                
-                                                                
-       </div> 
-       <div *ngIf="age.invalid && submitted && (!readdmission.age   || readdmission.age.trim() === '')"
-        class="text-danger">Age is required.</div>
+           (input)="formatCNIC()">
+           
+  </div>
+    <!-- <div *ngIf="cnic.invalid && submitted && (!readdmission.cnic   || readdmission.cnic.trim() === '')"
+        class="text-danger">CNIC is required.</div> -->
+</div>
+
+                                
         
-       </div>
                                 
  <div class="col-md-4">
   <div class="form-group">
@@ -457,9 +482,9 @@
       <option value="Undefined">Undefined</option>
     </select>
     
-    <div *ngIf="gender.invalid && submitted && (!readdmission.gender   || readdmission.gender.trim() === '')" class="text-danger">Gender is required.
-
-    </div>
+     <div *ngIf="submitted && (!readdmission.gender || readdmission.gender.trim() === '')" class="text-danger">
+  Gender is required.
+</div>
       
   </div>
 </div>
@@ -485,24 +510,47 @@
                                                               </div> 
                                                             <!-- /.form-group -->
                                                           </div>
-                                                          <div class="col-md-4">
+                                                           <!-- <div class="col-md-4">
+                                                            
                                                             <div class="form-group" >
                                                               <label>Phone</label>
                                                                 <input class="form-control" [(ngModel)]="this.readdmission.phone"type="text" >
                                                                 
                                                                 
                                                               </div> 
-                                                            <!-- /.form-group -->
-                                                          </div>
+                                                            
+                                                          </div>  -->
                                                           <div class="col-md-4">
+  <div class="form-group">
+    <label>Phone</label>
+    <input class="form-control"
+           type="text"
+           maxlength="12"
+           [(ngModel)]="readdmission.phone"
+           (input)="formatPhone()">
+  </div>
+</div>
+
+                                                          <!-- <div class="col-md-4">
                                                             <div class="form-group" >
                                                               <label> Alternate phone</label>
                                                                 <input class="form-control" [(ngModel)]="this.readdmission.phone2" type="text" >
                                                                 
                                                                 
                                                               </div> 
-                                                            <!-- /.form-group -->
-                                                          </div>
+                                                            
+                                                          </div> -->
+                                                          <div class="col-md-4">
+  <div class="form-group">
+    <label>Alternate Phone</label>
+    <input class="form-control"
+           type="text"
+           maxlength="12"
+           [(ngModel)]="readdmission.phone2"
+           (input)="formatAlternatePhone()">
+  </div>
+</div>
+
                                                     </div>
                                                     <!-- /.card-body -->
                                                  
@@ -1107,6 +1155,7 @@
                                                                                 <option value="Sohbatpur">Sohbatpur</option>
                                                                                 <option value="Washuk">Washuk</option>
                                                                                 <option value="Zhob">Zhob</option>
+                                                                                <option value="Nankana Sahib">Nankana Sahib</option>
                                                                                 <option value="Ziarat">Ziarat</option>
                                                                                 <option value="Other">Other</option>
                                                                               </select>
@@ -1409,6 +1458,7 @@
                                                                 <option value="Sohbatpur">Sohbatpur</option>
                                                                 <option value="Washuk">Washuk</option>
                                                                 <option value="Zhob">Zhob</option>
+                                                                <option value="Nankana Sahib">Nankana Sahib</option>
                                                                 <option value="Ziarat">Ziarat</option>
                                                                 <option value="Other">Other</option>
                                                               </select>
@@ -1745,6 +1795,7 @@
                                                                   <option value="Sohbatpur">Sohbatpur</option>
                                                                   <option value="Washuk">Washuk</option>
                                                                   <option value="Zhob">Zhob</option>
+                                                                  <option value="Nankana Sahib">Nankana Sahib</option>
                                                                   <option value="Ziarat">Ziarat</option>
                                                                       <option value="Other">Other</option>
                                                           </select>

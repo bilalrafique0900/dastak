@@ -58,7 +58,40 @@ this.readdmission.referenceNo=this.auto.referenceNo;
       },
     });
   }
+  formatCNIC() {
+  let value = this.readdmission.cnic.replace(/[^0-9]/g, '');
+
+  if (value.length > 5) {
+    value = value.slice(0, 5) + '-' + value.slice(5);
+  }
+  if (value.length > 13) {
+    value = value.slice(0, 13) + '-' + value.slice(13);
+  }
+
+  this.readdmission.cnic = value.substring(0, 15); // final formatted length
+}
+formatPhone() {
+  let value = this.readdmission.phone.replace(/[^0-9]/g, '');
+
+  if (value.length > 4) {
+    value = value.slice(0, 4) + '-' + value.slice(4);
+  }
+
+  this.readdmission.phone = value.substring(0, 12);  // final length: 4+1+7
+}
+formatAlternatePhone() {
+  let value = this.readdmission.phone2.replace(/[^0-9]/g, '');
+
+  if (value.length > 4) {
+    value = value.slice(0, 4) + '-' + value.slice(4);
+  }
+
+  this.readdmission.phone2 = value.substring(0, 12);  // 0312-1234567 format
+}
+
+
   PostAllRE() {
+    this.submitted = true;
     if (this.readdmission.invalid) {
       return; // Stop function execution if the form is invalid
     }
@@ -90,7 +123,21 @@ this.readdmission.referenceNo=this.auto.referenceNo;
     this.readdmission.referencialName=JSON.stringify(referenceNameofReferences);
     this.readdmission.typeOfReference=JSON.stringify(referenceTypeofReferences);
     this.readdmission.referencialCity=JSON.stringify(referenceCityofReferences);
-    
+if (
+   !this.readdmission.age ||
+  !this.readdmission.religion?.trim() ||
+    !this.readdmission.firstName?.trim() ||
+      !this.readdmission.lastName?.trim() ||
+  !this.readdmission.birthReligion?.trim() ||
+  !this.readdmission.fatherName?.trim() ||
+  !this.readdmission.gender?.trim() ||
+   !this.readdmission.nationality?.trim() 
+  // !this.readdmission.phone?.trim()
+) {
+  alert('Please Fill All Required Fields');
+  return;
+}
+
     this.Srv.PostData(`NewAdmission/readmission`,this.readdmission).subscribe({
       next: (res: any) => {
         

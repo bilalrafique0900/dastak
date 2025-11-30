@@ -46,4 +46,20 @@ export class FilesComponent {
         },
       });
     }
+     Delete(file:any,entity:any) {
+    this.Srv.GetData(`Menu/deletefile?file=`+file+'&entity='+entity).subscribe({
+      next: (res: any) => {
+        
+        
+          
+          
+
+       
+      },
+      error: (err) => {
+       // this.usernameError = err ? err.Message : '';
+      },
+    });
+    this.Getfile();
+  }
 }

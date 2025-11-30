@@ -61,7 +61,7 @@ export class SessionConfig {
  public static onlineUrl: string = 'http://localhost:5269/'
  // public static onlineUrl: string = 'http://172.25.18.97:8085/'
   //public static onlineUrl: string = 'http://110.93.249.77:8085/'
-//  public static onlineUrl: string = window.location.origin == 'http://172.25.18.97:8090'? 'http://172.25.18.97:8085/':'http://110.93.249.77:8085/';
+ // public static onlineUrl: string = window.location.origin == 'http://172.25.18.97:8090'? 'http://172.25.18.97:8085/':'http://110.93.249.77:8085/';
 
 
 

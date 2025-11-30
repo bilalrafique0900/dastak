@@ -13,6 +13,7 @@ export class ProceedapplicationComponent implements OnInit {
   possessionForm!: FormGroup;
   pendadd: any={};
   proceedpost: any={};
+   submitted: boolean = false;
   possession:any;
   HasScreened=0;
   entity: any;
@@ -32,6 +33,7 @@ export class ProceedapplicationComponent implements OnInit {
     this.file = this.route.snapshot.params["file"];
   this.GetAll(); 
   }
+  
   GetAll() {
     this.Srv.GetData(`Menu/getproceedinfoforreadmission?entity=`+this.entity).subscribe({
       next: (res: any) => {
@@ -97,6 +99,7 @@ export class ProceedapplicationComponent implements OnInit {
     });
   }
   PostProceed() {
+      this.submitted = true;
     this.proceedpost.name = this.pendadd.fullName;
     this.proceedpost.referenceNo = this.entity;
     this.proceedpost.fileNo = this.file;
@@ -116,7 +119,21 @@ export class ProceedapplicationComponent implements OnInit {
     this.proceedpost.Items=JSON.stringify(PossessionItems);
     this.proceedpost.Quantities=JSON.stringify(possessionQuantities);
     this.proceedpost.InPossessionOf=JSON.stringify(possessioninPossessionOfs);
-    
+    if (
+  !this.proceedpost.reasonForAdmission ||
+  !this.proceedpost.natureOfAssistance?.trim() ||
+  !this.proceedpost.reasonOfRefuse?.trim() ||
+  !this.proceedpost.interviewDate?.trim() ||
+  !this.proceedpost.admissionDate?.trim() ||
+  !this.proceedpost.details?.trim() ||
+
+
+   
+  !this.proceedpost.listOfDocuments?.trim()
+) {
+  alert('Please Fill All Required Fields');
+  return;
+}
     
     
     this.Srv.PostData(`Pending/postproceeddata`,this.proceedpost).subscribe({

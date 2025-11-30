@@ -10,6 +10,7 @@ import { HttpService } from 'src/app/core/services/http.service';
 })
 export class EditbasicinformationComponent implements OnInit {
   readdmission: any={};
+  submitted=false;
   entity:any;
   IsReference=0;
   maritalstatus='single';
@@ -36,6 +37,7 @@ export class EditbasicinformationComponent implements OnInit {
     });
   }
   GetAll() {
+    this.submitted=false;
     
     this.Srv.GetData(`NewAdmission/getinfo?entity=`+this.entity).subscribe({
       next: (res: any) => {
@@ -44,6 +46,9 @@ export class EditbasicinformationComponent implements OnInit {
           
           this.updatebasic = res.data;
           this.readdmission.referenceNo=this.entity;
+          this.readdmission.fileNo=this.updatebasic.fileNo;
+          this.readdmission.rno=this.entity;
+          this.readdmission.fno=this.updatebasic.fileNo;
           this.readdmission.assessmentRisk= this.updatebasic.assessmentRisk;
           this.readdmission.dateOfBirth= this.updatebasic.dateOfBirth;
           this.readdmission.age= this.updatebasic.age;

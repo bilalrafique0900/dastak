@@ -27,5 +27,21 @@ export class AllclosedfilesComponent {
         },
       });
     }
+     Delete(file:any,entity:any) {
+    this.Srv.GetData(`LegalDetail/deleteclosedfile?file=`+file+'&entity='+entity).subscribe({
+      next: (res: any) => {
+        
+        
+          
+          
+
+       
+      },
+      error: (err) => {
+       // this.usernameError = err ? err.Message : '';
+      },
+    });
+    this.Getclosedfile();
+  }
 
 }

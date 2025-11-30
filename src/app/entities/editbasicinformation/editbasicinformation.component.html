@@ -20,7 +20,48 @@
           <!-- /.card-header -->
           <div class="card-body">
             <div class="row">
-
+<div class="col-md-4">
+                <div class="form-group" >
+                  <label>File no</label>
+                    <input class="form-control"[(ngModel)]="this.readdmission.fileNo" 
+                    name="fileNo"
+                    #fileNo="ngModel"
+                    required
+                    
+                    type="text" >
+                    
+                    
+                  </div> 
+                  <div *ngIf="fileNo.invalid && submitted && (!this.readdmission.fileNo   || this.readdmission.fileNo.trim() === '')"
+                  class="text-danger">
+                  <small>File No is <strong>required</strong></small>
+                  
+                 </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group" >
+                  <label>Reference no</label>
+                    <input class="form-control"[(ngModel)]="this.readdmission.referenceNo"
+                    name="referenceNo"
+                    #referenceNo="ngModel"
+                    required
+                    
+                     type="text" >
+                    
+                    
+                  </div> 
+                  <div *ngIf="referenceNo.invalid && submitted && (!this.readdmission.referenceNo   || this.readdmission.referenceNo.trim() === '')"
+                  class="text-danger">
+                  <small>Reference No is <strong>required</strong></small>
+                  
+                 </div>
+                <!-- /.form-group -->
+              </div>
+              <div class="col-md-4">
+                                    
+                <!-- /.form-group -->
+                            </div>
       
           <div class="col-md-4">
 <div class="form-group">
@@ -787,6 +828,7 @@
                                                                                 <option value="Karor Lal Esan">Karor Lal Esan</option>
                                                                                 <option value="Kasur">Kasur</option>
                                                                                 <option value="Kamalia">Kamalia</option>
+                                                                                   <option value="Nankana Sahib">Nankana Sahib</option>
                                                                                 <option value="Kamoke">Kamoke</option>
                                                                                 <option value="Khanewal">Khanewal</option>
                                                                                 <option value="Khanpur">Khanpur</option>
@@ -1099,6 +1141,7 @@
                                                                 <option value="Multan">Multan</option>
                                                                 <option value="Murree">Murree</option>
                                                                 <option value="Muridke">Muridke</option>
+                                                                <option value="Nankana Sahib">Nankana Sahib</option>
                                                                 <option value="Mianwali Bangla">Mianwali Bangla</option>
                                                                 <option value="Muzaffargarh">Muzaffargarh</option>
                                                                 <option value="Narowal">Narowal</option>
@@ -1392,6 +1435,7 @@
                                                                   <option value="Karor Lal Esan">Karor Lal Esan</option>
                                                                   <option value="Kasur">Kasur</option>
                                                                   <option value="Kamalia">Kamalia</option>
+                                                                  <option value="Nankana Sahib">Nankana Sahib</option>
                                                                   <option value="Kamoke">Kamoke</option>
                                                                   <option value="Khanewal">Khanewal</option>
                                                                   <option value="Khanpur">Khanpur</option>
@@ -1614,7 +1658,7 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <button class="btn btn-primary" (click)="PostAllRE()">Save</button>
+            <button class="btn btn-primary" (click)="submitted=true;PostAllRE()">Save</button>
             <button class="btn btn-default mx-2">Cancel</button>
           </div>
         </div>
