@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 import { SessionService } from 'src/app/core/services/session.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-files',
   templateUrl: './files.component.html',
@@ -47,9 +47,20 @@ export class FilesComponent {
       });
     }
      Delete(file:any,entity:any) {
-    this.Srv.GetData(`Menu/deletefile?file=`+file+'&entity='+entity).subscribe({
+      Swal.fire({
+    title: 'Are you sure?',
+    text: "This record will be permanently deleted.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+          this.Srv.GetData(`Menu/delete-file?file=`+file+'&entity='+entity).subscribe({
       next: (res: any) => {
-        
+            if(res?.isDeleted)
+       this.Getfile();   
         
           
           
@@ -60,6 +71,10 @@ export class FilesComponent {
        // this.usernameError = err ? err.Message : '';
       },
     });
-    this.Getfile();
+      Swal.fire('Deleted!', 'Record has been deleted.', 'success');
+    }
+  });
+
+  
   }
 }

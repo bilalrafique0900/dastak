@@ -83,10 +83,10 @@
                     
                     
                   </div> 
-              <div *ngIf="submitted && (!legalcase.legalNoticeSent || legalcase.legalNoticeSent.trim() === '')"
+              <!-- <div *ngIf="submitted && (!legalcase.legalNoticeSent || legalcase.legalNoticeSent.trim() === '')"
                     class="text-danger">
                   <small>legal Notice Sent is <strong>required</strong></small>
-            </div>
+            </div> -->
               </div>
               <div class="col-md-4">
                 <div class="form-group">
@@ -164,7 +164,8 @@
                                 <option value="Harassment">Harassment</option>                                      
                                 <option value="Khula">Khula</option>                                      
                                 <option value="Divorce">Divorce</option>                                      
-                                <option value="Dowry articles">Dowry articles</option>                                      
+                                <option value="Dowry articles">Dowry articles</option>   
+                                 <option value="dower  ">Dower  </option>                                    
                                 <option value="Maintenance of wife/children">Maintenance of wife/children</option>  
                                 <option value="Personal belongings">Personal belongings</option>                                      
                                 <option value="Security threats from family">Security threats from family</option>                                      
@@ -187,10 +188,10 @@
                                 
                                 
                               </div> 
-                                               <div *ngIf="submitted && (!legalcase.firNo || legalcase.firNo.trim() === '')"
+                                               <!-- <div *ngIf="submitted && (!legalcase.firNo || legalcase.firNo.trim() === '')"
                     class="text-danger">
                   <small>firNo is <strong>required</strong></small>
-            </div>
+            </div> -->
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
@@ -199,10 +200,10 @@
                                 
                                 
                               </div> 
-                                                       <div *ngIf="submitted && (!legalcase.caseNo || legalcase.caseNo.trim() === '')"
+                                                       <!-- <div *ngIf="submitted && (!legalcase.caseNo || legalcase.caseNo.trim() === '')"
                     class="text-danger">
                   <small>caseNo is <strong>required</strong></small>
-            </div>
+            </div> -->
                           </div>
                           <div class="col-md-6">
                             <div class="form-group" >
@@ -298,10 +299,10 @@
                                 
                                 
                               </div> 
-                                                  <div *ngIf="submitted && (!legalcase.contactOfLawyer || legalcase.contactOfLawyer.trim() === '')"
+                                                  <!-- <div *ngIf="submitted && (!legalcase.contactOfLawyer || legalcase.contactOfLawyer.trim() === '')"
                     class="text-danger">
                   <small>contactOfLawyer is <strong>required</strong></small>
-            </div>
+            </div> -->
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
@@ -319,7 +320,7 @@
                                 <option value="Guardian court">Guardian court</option>                                                      
                                 <option value="Supreme court">Supreme court</option> 
                                 
-                      
+                       <option value="Other ">Other</option> 
                               </select>
                                 
                                 
@@ -617,10 +618,10 @@
                             <input type="date" [(ngModel)]="this.legalcase.nextDateOfHearing"  class="form-control " data-target="#nextDateOfHearing"/>
                         </div>
                         </div>
-                                            <div *ngIf="submitted && (!legalcase.nextDateOfHearing || legalcase.nextDateOfHearing.trim() === '')"
+                                            <!-- <div *ngIf="submitted && (!legalcase.nextDateOfHearing || legalcase.nextDateOfHearing.trim() === '')"
                     class="text-danger">
                   <small>nextDateOfHearing is <strong>required</strong></small>
-            </div>
+            </div> -->
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
@@ -651,10 +652,10 @@
                             </textarea>
                             
                           </div> 
-                                                          <div *ngIf="submitted && (!legalcase.remarks || legalcase.remarks.trim() === '')"
+                                                          <!-- <div *ngIf="submitted && (!legalcase.remarks || legalcase.remarks.trim() === '')"
                     class="text-danger">
                   <small>remarks is <strong>required</strong></small>
-            </div>
+            </div> -->
                       </div>
 
              
@@ -670,17 +671,18 @@
                                         <option value="Case is too costly">Case is too costly</option>
                                         <option value="Social stigma">Social stigma</option>
                                         <option value="Facing threats/harassment">Facing threats/harassment</option>
-                                        <option value="Other">Other</option>    
+                                        <option value="None">None</option>   
+                                           <option value="Other">Other</option>   
                             
                   
                           </select>
                             
                             
                           </div> 
-                                                              <div *ngIf="submitted && (!legalcase.reasonForWithdrawal || legalcase.reasonForWithdrawal.trim() === '')"
+                                                               <div *ngIf="submitted && (!legalcase.reasonForWithdrawal || legalcase.reasonForWithdrawal.trim() === '')"
                     class="text-danger">
                   <small>reasonForWithdrawal is <strong>required</strong></small>
-            </div>
+            </div> 
                       </div>
                        <div class="col-md-6">
                         <div class="form-group" >
@@ -689,10 +691,10 @@
                             </textarea>
                             
                           </div> 
-                         <div *ngIf="submitted && (!legalcase.outcome || legalcase.outcome.trim() === '')"
+                         <!-- <div *ngIf="submitted && (!legalcase.outcome || legalcase.outcome.trim() === '')"
                     class="text-danger">
                   <small>outcome is <strong>required</strong></small>
-            </div>
+            </div> -->
                       </div>
 
 

@@ -24,25 +24,25 @@ submitted:boolean=false;
   !this.legalcase.legalAssistanceSought?.trim()||
   !this.legalcase.legalNoticeSent?.trim()||
   !this.legalcase.dateWhenLegalNoticeSent?.trim()||
-  !this.legalcase.legalNoticeSentTo?.trim()||
+ // !this.legalcase.legalNoticeSentTo?.trim()||
   !this.legalcase.typeOfAssistance?.trim()||
   !this.legalcase.natureOfLegalConcern?.trim()||
-  !this.legalcase.firNo?.trim()||
-  !this.legalcase.caseNo?.trim()||
+ // !this.legalcase.firNo?.trim()||
+ // !this.legalcase.caseNo?.trim()||
   !this.legalcase.caseFiledBy?.trim()||
   !this.legalcase.caseFiledAgainst?.trim()||
   !this.legalcase.dateoffiling?.trim()||
   !this.legalcase.isLawyerShelterAssigned?.trim()||
   !this.legalcase.nameOfLawyer?.trim()||
-  !this.legalcase.contactOfLawyer?.trim()||
+ // !this.legalcase.contactOfLawyer?.trim()||
   !this.legalcase.court?.trim()||
   !this.legalcase.provinceOfCourt?.trim()||
   !this.legalcase.cityOfCourt?.trim()||
-  !this.legalcase.nextDateOfHearing?.trim()||
+  //!this.legalcase.nextDateOfHearing?.trim()||
   !this.legalcase.statusOfCase?.trim()||
-  !this.legalcase.remarks?.trim()||
-  !this.legalcase.reasonForWithdrawal?.trim()||
-  !this.legalcase.outcome?.trim()
+ // !this.legalcase.remarks?.trim()
+  !this.legalcase.reasonForWithdrawal?.trim()
+ // !this.legalcase.outcome?.trim()
 
 
 
