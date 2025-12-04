@@ -11,6 +11,7 @@ import { HttpService } from 'src/app/core/services/http.service';
 export class InterventioncommunityComponent {
   
   interventioncase: any={};
+  submitted:boolean=false;
   //DetailsOfIntervention:any[]=Array(12);
   DetailsOfIntervention: any[] = [
     {  natureOfIntervention: '',detail: '',additionalDetails: '',complications: '',additionalComplications: '',outcome: ''},
@@ -45,6 +46,19 @@ export class InterventioncommunityComponent {
   }
 
   PostIntervention() {
+     this.submitted = true
+    if (
+  !this.interventioncase.referenceNo?.trim() || 
+  !this.interventioncase.name?.trim()
+  
+
+
+
+  
+) {
+  alert('Please Fill All Required Fields');
+  return;
+}
     
 
     this.interventioncase.detailsOfIntervention=this.DetailsOfIntervention;

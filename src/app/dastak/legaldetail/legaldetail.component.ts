@@ -19,7 +19,7 @@ export class LegaldetailComponent {
   this.GetAll();
   }
   GetAll() {
-    this.Srv.GetData(`LegalDetail/getlegalassistance`).subscribe({
+    this.Srv.GetData(`LegalDetail/getlegalassistancebyreferenceno?entity=`+this.entity).subscribe({
       next: (res: any) => {
         
         if (res.data) {

@@ -25,7 +25,10 @@
                     
                     
                   </div> 
-                <!-- /.form-group -->
+                     <div *ngIf="submitted && (!interventioncase.referenceNo || interventioncase.referenceNo.trim() === '')"
+  class="text-danger">
+  <small>Reference No is <strong>required</strong></small>
+</div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
@@ -34,7 +37,10 @@
                     
                     
                   </div> 
-                <!-- /.form-group -->
+                           <div *ngIf="submitted && (!interventioncase.name || interventioncase.name.trim() === '')"
+                    class="text-danger">
+                  <small>name  is <strong>required</strong></small>
+</div>
               </div>
    
             
