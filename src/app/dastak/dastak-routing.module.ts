@@ -39,6 +39,8 @@ import { ViewcommunityconsultationComponent } from './viewcommunityconsultation/
 import { AllinterventioncommunityComponent } from './allinterventioncommunity/allinterventioncommunity.component';
 import { InterventioncommunityComponent } from './interventioncommunity/interventioncommunity.component';
 import { EditinterventioncommunityComponent } from './editinterventioncommunity/editinterventioncommunity.component';
+import { AllviewinterventioncommunityComponent } from './allviewinterventioncommunity/allviewinterventioncommunity.component';
+
 const routes: Routes = [
   { path:'',
     component:AllpendingfilesComponent
@@ -72,6 +74,9 @@ const routes: Routes = [
   },
       { path:'interventioncommunity',
     component:InterventioncommunityComponent
+  },
+     { path:'allviewinterventioncommunity/:entity',
+    component:AllviewinterventioncommunityComponent
   },
    { path:'allinterventioncommunity',
     component:AllinterventioncommunityComponent

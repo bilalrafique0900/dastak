@@ -1197,7 +1197,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group" >
                                                                   <label> Complete address</label>
-                                                                    <input class="form-control"[(ngModel)]="this.readdmission.Address" 
+                                                                    <input class="form-control" [(ngModel)]="this.address" 
                                                                     #Address="ngModel"
                                                                     name="Address"
                                                                      required 
@@ -1215,7 +1215,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                               <label> city</label>
-                                                              <select class="form-control select2"  formControlName="this.readdmission.city" 
+                                                              <select class="form-control select2"   [(ngModel)]="this.city"
 
                                                               style="width: 100%;">
                                                                 <option value="" disabled="" selected="">Select The City</option>

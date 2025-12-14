@@ -40,7 +40,7 @@ import { ViewcommunityconsultationComponent } from './viewcommunityconsultation/
 import { AllinterventioncommunityComponent } from './allinterventioncommunity/allinterventioncommunity.component';
 import { InterventioncommunityComponent } from './interventioncommunity/interventioncommunity.component';
 import { EditinterventioncommunityComponent } from './editinterventioncommunity/editinterventioncommunity.component';
-
+import { AllviewinterventioncommunityComponent } from './allviewinterventioncommunity/allviewinterventioncommunity.component';
 @NgModule({
   declarations: [
     AllpendingfilesComponent,
@@ -76,6 +76,7 @@ import { EditinterventioncommunityComponent } from './editinterventioncommunity/
      EditcommunityconsultationComponent,
      ViewcommunityconsultationComponent,
      AllinterventioncommunityComponent,
+  AllviewinterventioncommunityComponent,
      InterventioncommunityComponent,
      EditinterventioncommunityComponent
   ],

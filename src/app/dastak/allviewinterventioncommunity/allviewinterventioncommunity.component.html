@@ -19,7 +19,8 @@
 <section class="content">
   <div class="container-fluid">
               <!-- SELECT2 EXAMPLE -->
-   <!-- <div class="card card-default">
+ 
+<div class="card card-default">
      
     <div class="card-body p-0">
       <table class="table table-striped">
@@ -63,12 +64,9 @@
     </div>
    
 
-  </div>  -->
- <!-- FILTERED INTERVENTION TABLE (APPEARS WHEN VIEW IS CLICKED) -->
+  </div> 
 
-
-
-  <div class="row">
+  <!-- <div class="row">
                       
              
                       <div class="col-md-3" *ngFor="let item of intervention">
@@ -76,11 +74,11 @@
                         <div class="card card-widget widget-user shadow">
                          
                           <div class="widget-user-header bg-info">
-                            <h3 class="widget-user-username"><span class="description-text">Name:</span>{{item.name}}</h3>
+                            <h3 class="widget-user-username">{{item.name}}</h3>
                           
                          
                           </div>
-                        
+                       
                           <div class="card-footer">
                             <div class="row">
                               
@@ -121,15 +119,12 @@
                                   
 
                                    
-                                      <!-- <a class="btn btn-app" title="Basic Information" *ngIf="session.loginrole!='Data Entery Operator'" [routerLink]="['/entities/basicinformation', item.fileNo, item.referenceNo]"> -->
-                <a class="btn btn-app" title="Basic Information" [routerLink]="['/dastak/allviewinterventioncommunity', item.referenceNo]" >
+                <a class="btn btn-app" title="Basic Information" >
                    <i class="fas fa-eye"></i> View
                   </a>
                               
                                     
-                  <!-- <a class="btn btn-app" title="Delete "  (click)="Delete(item.id)" >
-                                                     <i class="fas fa-times"></i> Discard
-                  </a> -->
+
                                   
                                 
                                     
@@ -145,7 +140,7 @@
                
                       </div>
                      
-                    </div>
+                    </div> -->
 
 
 

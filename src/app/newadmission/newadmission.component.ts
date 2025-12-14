@@ -13,6 +13,11 @@ export class NewadmissionComponent implements OnInit {
   auto: any={};
   entity:any;
   file:any;
+    address:any;
+      city:any;
+        country:any;
+          domicileCity:any;
+            domicileProvince:any;
   IsReference=0;
   maritalstatus='single';
   Motherlivigstatus='alive';
@@ -91,6 +96,7 @@ formatAlternatePhone() {
 
 
   PostAllRE() {
+    debugger
     this.submitted = true;
     if (this.readdmission.invalid) {
       return; // Stop function execution if the form is invalid
@@ -105,6 +111,11 @@ formatAlternatePhone() {
     this.readdmission.motherLivingStatus = this.Motherlivigstatus;
     this.readdmission.isReferential=this.IsReference;
     this.readdmission.currentlyExpecting=this.IsCurrently;
+       this.readdmission.address= this.address;
+          this.readdmission.city= this.city;
+          this.readdmission.country= this.country;     
+          this.readdmission.domicileCity= this.domicileCity;
+          this.readdmission.domicileProvince= this.domicileProvince;
     debugger;
     this.readdmission.proofOfMarriage=JSON.stringify(this.readdmission.proofOfMarriage);
     const childrensArray = this.ChildrenForm.get('childrens') as FormArray;
@@ -123,6 +134,7 @@ formatAlternatePhone() {
     this.readdmission.referencialName=JSON.stringify(referenceNameofReferences);
     this.readdmission.typeOfReference=JSON.stringify(referenceTypeofReferences);
     this.readdmission.referencialCity=JSON.stringify(referenceCityofReferences);
+    
 if (
    !this.readdmission.age ||
   !this.readdmission.religion?.trim() ||
