@@ -16,6 +16,7 @@ export class ProceedapplicationComponent implements OnInit {
    submitted: boolean = false;
   possession:any;
   HasScreened=0;
+  isAbused=0;
   entity: any;
   file: any;
 
@@ -50,7 +51,8 @@ export class ProceedapplicationComponent implements OnInit {
           this.proceedpost.reasonOfRefuse = JSON.parse(res.data.admissioninfo.reasonOfRefuse);
           if(res.data.admissioninfo.whereHasSheReferred!=null)
           this.proceedpost.whereHasSheReferred = JSON.parse(res.data.admissioninfo.whereHasSheReferred);
-        this.proceedpost.isAbused = res.data.admissioninfo.isAbused?true:false;
+       // this.proceedpost.isAbused = res.data.admissioninfo.isAbused?true:false;
+         this.proceedpost.isAbused = res.data.admissioninfo.isAbused==1?1:0;
         if(res.data.admissioninfo.interviewDate!=null)
         this.proceedpost.interviewDate = res.data.admissioninfo.interviewDate.toISOString().slice(0, 10);;
         if(res.data.admissioninfo.admissionDate!=null)
@@ -122,7 +124,7 @@ export class ProceedapplicationComponent implements OnInit {
     if (
   !this.proceedpost.reasonForAdmission ||
   !this.proceedpost.natureOfAssistance?.trim() ||
-  !this.proceedpost.reasonOfRefuse?.trim() ||
+  // !this.proceedpost.reasonOfRefuse?.trim() ||
   !this.proceedpost.interviewDate?.trim() ||
   !this.proceedpost.admissionDate?.trim() ||
   !this.proceedpost.details?.trim() ||

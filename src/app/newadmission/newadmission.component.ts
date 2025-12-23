@@ -47,6 +47,7 @@ export class NewadmissionComponent implements OnInit {
   this.GetAll();
   
   }
+  
   GetAll() {
     this.Srv.GetData(`NewAdmission/autofields`).subscribe({
       next: (res: any) => {
@@ -218,4 +219,22 @@ if (
       console.log('Form is invalid');
     }
   }
+  onAdmissionDateChange(date: string) {
+    debugger
+  if (!date) {
+    return;
+  }
+
+  this.Srv.GetData(`NewAdmission/autofieldsbyadmissiondate?admissionDate=${date}`).subscribe({
+    next: (res: any) => {
+      if (res?.data) {
+        this.readdmission.fileNo = res.data.fileNo;
+        this.readdmission.referenceNo = res.data.referenceNo;
+      }
+    },
+    error: (err) => {
+      console.error('AutoFields error', err);
+    }
+  });
+}
 }

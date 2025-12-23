@@ -95,9 +95,10 @@
                        <small>NatureOfAssistance is <strong>required</strong></small>
                       </div>
                     </div>
+                    
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label>Is subjected to abuse?</label>
+                        <label>Is admission granted?</label>
                         <div class="form-group clearfix">
                           <div class="icheck-primary">
                             <input type="radio" id="syes"  [(ngModel)]="this.proceedpost.isAbused" name="childrenradio" [value]="1">
@@ -110,7 +111,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-8 offset-md-2">
+                 
+                    <div class="col-md-8 offset-md-2" *ngIf="this.proceedpost.isAbused==0">
                       <div class="form-group">
                         <label>Reason for refusing</label>
                         <select multiple class="form-control"  [(ngModel)]="this.proceedpost.reasonOfRefuse">
@@ -125,10 +127,10 @@
                                 <option value="Other">Other</option> 
                         </select>
                       </div>
-                              <div *ngIf="!proceedpost.reasonOfRefuse && submitted"
+                              <!-- <div *ngIf="!proceedpost.reasonOfRefuse && submitted"
                           class="text-danger">
                        <small>Reason Of Refuse is <strong>required</strong></small>
-                      </div>
+                      </div> -->
                     </div>
                     <div class="col-md-8 offset-md-2">
                       <div class="form-group">

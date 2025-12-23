@@ -15,6 +15,11 @@ export class ReadmissionComponent implements OnInit {
   IsSingle=true;
   IsChildren=false; 
   IsCurrently=false;
+    address:any;
+      city:any;
+        country:any;
+          domicileCity:any;
+            domicileProvince:any;
   file : any;
   entity:any;
   ReferenceForm!: FormGroup;
@@ -72,6 +77,7 @@ this.GetAll();
           this.readdmission.assessmentRisk= this.updatebasic.assessmentRisk;
           this.readdmission.dateOfBirth= this.updatebasic.dateOfBirth;
           this.readdmission.age= this.updatebasic.age;
+                   this.readdmission.referenceNo= this.updatebasic.referenceNo;
           this.readdmission.religion= this.updatebasic.religion;
           this.readdmission.birthReligion= this.updatebasic.birthReligion;
           this.readdmission.fatherName= this.updatebasic.fatherName;
@@ -181,11 +187,11 @@ referenceNameofReferences.forEach((name: string, index: number) => {
 
 
           ///////////////////////
-          this.readdmission.address= this.updatebasic.address;
-          this.readdmission.city= this.updatebasic.city;
-          this.readdmission.country= this.updatebasic.country;     
-          this.readdmission.domicileCity= this.updatebasic.domicileCity;
-          this.readdmission.domicileProvince= this.updatebasic.domicileProvince;
+          this.readdmission.address= this.address;
+          this.readdmission.city= this.city;
+          this.readdmission.country= this.readdmission.country;     
+          this.readdmission.domicileCity= this.domicileCity;
+          this.readdmission.domicileProvince= this.domicileProvince;
           
           //this.readdmission.referenceNo=this.updatebasic.referenceNo;
           //this.readdmission.fileNo=this.updatebasic.fileNo;
@@ -212,13 +218,47 @@ referenceNameofReferences.forEach((name: string, index: number) => {
     },
   });
   }
+    formatCNIC() {
+  let value = this.readdmission.cnic.replace(/[^0-9]/g, '');
+
+  if (value.length > 5) {
+    value = value.slice(0, 5) + '-' + value.slice(5);
+  }
+  if (value.length > 13) {
+    value = value.slice(0, 13) + '-' + value.slice(13);
+  }
+
+  this.readdmission.cnic = value.substring(0, 15); // final formatted length
+}
+formatPhone() {
+  let value = this.readdmission.phone.replace(/[^0-9]/g, '');
+
+  if (value.length > 4) {
+    value = value.slice(0, 4) + '-' + value.slice(4);
+  }
+
+  this.readdmission.phone = value.substring(0, 12);  // final length: 4+1+7
+}
+formatAlternatePhone() {
+  let value = this.readdmission.phone2.replace(/[^0-9]/g, '');
+
+  if (value.length > 4) {
+    value = value.slice(0, 4) + '-' + value.slice(4);
+  }
+
+  this.readdmission.phone2 = value.substring(0, 12);  // 0312-1234567 format
+}
   PostAllRE() {
     this.readdmission.isReadmission=1;
     this.readdmission.isAdmitted=0;
     this.readdmission.firstName=this.updatebasic.firstName;
     this.readdmission.lastName=this.updatebasic.lastName;
     this.readdmission.title=this.updatebasic.title;
-
+   this.readdmission.address= this.address;
+          this.readdmission.city= this.city;
+          this.readdmission.country= this.country;    
+          this.readdmission.domicileCity= this.domicileCity;
+          this.readdmission.domicileProvince= this.domicileProvince;
     this.readdmission.proofOfMarriage=JSON.stringify(this.readdmission.proofOfMarriage);
     this.readdmission.cityofReference=JSON.stringify(this.readdmission.cityofReference);
     this.readdmission.isReferencial=JSON.stringify(this.IsReference);
