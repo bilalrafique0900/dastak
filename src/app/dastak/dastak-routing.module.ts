@@ -34,13 +34,11 @@ import { CommunityConsultationsComponent } from './communityconsultations/commun
 import { AllCommunityConsultationsComponent } from './allcommunityconsultations/allcommunityconsultations.component';
 
 import { EditcommunityconsultationComponent } from './editcommunityconsultation/editcommunityconsultation.component';
-
 import { ViewcommunityconsultationComponent } from './viewcommunityconsultation/viewcommunityconsultation.component';
 import { AllinterventioncommunityComponent } from './allinterventioncommunity/allinterventioncommunity.component';
 import { InterventioncommunityComponent } from './interventioncommunity/interventioncommunity.component';
 import { EditinterventioncommunityComponent } from './editinterventioncommunity/editinterventioncommunity.component';
 import { AllviewinterventioncommunityComponent } from './allviewinterventioncommunity/allviewinterventioncommunity.component';
-
 const routes: Routes = [
   { path:'',
     component:AllpendingfilesComponent

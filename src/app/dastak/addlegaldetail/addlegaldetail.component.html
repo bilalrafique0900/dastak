@@ -269,6 +269,15 @@
             </div>
                           </div>
                           <div class="col-md-6">
+                            <div class="form-group" >
+                              <label>Date of filing</label>
+                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                <input type="date" [(ngModel)]="this.legalcase.dateoffiling"  class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                            </div>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <div class="col-md-6">
                             <div class="form-group">
                               <label>Legal aid received from?
                               </label>
@@ -651,6 +660,24 @@
                     class="text-danger">
                   <small>statusOfCase is <strong>required</strong></small>
             </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Status of case</label>
+                          <select class="form-control select2" [(ngModel)]="this.legalcase.statusOfCase" style="width: 100%;">
+                            <option value="">Select Option</option>
+                            <option value="Disposed">Disposed</option>
+                            <option value="Decree">Decreed</option>
+                            <option value="Withdraw">Withdrawn</option>                                      
+                            <option value="Pending">Pending</option>                          
+                            
+                            
+                  
+                          </select>
+                            
+                            
+                          </div> 
+                        <!-- /.form-group -->
                       </div>
               
                       <div class="col-md-6">
