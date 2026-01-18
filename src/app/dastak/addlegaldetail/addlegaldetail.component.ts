@@ -12,6 +12,7 @@ export class AddlegaldetailComponent {
   legalnotice: any={};
   legalcase: any={};
   file: any;
+  submitted:boolean=false;
   entity: any;
   constructor(private fb: FormBuilder
     ,private cb: FormBuilder ,
@@ -39,6 +40,40 @@ export class AddlegaldetailComponent {
     });
   }
   PostAll() {
+          this.submitted = true
+    if (
+  
+  !this.legalcase.legalAdviceSought?.trim()||
+  !this.legalcase.legalAssistanceSought?.trim()||
+  // !this.legalcase.legalNoticeSent?.trim()||
+  // !this.legalcase.dateWhenLegalNoticeSent?.trim()||
+ // !this.legalcase.legalNoticeSentTo?.trim()||
+  !this.legalcase.typeOfAssistance?.trim()||
+  !this.legalcase.natureOfLegalConcern?.trim()||
+ // !this.legalcase.firNo?.trim()||
+ // !this.legalcase.caseNo?.trim()||
+  !this.legalcase.caseFiledBy?.trim()||
+  !this.legalcase.caseFiledAgainst?.trim()||
+  !this.legalcase.dateoffiling?.trim()||
+  !this.legalcase.isLawyerShelterAssigned?.trim()||
+  !this.legalcase.nameOfLawyer?.trim()||
+ // !this.legalcase.contactOfLawyer?.trim()||
+  !this.legalcase.court?.trim()||
+  !this.legalcase.provinceOfCourt?.trim()||
+  !this.legalcase.cityOfCourt?.trim()||
+  //!this.legalcase.nextDateOfHearing?.trim()||
+  !this.legalcase.statusOfCase?.trim()
+ // !this.legalcase.remarks?.trim()
+  // !this.legalcase.reasonForWithdrawal?.trim()
+ // !this.legalcase.outcome?.trim()
+
+
+
+  
+) {
+  alert('Please Fill All Required Fields');
+  return;
+}
     
     this.legalcase.referenceNo=this.entity;
     this.Srv.PostData(`LegalDetail/addlegal`,this.legalcase).subscribe({

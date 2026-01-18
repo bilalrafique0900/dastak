@@ -30,9 +30,10 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th style=>Created at</th>
+              <!-- <th style=>Created at</th> -->
               <th>Case iD</th>
               <th>Case reference</th>
+                   <th>Name</th>
               <th >Next date of hearing</th>
               <th >Court</th>
               <th >Nature of legal concern</th>
@@ -42,9 +43,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of legal">
-              <td>{{item.createdAt| date:'fullDate'}}</td>
+              <!-- <td>{{item.createdAt| date:'fullDate'}}</td> -->
               <td>{{item.caseId}}</td>
               <td>{{item.caseRef}}</td>
+                  <td>{{item.fullName}}</td>
               <td>{{item.nextDateOfHearing| date:'fullDate'}}</td>
               <td>{{item.court}}</td>  
               <td>{{item.natureOfLegalConcern}}</td>
@@ -61,11 +63,12 @@
               
                 <button type="button" class="btn btn-primary ml-1" title="Edit" [routerLink]="['/dastak/editlegal',this.file,this.entity,item.caseId]">   
                   <i class="fas fa-edit"></i> </button>
-                <br><br>
+                <!-- <br><br>
                 <button type="button" class="btn btn-success ml-1" title="Update"[routerLink]="['/dastak/updatelegal',this.file,this.entity,item.caseId]" >
-                  <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span> <i class="fas fa-sync-alt"></i></button> 
+                  <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span> <i class="fas fa-sync-alt"></i></button>  -->
                   <br><br>
-              
+               <button type="button" class="btn btn-danger ml-1"(click)="Delete(item.id)"  title="Dicard"  >
+                    <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span><i class="fas fa-times"></i></button> 
                 
               </div></td>
              

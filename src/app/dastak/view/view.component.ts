@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/core/services/http.service';
 })
 export class ViewComponent {
   VisitorId:any;
-
+formattedTime:any;
   visitordata: any={};
   constructor(private Srv:HttpService,
      private route:ActivatedRoute
@@ -17,6 +17,12 @@ export class ViewComponent {
     this.VisitorId = this.route.snapshot.params["Id"];
   }
   ngOnInit(){
+    if (this.visitordata?.time) {
+    let [h, m] = this.visitordata.time.split(':');
+    let d = new Date();
+    d.setHours(+h, +m);
+    this.formattedTime = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+  }
 this.GetVisitorById();
   }
   getFormattedData(data:any) {

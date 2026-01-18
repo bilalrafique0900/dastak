@@ -22,8 +22,8 @@ submitted:boolean=false;
   !this.legalcase.name?.trim()||
   !this.legalcase.legalAdviceSought?.trim()||
   !this.legalcase.legalAssistanceSought?.trim()||
-  !this.legalcase.legalNoticeSent?.trim()||
-  !this.legalcase.dateWhenLegalNoticeSent?.trim()||
+  // !this.legalcase.legalNoticeSent?.trim()||
+  // !this.legalcase.dateWhenLegalNoticeSent?.trim()||
  // !this.legalcase.legalNoticeSentTo?.trim()||
   !this.legalcase.typeOfAssistance?.trim()||
   !this.legalcase.natureOfLegalConcern?.trim()||
@@ -39,9 +39,9 @@ submitted:boolean=false;
   !this.legalcase.provinceOfCourt?.trim()||
   !this.legalcase.cityOfCourt?.trim()||
   //!this.legalcase.nextDateOfHearing?.trim()||
-  !this.legalcase.statusOfCase?.trim()||
+  !this.legalcase.statusOfCase?.trim()
  // !this.legalcase.remarks?.trim()
-  !this.legalcase.reasonForWithdrawal?.trim()
+  // !this.legalcase.reasonForWithdrawal?.trim()
  // !this.legalcase.outcome?.trim()
 
 

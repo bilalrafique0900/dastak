@@ -24,7 +24,18 @@ export class AddexternalvisitComponent implements OnInit {
       visitors: this.fb.array([this.createVisitorGroup()])
     });
   }
+ formatCNIC() {
+  let value = this.dastakvisit.cnic.replace(/[^0-9]/g, '');
 
+  if (value.length > 5) {
+    value = value.slice(0, 5) + '-' + value.slice(5);
+  }
+  if (value.length > 13) {
+    value = value.slice(0, 13) + '-' + value.slice(13);
+  }
+
+  this.dastakvisit.cnic = value.substring(0, 15); // final formatted length
+}
   visitors(): FormArray {
     return this.visitForm.get('visitors') as FormArray;
   }
@@ -55,14 +66,15 @@ export class AddexternalvisitComponent implements OnInit {
     }
   }
   Post() {
+    debugger
     const visitorsArray = this.visitForm.get('visitors') as FormArray;
     // Or, if you want to loop through all the visitors and get their 'name' values
     const visitorNames = visitorsArray.controls.map(visitor => visitor.get('name')?.value);
-    const visitorDesignations = visitorsArray.controls.map(visitor => visitor.get('designation')?.value);
+    //const visitornoOfPlannedVisits = visitorsArray.controls.map(visitor => visitor.get('noOfPlannedVisits')?.value);
     const visitorDetails = visitorsArray.controls.map(visitor => visitor.get('detail')?.value);
     const visitorContacts = visitorsArray.controls.map(visitor => visitor.get('contact')?.value);
     this.dastakvisit.name=JSON.stringify(visitorNames);
-    this.dastakvisit.designation=JSON.stringify(visitorDesignations);
+    //this.dastakvisit.designation=JSON.stringify(visitornoOfPlannedVisits);
     this.dastakvisit.detailOfVisitor=JSON.stringify(visitorDetails);
     this.dastakvisit.contactNo=JSON.stringify(visitorContacts);
      this.dastakvisit.time=this.dastakvisit.time+':00';

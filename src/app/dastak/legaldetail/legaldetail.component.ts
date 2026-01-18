@@ -33,5 +33,20 @@ export class LegaldetailComponent {
       },
     });
   }
+  Delete(id:any) {
+    this.Srv.GetData(`LegalDetail/gettdeleteall?id=`+id).subscribe({
+      next: (res: any) => {
+        
+        if (res.message) {
+          
+          this.GetAll();
+
+        }
+      },
+      error: (err) => {
+       // this.usernameError = err ? err.Message : '';
+      },
+    });
+  }
 
 }
